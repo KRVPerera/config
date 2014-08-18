@@ -1,0 +1,5 @@
+alias cls='clear'
+alias c='clear'
+alias rm='rm -i'
+alias quit='exit'
+#alias edit='gedit'
