@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=5000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -112,3 +112,17 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+
+function setproxy_mora() {
+    export {http,ftp,socks}_proxy='http://cache.mrt.ac.lk:3128/'
+	export https_proxy='https://cache.mrt.ac.lk:3128/'
+}
+
+function unsetproxy() {
+    unset {http,https,ftp,socks}_proxy
+}
+
