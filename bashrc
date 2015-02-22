@@ -116,12 +116,13 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-
+# function to add my university proxy settings
 function setproxy_mora() {
     export {http,ftp,socks}_proxy='http://cache.mrt.ac.lk:3128/'
 	export https_proxy='https://cache.mrt.ac.lk:3128/'
 }
 
+# function to remove proxy settings
 function unsetproxy() {
     unset {http,https,ftp,socks}_proxy
 }
