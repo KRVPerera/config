@@ -116,14 +116,81 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-# function to add my university proxy settings
-function setproxy_mora() {
+
+function smp() {
+	printf '\n---------------- Set mora proxy env --------------\n'
     export {http,ftp,socks}_proxy='http://cache.mrt.ac.lk:3128/'
+    echo "export {http,ftp,socks}_proxy='http://cache.mrt.ac.lk:3128/'"
 	export https_proxy='https://cache.mrt.ac.lk:3128/'
+	echo export https_proxy='https://cache.mrt.ac.lk:3128/'
+	printf '\n---------------- Test env --------------'
+	echo env | grep proxy
+	env | grep proxy
+	printf '\n'
 }
 
-# function to remove proxy settings
-function unsetproxy() {
+function asmp() {
+	printf '\n---------------- Unset mora proxy env --------------\n'
     unset {http,https,ftp,socks}_proxy
+    echo "unset {http,https,ftp,socks}_proxy"
+	printf '\n---------------- Test env --------------------------\n'
+	echo "env | grep proxy"
+	env | grep proxy
 }
 
+
+# added by Anaconda 2.1.0 installer
+export PATH="/home/drex/anaconda/bin:$PATH"
+export LD_LIBRARY_PATH=:/usr/local/lib
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+
+
+#function for Gooogle Code Jam
+function codejam_init(){
+ echo '------------------------ Test --------------------------------'
+ echo "./gcj_init_contest.py "$1" "
+ ./gcj_init_contest.py "$1" 
+}
+
+function codejam_download(){
+ echo '------------------------ Test --------------------------------'
+ echo "./gcj_download_input.py "$1" "$2" "$3""
+ ./gcj_download_input.py "$1" "$2" "$3"
+}
+
+
+function codejam_submit(){
+ echo '------------------------ Test --------------------------------'
+ echo "./gcj_submit_solution.py "$1" "$2" "$3""
+ ./gcj_submit_solution.py "$1" "$2" "$3"
+}
+
+function codejam_status(){
+ ./gcj_get_status.py
+}
+
+new-alias () { 
+  if [ -z "$1" ]; then
+    echo "alias name:"
+    read NAME
+  else
+    NAME=$1
+  fi
+
+  if [ -z "$2" ]; then
+    echo "alias definition:"
+    read DEFINTION
+  else
+    if [ "$2" = "-cd" ]; then
+      DEFINTION='cd '
+    else
+      DEFINTION=$2
+    fi
+  fi
+
+  echo "alias $NAME='$DEFINTION'" >> ~/.bashrc
+  . ~/.bashrc
+}
+alias ..='cd ..'
+alias ...='cd ../..'
