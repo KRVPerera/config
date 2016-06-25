@@ -123,7 +123,7 @@ function smp() {
     echo "export {http,ftp,socks}_proxy='http://cache.mrt.ac.lk:3128/'"
 	export https_proxy='https://cache.mrt.ac.lk:3128/'
 	echo export https_proxy='https://cache.mrt.ac.lk:3128/'
-	printf '\n---------------- Test env --------------'
+	printf '\n---------------- Test env --------------\n'
 	echo env | grep proxy
 	env | grep proxy
 	printf '\n'
