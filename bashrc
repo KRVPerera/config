@@ -10,14 +10,14 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=5000
-HISTFILESIZE=10000
+HISTFILESIZE=5000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -84,6 +84,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -112,17 +115,21 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
+# added by Anaconda3 4.0.0 installer
+export PATH="/home/krv/anaconda3/bin:$PATH"
+export JAVA_HOME="/usr/lib/jvm/jdk.1.8.0_92"
+export JRE_HOME="$JAVA_HOME/jre"
+export PYTHONPATH=~/Programs/xgboost/python-package
+export PATH="$JAVA_HOME/bin:$PATH"
 
 function smp() {
 	printf '\n---------------- Set mora proxy env --------------\n'
-    export {http,ftp,socks}_proxy='http://cache.mrt.ac.lk:3128/'
-    echo "export {http,ftp,socks}_proxy='http://cache.mrt.ac.lk:3128/'"
-	export https_proxy='https://cache.mrt.ac.lk:3128/'
-	echo export https_proxy='https://cache.mrt.ac.lk:3128/'
+    export {http,ftp,socks}_proxy='http://xxx:xxx/'
+	export all_proxy='http://xxx:xxx/'
+    echo "export {http,ftp,socks}_proxy='http://xxx:xxx/'"
+	export https_proxy='https://xxx:xxx/'
+	echo export https_proxy='https://xxx:xxx/'
 	printf '\n---------------- Test env --------------\n'
 	echo env | grep proxy
 	env | grep proxy
@@ -131,43 +138,20 @@ function smp() {
 
 function asmp() {
 	printf '\n---------------- Unset mora proxy env --------------\n'
-    unset {http,https,ftp,socks}_proxy
-    echo "unset {http,https,ftp,socks}_proxy"
+    unset {http,https,ftp,socksi,all}_proxy
+    echo "unset {http,https,ftp,socks,all}_proxy"
 	printf '\n---------------- Test env --------------------------\n'
 	echo "env | grep proxy"
 	env | grep proxy
 }
 
-
-# added by Anaconda 2.1.0 installer
-export PATH="/home/drex/anaconda/bin:$PATH"
-export LD_LIBRARY_PATH=:/usr/local/lib
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-
-
-#function for Gooogle Code Jam
-function codejam_init(){
- echo '------------------------ Test --------------------------------'
- echo "./gcj_init_contest.py "$1" "
- ./gcj_init_contest.py "$1" 
+function gsp(){
+	git config --global http.proxy "http://xxx:xxx"
+	git config --global https.proxy "https://xxx:xxx"
 }
-
-function codejam_download(){
- echo '------------------------ Test --------------------------------'
- echo "./gcj_download_input.py "$1" "$2" "$3""
- ./gcj_download_input.py "$1" "$2" "$3"
-}
-
-
-function codejam_submit(){
- echo '------------------------ Test --------------------------------'
- echo "./gcj_submit_solution.py "$1" "$2" "$3""
- ./gcj_submit_solution.py "$1" "$2" "$3"
-}
-
-function codejam_status(){
- ./gcj_get_status.py
+function agsp(){
+	git config --global --unset http.proxy 
+	git config --global --unset https.proxy 
 }
 
 new-alias () { 
@@ -192,5 +176,3 @@ new-alias () {
   echo "alias $NAME='$DEFINTION'" >> ~/.bashrc
   . ~/.bashrc
 }
-alias ..='cd ..'
-alias ...='cd ../..'
