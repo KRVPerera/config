@@ -160,6 +160,32 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock -c 000000 lock, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+x mode "$mode_system"
+
+set $movemode Move workspace Left (l), Right (h)
+
+mode "$movemode" {
+	bindsym l exec --no-startup-id i3-msg move workspace to output left, mode "default"
+	bindsym h exec --no-startup-id i3-msg move workspace to output right, mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode "$movemode"
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
@@ -191,8 +217,7 @@ bar {
         #tray_output primary
 }
 
-# KRV BInds
-bindsym $mod+shift+x exec i3lock -c 000000
+# KRV Binds
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl-set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl-set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl-set-sink-mute 0 toggle
@@ -200,10 +225,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl-set-sink-mute 0 toggle
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
-
-exec xrandr --newmode "1600x900_60.00"  118.25  1600 1696 1856 2112  900 903 908 934 -hsync +vsync
-exec xrandr --addmode VGA1 "1600x900_60.00"
-exec xrandr --output VGA1 --mode "1600x900_60.00"
 
 # loading on specific workspaces
 assign [class="Rhythmbox"] $workspace10
