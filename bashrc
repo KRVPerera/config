@@ -176,3 +176,11 @@ new-alias () {
   echo "alias $NAME='$DEFINTION'" >> ~/.bashrc
   . ~/.bashrc
 }
+
+function cdc(){
+	pwd | xclip
+}
+
+function cdv(){
+	cd `xclip -o`
+}
