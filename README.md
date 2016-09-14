@@ -25,3 +25,11 @@ You can find these files in linux.
       . ~/.bashrc 
       
   to see the changes instantly on the bash terminal. It will effect any terminal which has acces to bash history.
+
+
+init.vim
+========
+
+Config for neovim
+
+~/.config/nvim/init.vim
