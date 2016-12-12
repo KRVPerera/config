@@ -184,3 +184,17 @@ function cdc(){
 function cdv(){
 	cd `xclip -o`
 }
+
+function brightness () {
+	arg="$1"
+	max_brightness=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+	actual_brightness=$(cat /sys/class/backlight/intel_backlight/actual_brightness)
+	let	wanted=$(expr $arg)
+	echo "Actual is : $actual_brightness"
+	echo "Max is : $max_brightness"
+	if [ $wanted -ge $max_brightness ]; then
+		wanted=$max_brightness
+	fi
+	echo "Changed to : $wanted"
+	echo $wanted |sudo tee /sys/class/backlight/intel_backlight/brightness
+}
