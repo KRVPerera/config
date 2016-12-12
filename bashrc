@@ -198,3 +198,41 @@ function brightness () {
 	echo "Changed to : $wanted"
 	echo $wanted |sudo tee /sys/class/backlight/intel_backlight/brightness
 }
+
+function bColor(){
+	if [ -z "$1" ]; then
+		col_num=$1
+		echo "Colour Codes : "
+		read col_num
+	else
+		if [ $1 =  "h" ]; then
+			echo "Black : 30"
+			echo "Red   : 31"
+			echo "Green : 32"
+			echo "Brown : 33"
+			echo "Blue  : 34"
+			echo "Purple: 35"
+			echo "Cyan  : 36"
+			echo "Usage : bColor col# [1|0]"
+			return 0
+		fi
+		col_num=$1
+	fi
+
+	if [ -z "$2" ]; then
+		light=1
+	else
+		light=$2
+		if [ "$2" -eq 1 ]; then
+			echo "Color will be darker"
+		elif [ "$2" -eq 0 ]; then
+			echo "Color will be lighter"
+		else
+			echo "Invalid lightness! Set to darker"
+			light=1
+		fi
+	fi
+	echo `expr index  "$PS1" '[01];[30-36]m'`
+	echo "export PS1='\e[$light;$col_num m PS1 \e[m'"
+	PS1="\e["$light";"$col_num"m"$PS1"\e[m"
+}
