@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -30,14 +30,14 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 set background=dark
 colorscheme solarized8
 
-if has('gui_running')
-    set guioptions-=T
-    set guioptions-=m
-    set guioptions-=r
-else
-    let g:solarized_termcolours=256
-endif
-
+"if has('gui_running')
+"    set guioptions-=T
+"    set guioptions-=m
+"    set guioptions-=r
+"else
+"    let g:solarized_termcolours=256
+"endif
+"
 set guifont=Inconsolata-g\ 12
 set omnifunc=syntaxComplete#Complete
 set dictionary+=/usr/share/dict/words
@@ -86,3 +86,5 @@ nnoremap <C-F> :NERTreeFind<CR>
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+let g:hardtime_default_on = 1
