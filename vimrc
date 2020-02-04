@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -16,6 +15,12 @@ Plug 'davidhalter/jedi-vim'
 Plug 'klen/python-mode'
 Plug 'takac/vim-hardtime'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+"Plug 'lankavitharana/ballerina-vim'
+Plug 'KRVPerera/ballerina-vim'
+"Plug '~/Projects/ballerina-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'natebosch/vim-lsc'
+Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
 
@@ -26,6 +31,8 @@ autocmd! bufwritepost .vimrc source %
 au BufRead,BufNewFile *.upf,*.upf2 set filetype=upf
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let mapleader = ','
 
 set background=dark
 colorscheme solarized8
@@ -71,6 +78,7 @@ set wrap
 set clipboard=unnamed
 
 inoremap ii <Esc>
+inoremap jj <Esc>
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
@@ -88,3 +96,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 let g:hardtime_default_on = 1
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+
