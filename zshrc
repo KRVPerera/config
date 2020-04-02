@@ -117,10 +117,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-
-export PATH=$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.2.0-SNAPSHOT/bin:$PATH
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#export PATH=$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.3.0-SNAPSHOT/bin:$PATH
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
 
 # Colorise the top Tabs of Iterm2 with the same color as background
 ## Just change the 18/26/33 wich are the rgb values
@@ -155,3 +153,19 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 export BALLERINA_TOOL="ballerina"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/rukshanp/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/rukshanp/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/rukshanp/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/rukshanp/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
