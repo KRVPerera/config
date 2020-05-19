@@ -24,18 +24,18 @@ export BALLERINA_TOOL="/Library/Ballerina/bin/ballerina"; echo "BALLERINA_TOOL=$
 echo "$BALLERINA_TOOL -v"
 $BALLERINA_TOOL -v
 echo "$BALLERINA_TOOL run --experimental $FILE"
-$BALLERINA_TOOL run --experimental $FILE | tee out_lib
+$BALLERINA_TOOL run --experimental $FILE 2>&1 | tee out_lib
 filename="${FILE%.*}"
 
 export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.3.0-SNAPSHOT/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina
 echo "$BALLERINA_TOOL -v"
 $BALLERINA_TOOL -v
 echo "$BALLERINA_TOOL run --experimental $FILE"
-$BALLERINA_TOOL run --experimental $FILE | tee out_my
+$BALLERINA_TOOL run --experimental $FILE 2>&1 | tee out_my
 filename="${FILE%.*}"
 
 echo ""
 echo "\n###### DIFF output #######"
 #diff --ignore-space-change out_ref out_my -s
 diff out_lib out_my -s
-rm out_lib out_my
+#rm out_lib out_my
