@@ -33,7 +33,7 @@ alias decompileGui='java -jar /Applications/jd-gui.jar'
 alias runBBE='~/MyScripts/runBBE.sh'
 alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/Library/Ballerina/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
-alias bal1='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.3.0-SNAPSHOT/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
+alias bal1='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-2.0.0-SNAPSHOT/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 alias bal2='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.2.1-SNAPSHOT/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 alias debugBalB='$BALLERINA_TOOL -v; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL build'
 alias debugBal='$BALLERINA_TOOL -v; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL run'
@@ -55,3 +55,6 @@ alias bdr='bv; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL run'
 alias bh='echo $BALLERINA_TOOL;which ballerina'
 alias b0='bal0'
 alias b1='bal1'
+
+alias downloadSongs="youtube-dl -f 'bestvideo[height<=360]+bestaudio/best[height<=360]' --download-archive Songs.txt https://www.youtube.com/playlist\?list\=PLKK_AU2B-pEoOIhsxTIKwlNTNReBQrLi3"
+alias downWith5Cns="aria2c --file-allocation=none -c -x 5 --check-integrity=true"
