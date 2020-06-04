@@ -1,6 +1,6 @@
 #!/bin/bash
-source ~/bash_aliases
-echo "Extracting $1"
+shopt -s expand_aliases
+source ~/bash_aliases.sh
 FILE=$1
 
 if [ ${FILE: -1} == "." ]; then
@@ -20,14 +20,14 @@ if [ ! -f "$FILE" ]; then
 fi
 
 echo "Creating build file using ballerina"
-export BALLERINA_TOOL="/Library/Ballerina/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina
+b0
 echo "$BALLERINA_TOOL -v"
 $BALLERINA_TOOL -v
 echo "$BALLERINA_TOOL run --experimental $FILE"
 $BALLERINA_TOOL run --experimental $FILE 2>&1 | tee out_lib
 filename="${FILE%.*}"
 
-export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.3.0-SNAPSHOT/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina
+b1
 echo "$BALLERINA_TOOL -v"
 $BALLERINA_TOOL -v
 echo "$BALLERINA_TOOL run --experimental $FILE"
