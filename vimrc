@@ -14,19 +14,18 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'davidhalter/jedi-vim'
 Plug 'klen/python-mode'
 Plug 'takac/vim-hardtime'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-"Plug 'lankavitharana/ballerina-vim'
-"Plug 'KRVPerera/ballerina-vim'
-Plug '/Users/rukshanp/Projects/VimPlugin/vim-plug/ballerina-vim'
+"Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'KRVPerera/ballerina-vim', { 'branch': 'stable' }
+"Plug '/Users/rukshanp/Projects/VimPlugin/vim-plug/ballerina-vim'
 Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
 let g:hardtime_showmsg = 1
 let g:hardtime_maxcount = 2
-
+"let g:syntastic_java_checkers = []
 autocmd! bufwritepost .vimrc source %
-au BufRead,BufNewFile *.upf,*.upf2 set filetype=upf
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
@@ -100,3 +99,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 nnoremap <C-X> :syntime on<CR>
 nnoremap <C-M> :syntime report<CR>
+
+" Nerd tree changes
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
