@@ -25,8 +25,8 @@ $BALLERINA_TOOL -v
 echo "$BALLERINA_TOOL build --experimental $FILE"
 $BALLERINA_TOOL build --experimental $FILE
 filename="${FILE%.*}"
-
-java -jar $filename.jar > out_my
+baseFileName="$(basename -- $filename)"
+java -jar $baseFileName.jar > out_my
 
 echo ""
 echo "####### New output #######"
@@ -41,4 +41,4 @@ echo ""
 echo "\n###### DIFF output #######"
 #diff --ignore-space-change out_ref out_my -s
 diff out_ref out_my -s
-rm $filename.jar out_ref out_my
+rm $baseFileName.jar out_ref out_my
