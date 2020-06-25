@@ -1,3 +1,4 @@
+echo "Loading local aliases : $0"
 export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview2-SNAPSHOT"
 
 alias src="cd /Users/rukshanp/Projects/ballerina-lang"
