@@ -114,7 +114,11 @@ if [ -f ~/bash_aliases.sh ]; then
     . ~/bash_aliases.sh
 fi
 
-ulimit -S -n 20000
+if [ -f ~/bash_functions.sh ]; then
+    . ~/bash_functions.sh
+fi
+
+ulimit -S -n 65000
 
 #export PATH=$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.3.0-SNAPSHOT/bin:$PATH
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
