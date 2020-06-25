@@ -8,6 +8,12 @@ if [ ${FILE: -1} == "." ]; then
     FILE=${FILE}bal
 fi
 
+if [ "${#FILE}" -le 4 ]; then
+    echo "File does not have a '.bal' extention"
+    FILE=${FILE}.bal
+    echo $FILE
+fi
+
 if [ ! ${FILE: -4} == ".bal" ]; then
     echo "File does not have a '.bal' extention"
     FILE=${FILE}.bal
