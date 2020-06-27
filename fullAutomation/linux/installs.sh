@@ -14,16 +14,22 @@ git config --global credential.helper 'cache --timeout=3600'
 
 
 # Oh my zsh
-zshInstall=`which zsh`
+zshInstall=`grep /zsh$ /etc/shells | tail -1`
 if [[ -z $zshInstall ]]; then
     sudo apt install zsh
     sudo apt install curl
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo ""
+    echo "##############################################"
+    echo "####    zsh is already installed          ####"
+    echo "##############################################"
 fi
 
 sudo apt autoremove
 
 cd ~
+rm -rf MyConfig
 mkdir MyConfig
 cd MyConfig
 git clone https://github.com/KRVPerera/config.git
