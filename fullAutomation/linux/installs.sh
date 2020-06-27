@@ -12,4 +12,7 @@ git config --global merge.conflictstyle diff3
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 
+
+# Oh my zsh
+sudo apt install curl
 curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
