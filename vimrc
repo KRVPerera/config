@@ -16,8 +16,8 @@ Plug 'klen/python-mode'
 Plug 'takac/vim-hardtime'
 "Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
-"Plug 'KRVPerera/ballerina-vim', { 'branch': 'stable' }
-Plug '/Users/rukshanp/Projects/VimPlugin/vim-plug/ballerina-vim'
+Plug 'KRVPerera/ballerina-vim', { 'branch': 'stable' }
+"Plug '/Users/rukshanp/Projects/VimPlugin/vim-plug/ballerina-vim'
 Plug 'easymotion/vim-easymotion'
 
 call plug#end()
