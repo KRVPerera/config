@@ -50,10 +50,13 @@ cd MyConfig/config
 git pull origin master
 
 echo "Copying zshrc"
-rm ~/.zshrc
+mv ~/.zshrc ~/.zshrc.bak
 ln -s zshrc ~/.zshrc
+
 echo "Copying aliases"
+mv ~/bash_aliases.sh ~/bash_aliases.bak
 ln -s bash_aliases.sh ~/bash_aliases.sh
+
 echo "Copying bashrc"
 mv ~/.bashrc ~/.bashrc.bak
 ln -s bashrc ~/.bashrc
@@ -65,4 +68,10 @@ if [[ ! -f /usr/bin/vim ]] ; then
     echo "Copying vimrc"
     mv ~/.vimrc ~/.vimrc.bak
     ln -s vimrc ~/.vimrc
+else
+    echo ""
+    echo "##############################################"
+    echo "####   vim is already installed          ####"
+    vim -version
+    echo "##############################################"
 fi
