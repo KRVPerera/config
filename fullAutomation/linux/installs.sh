@@ -27,7 +27,15 @@ else
 fi
 
 ## Java installation
-sudo apt-get install openjdk-14-jdk
+if [[ ! -f /usr/bin/java ]] ; then
+    sudo apt-get install openjdk-14-jdk
+else
+    echo ""
+    echo "##############################################"
+    echo "####   java is already installed          ####"
+    java -version
+    echo "##############################################"
+fi
 
 sudo apt autoremove
 
