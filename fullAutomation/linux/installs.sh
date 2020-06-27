@@ -71,8 +71,13 @@ ln -s $configPath/bashrc ~/.bashrc
 
 ## vim setup
 if [[ ! -f /usr/bin/vim ]] ; then
+    echo "Installing vim"
     sudo apt install vim
+    echo "[VIM] install vim plug"
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo "[VIM] install vim solarized8"
+    git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8
+
     echo "Copying vimrc"
     mv ~/.vimrc ~/.vimrc.bak
     ln -s $configPath/vimrc ~/.vimrc
