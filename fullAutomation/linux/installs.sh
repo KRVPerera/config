@@ -50,14 +50,19 @@ cd MyConfig/config
 git pull origin master
 
 echo "Copying zshrc"
-cp zshrc ~/.zshrc
+rm ~/.zshrc
+ln -s zshrc ~/.zshrc
 echo "Copying aliases"
-cp bash_aliases.sh ~/bash_aliases.sh
+ln -s bash_aliases.sh ~/bash_aliases.sh
 echo "Copying bashrc"
-cp bashrc ~/.bashrc
+mv ~/.bashrc ~/.bashrc.bak
+ln -s bashrc ~/.bashrc
 
 ## vim setup
-sudo apt install vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo "Copying vimrc"
-cp vimrc ~/.vimrc
+if [[ ! -f /usr/bin/vim ]] ; then
+    sudo apt install vim
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo "Copying vimrc"
+    mv ~/.vimrc ~/.vimrc.bak
+    ln -s vimrc ~/.vimrc
+fi
