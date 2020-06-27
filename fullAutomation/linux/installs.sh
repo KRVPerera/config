@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo apt install vim
 sudo apt install git
 
 ## git setup
@@ -40,12 +39,25 @@ fi
 sudo apt autoremove
 
 cd ~
-rm -rf MyConfig
-mkdir MyConfig
-cd MyConfig
-git clone https://github.com/KRVPerera/config.git
-cd config
+if [[ ! -d MyConfig ]]; then
+    mkdir MyConfig
+    cd MyConfig
+    git clone https://github.com/KRVPerera/config.git
+    cd ..
+fi
+
+cd MyConfig/config
+git pull origin master
+
+echo "Copying zshrc"
 cp zshrc ~/.zshrc
+echo "Copying aliases"
 cp bash_aliases.sh ~/bash_aliases.sh
+echo "Copying bashrc"
 cp bashrc ~/.bashrc
+
+## vim setup
+sudo apt install vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "Copying vimrc"
 cp vimrc ~/.vimrc
