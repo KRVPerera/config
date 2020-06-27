@@ -69,7 +69,7 @@ git pull origin master
 
 echo "Copying zshrc"
 mv ~/.zshrc ~/.zshrc.bak
-ln -s $configPath/zshrc ~/.zshrc
+ln -s $configPath/zshrc.linux ~/.zshrc
 
 echo "Copying aliases"
 mv ~/bash_aliases.sh ~/bash_aliases.bak
