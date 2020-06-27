@@ -1,6 +1,14 @@
 #!/bin/bash
 
-sudo apt install git
+if [[ ! -f /usr/bin/git ]]; then
+    sudo apt install git
+else
+    echo ""
+    echo "##############################################"
+    echo "####    git is already installed          ####"
+    git --version
+    echo "##############################################"
+fi
 
 ## git setup
 git config --global user.name "KRVPerera"
@@ -10,7 +18,6 @@ git config --global core.editor "vim --wait"
 git config --global merge.conflictstyle diff3
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
-
 
 # Oh my zsh
 zshInstall=`grep /zsh$ /etc/shells | tail -1`
