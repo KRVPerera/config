@@ -26,6 +26,9 @@ else
     echo "##############################################"
 fi
 
+## Java installation
+sudo apt-get install openjdk-14-jdk
+
 sudo apt autoremove
 
 cd ~
