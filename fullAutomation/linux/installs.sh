@@ -21,6 +21,7 @@ git config --global credential.helper 'cache --timeout=3600'
 
 ## utils
 sudo apt install htop
+sudo apt-get install git-extras
 
 # Oh my zsh
 zshInstall=`grep /zsh$ /etc/shells | tail -1`
