@@ -15,4 +15,4 @@ git config --global credential.helper 'cache --timeout=3600'
 
 # Oh my zsh
 sudo apt install curl
-curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
