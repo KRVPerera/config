@@ -37,3 +37,4 @@ cd config
 cp zshrc ~/.zshrc
 cp bash_aliases.sh ~/bash_aliases.sh
 cp bashrc ~/.bashrc
+cp vimrc ~/.vimrc
