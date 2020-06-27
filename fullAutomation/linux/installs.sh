@@ -72,6 +72,6 @@ else
     echo ""
     echo "##############################################"
     echo "####   vim is already installed          ####"
-    vim -version
+    vim --version
     echo "##############################################"
 fi
