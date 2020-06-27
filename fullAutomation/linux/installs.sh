@@ -14,5 +14,14 @@ git config --global credential.helper 'cache --timeout=3600'
 
 
 # Oh my zsh
+sudo apt install zsh
 sudo apt install curl
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+cd ~
+mkdir MyConfig
+cd MyConfig
+git clone https://github.com/KRVPerera/config.git
+cd config
+cp zshrc ~/.zshrc
+cp bash_aliases.sh ~/bash_aliases.sh
