@@ -38,7 +38,7 @@ fi
 
 sudo apt autoremove
 
-configPath="~/MyConfig/config"
+configPath=~/MyConfig/config
 cd ~
 if [[ ! -d MyConfig ]]; then
     mkdir MyConfig
