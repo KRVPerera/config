@@ -19,6 +19,9 @@ git config --global merge.conflictstyle diff3
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 
+## utils
+sudo apt install htop
+
 # Oh my zsh
 zshInstall=`grep /zsh$ /etc/shells | tail -1`
 if [[ -z $zshInstall ]]; then
