@@ -177,3 +177,4 @@ source $ZPLUG_HOME/init.zsh
 
 ## plugins
 zplug "djui/alias-tips"
+
