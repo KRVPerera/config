@@ -79,7 +79,7 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git Alias-finder brew git-flow git-extras history-substring-search)
+plugins=(git Alias-finder brew git-flow git-extras history-substring-search alias-tips)
 
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 
@@ -172,4 +172,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+## plugins
 zplug "djui/alias-tips"
