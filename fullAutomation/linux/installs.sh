@@ -38,6 +38,7 @@ fi
 
 sudo apt autoremove
 
+configPath="~/MyConfig/config"
 cd ~
 if [[ ! -d MyConfig ]]; then
     mkdir MyConfig
@@ -46,20 +47,20 @@ if [[ ! -d MyConfig ]]; then
     cd ..
 fi
 
-cd MyConfig/config
+cd $configPath
 git pull origin master
 
 echo "Copying zshrc"
 mv ~/.zshrc ~/.zshrc.bak
-ln -s zshrc ~/.zshrc
+ln -s $configPath/zshrc ~/.zshrc
 
 echo "Copying aliases"
 mv ~/bash_aliases.sh ~/bash_aliases.bak
-ln -s bash_aliases.sh ~/bash_aliases.sh
+ln -s $configPath/bash_aliases.sh ~/bash_aliases.sh
 
 echo "Copying bashrc"
 mv ~/.bashrc ~/.bashrc.bak
-ln -s bashrc ~/.bashrc
+ln -s $configPath/bashrc ~/.bashrc
 
 ## vim setup
 if [[ ! -f /usr/bin/vim ]] ; then
@@ -67,7 +68,7 @@ if [[ ! -f /usr/bin/vim ]] ; then
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     echo "Copying vimrc"
     mv ~/.vimrc ~/.vimrc.bak
-    ln -s vimrc ~/.vimrc
+    ln -s $configPath/vimrc ~/.vimrc
 else
     echo ""
     echo "##############################################"
