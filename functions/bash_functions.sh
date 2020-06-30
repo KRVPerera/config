@@ -57,3 +57,16 @@ find_ballerina_file () {
         return 1
     fi
 }
+
+print_all_arguments () {
+    # store arguments in a special array
+    args=("$@")
+    # get number of elements
+    ELEMENTS=${#args[@]}
+
+    # echo each element in array
+    # for loop
+    for (( i=0;i<$ELEMENTS;i++)); do
+        echo "$i : ${args[${i}]}"
+    done
+}
