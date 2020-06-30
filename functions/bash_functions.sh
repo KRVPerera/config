@@ -4,34 +4,49 @@ echo "Loading functions : $0"
 
 find_ballerina_file () {
     FILE=$1
+    FILE_EXT={$1:-4}
+    debug_on=false
+
+    if [[ $2 == "debug" ]]; then
+        debug_on=true
+    fi
+
+
+    if [ -f "$FILE" ]; then
+        echo $FILE
+    fi
+
+    if [[ $debug_on == true ]]; then
+        echo "$FILE not found assuming a ballering file"
+    fi
 
     if [[ ${FILE:-1} == "." ]]; then
-        echo "Extention is not given. Assuming '.bal'"
+        if [[ $debug_on == true ]]; then
+            echo "Extention is not given. Assuming '.bal'"
+        fi
         FILE=${FILE}bal
     fi
 
     # TODO: fix this issue :(
     if [ "${#FILE}" -le 4 ]; then
-        echo "File does not have a '.bal' extention"
+        if [[ $debug_on == true ]]; then
+            echo "File does not have a '.bal' extention"
+        fi
         FILE=${FILE}.bal
+    fi
+
+    if [[ ! $FILE_EXT == ".bal" ]]; then
+        if [[ $debug_on == true ]]; then
+            echo "File does not have a '.bal' extention"
+        fi
+        FILE=${FILE}.bal
+    fi
+
+    if [[ $debug_on == true ]]; then
+        echo "Found : $FILE"
+    fi
+
+    if [[ -f "$FILE" ]]; then
         echo $FILE
     fi
-
-    if [ ! ${FILE:-4} == ".bal" ]; then
-        echo "File does not have a '.bal' extention"
-        FILE=${FILE}.bal
-        echo $FILE
-    fi
-
-    if [ ! -f "$FILE" ]; then
-        echo "A file named '$FILE' does not exists"
-        exit 1
-    fi
 }
-
-greeting () {
-  echo "Hello $1"
-}
-
-greeting "Joe"
-find_ballerina_file "t5"
