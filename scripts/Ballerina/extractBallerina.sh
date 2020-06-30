@@ -1,25 +1,10 @@
 #!/bin/bash -f
 
+source /Users/rukshanp/bash_functions.sh
+
 echo "**** Extracting $1****"
 echo ""
-FILE=$1
-
-if [ ${FILE: -1} == "." ]; then
-    echo "Extention is not given. Assuming '.bal'"
-    FILE=${FILE}bal
-fi
-
-if [ "${#FILE}" -le 4 ]; then
-    echo "File does not have a '.bal' extention. Appending"
-    FILE=${FILE}.bal
-    echo $FILE
-fi
-
-if [ ! ${FILE: -4} == ".bal" ]; then
-    echo "File does not have a '.bal' extention. Appending"
-    FILE=${FILE}.bal
-    echo $FILE
-fi
+FILE=$(find_ballerina_file $@)
 
 if [ ! -f "$FILE" ]; then
     echo "A file named '$FILE' does not exists"
