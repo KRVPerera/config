@@ -102,6 +102,10 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+if [ -f ~/bash_functions.sh ]; then
+    . ~/bash_functions.sh
+fi
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -112,10 +116,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 if [ -f ~/bash_aliases.sh ]; then
     . ~/bash_aliases.sh
-fi
-
-if [ -f ~/bash_functions.sh ]; then
-    . ~/bash_functions.sh
 fi
 
 ulimit -S -n 65000
