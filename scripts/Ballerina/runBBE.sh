@@ -2,7 +2,7 @@
 
 source /Users/rukshanp/bash_functions.sh
 
-echo "Extracting $1"
+echo "running BBE : $1"
 FILE=$(find_ballerina_file $@)
 
 if [ ! -f "$FILE" ]; then
