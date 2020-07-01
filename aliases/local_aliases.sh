@@ -11,6 +11,13 @@ alias balOriginial='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-la
 
 #alias balSwanLake='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/ballerina-swan-lake-preview1-build2/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 
+# Setting up BALLERINA_TOOL env variable
+
+alias b0='bal0'
+alias b1='bal1'
+alias bo='balOriginial'
+alias b2='bal2'
+
 # building ballerina
 alias buildO='/Users/rukshanp/MyScripts/balBuildOnly.sh'
 alias bbo='buildO';
@@ -21,20 +28,18 @@ alias bbowb='buildOWB'
 alias buildCB='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh'
 alias bcb='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh'
 
+# Ballerina executors
 alias runBBE='~/MyScripts/runBBE.sh'
-alias debugBalB='$BALLERINA_TOOL -v; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL build'
-alias debugBal='$BALLERINA_TOOL -v; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL run'
-alias balB='$BALLERINA_TOOL build'
-alias balR='$BALLERINA_TOOL run'
-alias caBat='cat ballerina-internal.log'
-alias caBatc='rm ballerina-internal.log'
 alias extractBal='$HOME/MyScripts/extractBallerina.sh'
-alias balDiff='~/MyScripts/balDiff.sh'
+alias br='~/MyScripts/balTool.sh run'
+alias bb='~/MyScripts/balTool.sh build'
 alias b='$BALLERINA_TOOL'
 alias bv='$BALLERINA_TOOL --version'
-alias br='~/MyScripts/balTool.sh run'
+alias caBat='cat ballerina-internal.log'
+alias caBatc='rm ballerina-internal.log'
+
+alias balDiff='~/MyScripts/balDiff.sh'
 alias bro='bv; $BALLERINA_TOOL run --old-parser'
-alias bb='~/MyScripts/balTool.sh build'
 alias bdi='~/MyScripts/balDiff.sh'
 alias bdi_bir='~/MyScripts/balDiffBir.sh'
 alias bra='bv; find . -type f -name "*.bal" -exec $BALLERINA_TOOL run {} \;'
@@ -42,10 +47,6 @@ alias bda='find . -type f -name "*.bal" -exec ~/MyScripts/balDiff.sh {} \;'
 alias bdb='bv; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL build'
 alias bdr='bv; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL run'
 alias bh='echo $BALLERINA_TOOL;which ballerina'
-alias b0='bal0'
-alias b1='bal1'
-alias bo='balOriginial'
-alias b2='bal2'
 #alias bs='balSwanLake'
 alias cf='cd ~/Testing/CompileFeatures/'
 alias ci='cd ~/Testing/CompileIssues/'

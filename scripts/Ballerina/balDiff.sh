@@ -1,41 +1,40 @@
 #!/bin/bash
 shopt -s expand_aliases
+source /Users/rukshanp/bash_functions.sh
 source ~/bash_aliases.sh
-FILE=$1
 
-if [ ${FILE: -1} == "." ]; then
-    echo "Extention is not given. Assuming '.bal'"
-    FILE=${FILE}bal
-fi
-
-if [ ! ${FILE: -4} == ".bal" ]; then
-    echo "File does not have a '.bal' extention"
-    FILE=${FILE}.bal
-    echo $FILE
-fi
+FILE=$(find_ballerina_file $@)
 
 if [ ! -f "$FILE" ]; then
     echo "A file named '$FILE' does not exists"
     exit 1
 fi
 
-echo "Creating build file using ballerina"
+echo
+echo "running baldiffer for : $FILE"
+echo
+
+echo "############# Building the '$FILE' in library build ############"
 b0
 echo "$BALLERINA_TOOL -v"
-$BALLERINA_TOOL -v
+bv
+echo
 echo "$BALLERINA_TOOL run --experimental $FILE"
 $BALLERINA_TOOL run --experimental $FILE 2>&1 | tee out_lib
-filename="${FILE%.*}"
+echo "################################################################"
 
+echo
+echo "############ Building the '$FILE' in my build ##################"
 b1
 echo "$BALLERINA_TOOL -v"
-$BALLERINA_TOOL -v
+bv
+echo
 echo "$BALLERINA_TOOL run --experimental $FILE"
 $BALLERINA_TOOL run --experimental $FILE 2>&1 | tee out_my
-filename="${FILE%.*}"
+echo "################################################################"
 
 echo ""
-echo "\n###### DIFF output #######"
+echo "######################### DIFF output ##########################"
 #diff --ignore-space-change out_ref out_my -s
 diff out_lib out_my -s
-#rm out_lib out_my
+rm -f out_lib out_my

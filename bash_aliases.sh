@@ -37,7 +37,6 @@ alias sub='git pull --recurse-submodule'
 # aliases for ballerina
 alias decompile='java -jar /Applications/procyon.jar'
 alias decompileGui='java -jar /Applications/jd-gui.jar'
-alias runAllBal='find . -type f -name "*.bal" -exec $BALLERINA_TOOL run {} \;'
 
 alias gitCleanBal='git restore misc**; git restore composer**; git restore tool-plugins**'
 alias findTCPListenPorts='lsof -PiTCP -sTCP:LISTEN'
