@@ -79,7 +79,7 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git Alias-finder brew git-flow git-extras history-substring-search alias-tips)
+plugins=(git alias-finder brew git-flow git-extras history-substring-search alias-tips)
 
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 
@@ -176,5 +176,5 @@ export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
 ## plugins
-zplug "djui/alias-tips"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+#zplug "djui/alias-tips"
+#zplug "zsh-users/zsh-syntax-highlighting", defer:2
