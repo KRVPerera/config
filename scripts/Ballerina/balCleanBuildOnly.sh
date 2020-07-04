@@ -1,7 +1,7 @@
 #!/bin/bash
 ./gradlew clean
-buildStatus=$?
-if [[ $buildStatus -ne 0 ]]; then
+cleanbuildStatus=$?
+if [[ $cleanbuildStatus -ne 0 ]]; then
     osascript -e 'display notification "clean FAILED" with title "CLEAN FAILED" subtitle "clean ballerina"'
     osascript -e 'say "Ballerina gradle clean FAILED"'
     exit 1
