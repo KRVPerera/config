@@ -21,12 +21,15 @@ alias b2='bal2'
 # building ballerina
 alias buildO='/Users/rukshanp/MyScripts/balBuildOnly.sh'
 alias bbo='buildO';
+alias bbDump='$BALLERINA_TOOL build --dump-bir';
 alias buildTO='/Users/rukshanp/MyScripts/balBuildTaskOnly.sh'
 alias bbto='buildTO'
 alias buildOWB='/Users/rukshanp/MyScripts/balBuildNoBalos.sh'
 alias bbowb='buildOWB'
 alias buildCB='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh'
 alias bcb='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh'
+alias bbOffline='/Users/rukshanp/MyScripts/balBuildOffline.sh'
+alias bcncb='/Users/rukshanp/MyScripts/balCleanBuildNoCacheOnly.sh'
 
 # Ballerina executors
 alias runBBE='~/MyScripts/runBBE.sh'
