@@ -27,8 +27,7 @@ find_ballerina_file () {
         fi
     fi
 
-    # TODO: fix this issue :(
-    if [ "${#FILE}" -le 4 ]; then
+    if [ "${#FILE}" -le 5 ]; then
         FILE=${FILE}.bal
         if [[ $debug_on == true ]]; then
             echo "File is shorter to have an extention : $FILE"
