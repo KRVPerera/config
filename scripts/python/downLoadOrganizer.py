@@ -39,15 +39,7 @@ class Catagory:
 
 
 class FolderOrganizer(FileSystemEventHandler):
-
     trackingFolder = "/Users/rukshanp/Downloads"
-    jpgFolder = "/Users/rukshanp/Downloads/Pictures"
-    jarFolder = "/Users/rukshanp/Downloads/jars"
-    setupFolder = "/Users/rukshanp/Downloads/SDKs"
-    documentFolder = "/Users/rukshanp/Downloads/docs"
-    videosFolder = "/Users/rukshanp/Downloads/Movies" 
-    xmlFolder = "/Users/rukshanp/Downloads/docs/xml"
-
     catagories = dict()
 
     def __init__(self, trackingFolder):
