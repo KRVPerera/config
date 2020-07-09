@@ -8,7 +8,6 @@ from watchdog.events import FileSystemEventHandler
 from pathlib import Path
 
 import os
-import json
 import time
 
 
