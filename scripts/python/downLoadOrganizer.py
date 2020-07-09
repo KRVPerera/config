@@ -1,5 +1,7 @@
 '''
     Download organizer
+    Inspired by : https://www.youtube.com/watch?v=qbW6FRbaSl0&lc=UgztcDvf5dAtVqc22GB4AaABAg
+    "Super quick Python automation ideas" by "Kalle Hallden"
 '''
 
 from watchdog.observers import Observer
