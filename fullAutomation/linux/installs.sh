@@ -11,8 +11,8 @@ else
 fi
 
 ## git setup
-git config --global user.name "KRVPerera"
-git config --global user.email "rukshan.viduranga@gmail.com"
+git config --global user.name ""
+git config --global user.email ""
 git config --global color.ui auto
 git config --global core.editor "vim --wait"
 git config --global merge.conflictstyle diff3
