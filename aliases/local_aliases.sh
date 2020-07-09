@@ -19,6 +19,8 @@ alias bo='balOriginial'
 alias b2='bal2'
 
 # building ballerina
+alias buildNormal='/Users/rukshanp/MyScripts/balBuildNormal.sh'
+alias bbn='buildNormal';
 alias buildO='/Users/rukshanp/MyScripts/balBuildOnly.sh'
 alias bbo='buildO';
 alias bbDump='$BALLERINA_TOOL build --dump-bir';
@@ -40,6 +42,9 @@ alias b='$BALLERINA_TOOL'
 alias bv='$BALLERINA_TOOL --version'
 alias caBat='cat ballerina-internal.log'
 alias caBatc='rm ballerina-internal.log'
+alias cb='caBat'
+alias cbc='caBatc'
+alias addMain='echo "public function main(){}" >>'
 
 alias balDiff='~/MyScripts/balDiff.sh'
 alias bro='bv; $BALLERINA_TOOL run --old-parser'
