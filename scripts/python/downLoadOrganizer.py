@@ -11,97 +11,113 @@ import os
 import time
 
 
+def createDir(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+class Catagory:
+
+    def __init__(self, name):
+        self.catagory_name = name
+        self.extentions = []
+
+
+    def addExtention(self, extention):
+        self.extentions.append(extention)
+
+
+    def getCatagoryPath(self, rootPath):
+        return rootPath + "/" + self.catagory_name
+
+
+    def __str__(self):
+        str = self.catagory_name + " {"
+        for ext in self.extentions:
+            str = str + ext + " "
+        str = str + "}"
+        return str
+
+
 class FolderOrganizer(FileSystemEventHandler):
+
     trackingFolder = "/Users/rukshanp/Downloads"
-    jpgFolder = "/Users/rukshanp/Pictures/downloaded"
+    jpgFolder = "/Users/rukshanp/Downloads/Pictures"
     jarFolder = "/Users/rukshanp/Downloads/jars"
     setupFolder = "/Users/rukshanp/Downloads/SDKs"
-    videosFolder = "/Users/rukshanp/Movies/downloaded"
+    documentFolder = "/Users/rukshanp/Downloads/docs"
+    videosFolder = "/Users/rukshanp/Downloads/Movies" 
+    xmlFolder = "/Users/rukshanp/Downloads/docs/xml"
+
+    catagories = dict()
 
     def __init__(self, trackingFolder):
         self.trackingFolder = trackingFolder
-        Path(self.jpgFolder).mkdir(parents=True, exist_ok=True)
-        Path(self.jarFolder).mkdir(parents=True, exist_ok=True)
-        Path(self.setupFolder).mkdir(parents=True, exist_ok=True)
-        Path(self.videosFolder).mkdir(parents=True, exist_ok=True)
+        # Pictures
+        self.createCatagory("Pictures", "jpg")
+        self.addCatagoryExt("Pictures", "png")
+
+        # SDKs
+        self.createCatagory("SDKs", "iso")
+        self.addCatagoryExt("SDKs", "dmg")
+        self.addCatagoryExt("SDKs", "zip")
+        self.addCatagoryExt("SDKs", "tar.bz2")
+        self.addCatagoryExt("SDKs", "deb")
+
+        # jars
+        self.createCatagory("jars", "jar")
+
+        # Documents
+        self.createCatagory("docs", "txt")
+        self.addCatagoryExt("docs", "pdf")
+        self.addCatagoryExt("docs", "xml")
+        self.addCatagoryExt("docs", "html")
+
+        # Movies
+        self.createCatagory("Movies", "mp4")
+
         print("Created")
+
+    def createCatagory(self, catagory, ext):
+        if catagory not in self.catagories:
+            self.catagories[catagory] = Catagory(catagory)
+
+        cat = self.catagories[catagory]    
+        cat.addExtention(ext)
+
+        catPath = cat.getCatagoryPath(self.trackingFolder)
+        createDir(catPath)
+
+    def addCatagoryExt(self, catagory, ext):
+        if catagory not in self.catagories:
+            self.catagories[catagory] = Catagory(catagory)
+
+        cat = self.catagories[catagory]    
+        cat.addExtention(ext)
 
     def on_modified(self, event):
         for file in os.listdir(self.trackingFolder):
-            if self.isImageFile(file):
-                srcPath = self.trackingFolder + "/" + file
-                newDestination = self.jpgFolder + "/" + file
-                i = 0
-                while os.path.isfile(newDestination):
-                    newDestination = self.jpgFolder + \
-                        "/new_file_" + str(i) + "__" + file
-                    i = i + 1
-
-                print("Moving {} to {}".format(srcPath, newDestination))
-
-            elif self.isJarFile(file):
-                srcPath = self.trackingFolder + "/" + file
-                newDestination = self.jarFolder + "/" + file
-                i = 0
-                while os.path.isfile(newDestination):
-                    newDestination = self.jarFolder + \
-                        "/new_file_" + str(i) + "__" + file
-                    i = i + 1
-
-                print("Moving {} to {}".format(srcPath, newDestination))
-
-            elif self.isSetupFile(file):
-                srcPath = self.trackingFolder + "/" + file
-                newDestination = self.setupFolder + "/" + file
-                i = 0
-                while os.path.isfile(newDestination):
-                    newDestination = self.setupFolder + \
-                        "/new_file_" + str(i) + "__" + file
-                    i = i + 1
-
-                print("Moving {} to {}".format(srcPath, newDestination))
-
-            elif self.isVideoFile(file):
-                srcPath = self.trackingFolder + "/" + file
-                newDestination = self.videosFolder + "/" + file
-                i = 0
-                while os.path.isfile(newDestination):
-                    newDestination = self.videosFolder + \
-                        "/new_file_" + str(i) + "__" + file
-                    i = i + 1
-
-                print("Moving {} to {}".format(srcPath, newDestination))
-            else:
+            srcPath = self.trackingFolder + "/" + file
+            if os.path.isdir(srcPath):
                 continue
-            
-            os.rename(srcPath, newDestination)
+            if file.startswith("."):
+                continue
+            print(file)
 
-    def isImageFile(self, fileName):
-        fileName = fileName.lower()
-        if fileName.endswith(".jpg"):
-            return True
-        if fileName.endswith(".png"):
-            return True
-        return False
-
-    def isJarFile(self, fileName):
-        if fileName.endswith(".jar"):
-            return True
-        return False
-
-    def isSetupFile(self, fileName):
-        if fileName.endswith(".dmg"):
-            return True
-        if fileName.endswith(".iso"):
-            return True
-        if fileName.endswith(".app"):
-            return True
-        return False
-    
-    def isVideoFile(self, fileName):
-        if fileName.endswith(".mp4"):
-            return True
-        return False
+            for cat in self.catagories.values():
+                catPath = cat.getCatagoryPath(self.trackingFolder)
+                extention = None
+                for ext in cat.extentions:
+                    pFile = file.lower()
+                    if pFile.endswith(ext):
+                        extention = ext
+                        break
+                
+                if extention is not None:
+                    newDestination = catPath + "/" + file
+                    os.rename(srcPath, newDestination)
+                    print("Moving {} to {}".format(srcPath, newDestination))
+                else:
+                    continue
 
 
 def main():
@@ -112,7 +128,7 @@ def main():
     observer.start()
     try:
         while True:
-            time.sleep(10)
+            time.sleep(1)
     except KeyboardInterrupt:
         observer.stop()
 
