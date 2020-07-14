@@ -135,6 +135,10 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # setting up java classpath for antlr
 export CLASSPATH=".:/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH"
 
+# setting up flutter
+#export PATH="$PATH:${HOME}/SDKs/flutter-1.17.5/bin"
+export PATH="$PATH:${HOME}/SDKs/flutter/bin"
+
 #set -o vi
 bindkey -v
 
