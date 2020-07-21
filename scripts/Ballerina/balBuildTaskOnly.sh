@@ -6,5 +6,5 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-./gradlew "$@" -x createJavadoc -x check -x generateDocs -x npmBuild
+./gradlew "$@" -x createJavadoc -x check -x generateDocs -x npmBuild --scan
 osascript -e 'say "Build task finished"'

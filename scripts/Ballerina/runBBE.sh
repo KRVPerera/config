@@ -22,7 +22,7 @@ java -jar $baseFileName.jar > out_my
 echo ""
 echo "####### New output #######"
 cat out_my
-cat $filename.out | sed '/#/d' | sed '/\$/d' > out_ref
+cat $filename.out | sed '/#/d' | sed '/\$/d' | sed '/run/d' > out_ref
 
 echo ""
 echo "\n####### Old output #######"
