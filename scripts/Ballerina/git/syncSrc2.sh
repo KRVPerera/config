@@ -19,4 +19,4 @@ fi
 
 osascript -e 'display notification "Source2 build finished" with title "syncSrc2.sh cronjob" subtitle "Build Ballerina"'
 osascript -e 'say "Source2 build PASSED"'
-delay 1
+sleep 1
