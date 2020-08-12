@@ -115,7 +115,7 @@ class FolderOrganizer(FileSystemEventHandler):
 
 
 def main():
-    downLoadsFolder = "/Users/rukshanp/Downloads"
+    downLoadsFolder = "/Users/Unknown/Downloads"
     folderEventHandler = FolderOrganizer(downLoadsFolder)
     observer = Observer()
     observer.schedule(folderEventHandler, downLoadsFolder, recursive=True)
