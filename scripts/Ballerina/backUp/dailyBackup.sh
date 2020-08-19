@@ -1,6 +1,6 @@
 #!/bin/bash
 start=`date +%s`
-rsync -av /Users/rukshanp/Projects/ballerina-lang /Users/rukshanp/Projects/backups/ballerina-lang-daily
+rsync -a --delete --exclude-from=/Users/rukshanp/Projects/backups/exclude_list.txt --log-file=/Users/rukshanp/Projects/backups/$(date +%Y%m%d)_daily_rsync.log /Users/rukshanp/Projects/ballerina-lang /Users/rukshanp/Projects/backups/ballerina-lang-daily/$(date +%Y%m%d_%T)
 end=`date +%s`
 
 runtime=$((end-start))

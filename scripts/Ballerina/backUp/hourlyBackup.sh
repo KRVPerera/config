@@ -1,7 +1,16 @@
 #!/bin/bash
 start=`date +%s`
-rsync -av /Users/rukshanp/Projects/ballerina-lang /Users/rukshanp/Projects/backups/ballerina-lang-hourly
+
+roundedMin=$(echo "$(date "+%M") - ($(date +%M)%10)" | bc)
+
+rsync -ah --delete --exclude-from=/Users/rukshanp/Projects/backups/exclude_list.txt --log-file=/Users/rukshanp/Projects/backups/$(date +%Y-%m-%d)_hourly_rsync.log  "/Users/rukshanp/Projects/ballerina-lang" "/Users/rukshanp/Projects/backups/ballerina-lang-hourly/$(date +%Y-%m_hour_%H)_$roundedMin"
+
+
 end=`date +%s`
+
+cd /Users/rukshanp/Projects/backups/ballerina-lang-hourly
+du -h -d 1 . | tee ../hour_backup_sizes.txt
+
 
 runtime=$((end-start))
 
