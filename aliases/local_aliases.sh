@@ -20,7 +20,7 @@ alias b2='bal2'
 
 # building ballerina
 alias buildNormal='/Users/rukshanp/MyScripts/balBuildNormal.sh'
-alias bbn='buildNormal;git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml';
+alias bbn='buildNormal';
 alias buildO='/Users/rukshanp/MyScripts/balBuildOnly.sh'
 alias bbo='buildO'
 alias bbDump='$BALLERINA_TOOL build --dump-bir';
