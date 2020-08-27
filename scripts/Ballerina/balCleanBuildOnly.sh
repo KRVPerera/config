@@ -11,7 +11,11 @@ osascript -e 'say "Ballerina gradle Clean SUCCESSFUL"'
 buildStatus=$?
 if [[ $buildStatus -ne 0 ]]; then
     osascript -e 'display notification "build FAILED" with title "BUILD FAILED" subtitle "Build ballerina"'
-    osascript -e 'say "Ballerina build FAILED"'
+    if [[ $SILENT_ON == "1" ]]; then
+        osascript -e 'say "Ballerina build FAILED"'
+    fi
     exit 1
 fi
-osascript -e 'say "Build SUCCESSFUL"'
+if [[ $SILENT_ON == "1" ]]; then
+    osascript -e 'say "Build SUCCESSFUL"'
+fi

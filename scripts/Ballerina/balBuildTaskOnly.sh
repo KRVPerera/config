@@ -6,5 +6,7 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-./gradlew "$@" -x createJavadoc -x check -x generateDocs -x npmBuild --scan
+if [[ $SILENT_ON == "1" ]]; then
+    ./gradlew "$@" -x createJavadoc -x check -x generateDocs -x npmBuild 
+fi
 osascript -e 'say "Build task finished"'
