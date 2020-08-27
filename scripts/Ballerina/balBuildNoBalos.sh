@@ -6,6 +6,8 @@ if [[ $buildStatus -ne 0 ]]; then
     osascript -e 'say "Ballerina build FAILED"'
     exit 1
 fi
-osascript -e 'say "Congratulations Ballerina Build nobalos SUCCESSFUL"'
+if [[ $SILENT_ON == "1" ]]; then
+    osascript -e 'say "Congratulations Ballerina Build nobalos SUCCESSFUL"'
+fi
 git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml
 sleep 1

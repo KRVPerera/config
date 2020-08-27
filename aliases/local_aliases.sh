@@ -1,5 +1,6 @@
 echo "Loading local aliases : $0"
-export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview3-SNAPSHOT"
+export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview4-SNAPSHOT"
+export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview3-SNAPSHOT"
 
 alias src="cd /Users/rukshanp/Projects/ballerina-lang"
 alias build="cd /Users/rukshanp/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
@@ -8,6 +9,7 @@ alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/Library/Ballerina/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 alias bal1='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 alias balOriginial='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
+alias bal3='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 
 #alias balSwanLake='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/ballerina-swan-lake-preview1-build2/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 
@@ -16,7 +18,7 @@ alias balOriginial='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-la
 alias b0='bal0'
 alias b1='bal1'
 alias bo='balOriginial'
-alias b2='bal2'
+alias b3='bal3'
 
 # building ballerina
 alias buildNormal='/Users/rukshanp/MyScripts/balBuildNormal.sh'
