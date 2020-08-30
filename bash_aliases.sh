@@ -1,4 +1,6 @@
-echo "Loading aliases $0"
+if [[ $DEBUG == "1" ]]; then
+    echo "Loading aliases $0"
+fi
 
 if [ -f ~/local_aliases.sh ]; then
     . ~/local_aliases.sh
@@ -47,5 +49,5 @@ alias downWithXCns="aria2c --file-allocation=none -c --check-integrity=true -x"
 
 alias gw='./gradlew'
 
-alias silentOn='export SILENT_ON="1"; echo "SILENT_ON=$SILENT_ON"'
-alias silentOff='export SILENT_ON="0"; echo "SILENT_ON=$SILENT_ON"'
+alias silent='export SILENT="0"; echo "SILENT_ON=$SILENT_ON"'
+alias alert='export SILENT="1"; echo "SILENT_ON=$SILENT_ON"'

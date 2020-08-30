@@ -1,6 +1,7 @@
 #!/bin/bash
-
-echo "Loading functions : $0"
+if [[ $DEBUG == "1" ]]; then
+    echo "Loading functions : $0"
+fi 
 
 find_ballerina_file () {
     FILE=$1
