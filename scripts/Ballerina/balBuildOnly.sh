@@ -11,7 +11,7 @@ if [[ $buildStatus -ne 0 ]]; then
     exit 1
 fi
 
-if [[ $SILENT_ON == "1" ]]; then
+if [[ $SILENT == "1" ]]; then
     osascript -e 'say "Congratulations Ballerina Build without test SUCCESSFUL"'
 fi
 

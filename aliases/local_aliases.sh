@@ -1,4 +1,6 @@
-echo "Loading local aliases : $0"
+if [[ $DEBUG == "1" ]]; then
+    echo "Loading local aliases : $0"
+fi
 export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview4-SNAPSHOT"
 export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview3-SNAPSHOT"
 
