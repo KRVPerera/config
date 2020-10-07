@@ -6,7 +6,9 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
+
+echo "./gradlew "$@" -x createJavadoc -x check -x generateDocs -x npmBuild --rerun-tasks"
+./gradlew "$@" -x createJavadoc -x check -x generateDocs -x npmBuild --rerun-tasks
 if [[ $SILENT == "1" ]]; then
-    ./gradlew "$@" -x createJavadoc -x check -x generateDocs -x npmBuild 
+    osascript -e 'say "Build task finished"'
 fi
-osascript -e 'say "Build task finished"'

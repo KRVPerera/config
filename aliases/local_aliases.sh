@@ -1,8 +1,8 @@
 if [[ $DEBUG == "1" ]]; then
     echo "Loading local aliases : $0"
 fi
-export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview4-SNAPSHOT"
-export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview3-SNAPSHOT"
+export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview5-SNAPSHOT"
+export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview4-SNAPSHOT"
 
 alias src="cd /Users/rukshanp/Projects/ballerina-lang"
 alias build="cd /Users/rukshanp/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
@@ -58,6 +58,7 @@ alias bra='bv; find . -type f -name "*.bal" -print -exec $BALLERINA_TOOL run {} 
 alias bda='find . -type f -name "*.bal" -exec ~/MyScripts/balDiff.sh {} \;'
 alias bdb='bv; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL build'
 alias bdr='bv; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL run'
+alias bdr6='bv; BAL_JAVA_DEBUG=5006 $BALLERINA_TOOL run'
 alias bh='echo $BALLERINA_TOOL;which ballerina'
 #alias bs='balSwanLake'
 alias cf='cd ~/Testing/CompileFeatures/'

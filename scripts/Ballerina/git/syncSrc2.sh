@@ -1,6 +1,8 @@
 #!/bin/bash
 osascript -e 'display notification "Source2 build started" with title "syncSrc2.sh cronjob" subtitle "Build Ballerina"'
-osascript -e 'say "Source2 build started"'
+if [[ $SILENT == "1" ]]; then
+    osascript -e 'say "Source2 build started"'
+fi
 
 cd /Users/rukshanp/Projects/Ballerina/ballerina-lang
 git stash
@@ -13,10 +15,14 @@ git push
 buildStatus=$?
 if [[ $buildStatus -ne 0 ]]; then
     osascript -e 'display notification "Source2 build FAILED" with title "BUILD FAILED" subtitle "Build ballerina"'
-    osascript -e 'say "Source2 build FAILED"'
+    if [[ $SILENT == "1" ]]; then
+        osascript -e 'say "Source2 build FAILED"'
+    fi
     exit 1
 fi
 
 osascript -e 'display notification "Source2 build finished" with title "syncSrc2.sh cronjob" subtitle "Build Ballerina"'
-osascript -e 'say "Source2 build PASSED"'
+if [[ $SILENT == "1" ]]; then
+    osascript -e 'say "Source2 build PASSED"'
+fi
 sleep 1
