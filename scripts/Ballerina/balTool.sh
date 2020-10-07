@@ -14,7 +14,7 @@ fi
 echo "Running ballerina tool on : $FILE"
 
 tool_command="run"
-if [[ ! -z $1 ]]; then
+if [[ -z $1 ]]; then
     echo "missing argument assume this is ballerina 'run'"
 else
     tool_command="$1"
@@ -27,9 +27,9 @@ $BALLERINA_TOOL -v
 echo
 echo "$BALLERINA_TOOL $tool_command --experimental $FILE"
 
-if [[ tool_command == "build" ]]; then
+if [[ $tool_command == "build" ]]; then
     echo "Building $FILE using ballerina"
-elif [[ tool_command == "run" ]]; then
+elif [[ $tool_command == "run" ]]; then
     echo "Running $FILE using ballerina"
 fi
 $BALLERINA_TOOL $tool_command --experimental $FILE

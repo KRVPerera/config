@@ -147,7 +147,8 @@ export PATH="$PATH:${HOME}/SDKs/flutter/bin"
 bindkey -v
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
+#export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_HOME=$(/usr/libexec/java_home -v 11.0)
 export HISTCONTROL=ignoreboth:erasedups
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
