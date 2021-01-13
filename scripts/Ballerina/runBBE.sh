@@ -13,11 +13,13 @@ fi
 echo "Creating build file using ballerina"
 echo "$BALLERINA_TOOL -v"
 $BALLERINA_TOOL -v
+$BALLERINA_TOOL home
 echo "$BALLERINA_TOOL build --experimental $FILE"
 $BALLERINA_TOOL build --experimental $FILE
+$BALLERINA_TOOL home
 filename="${FILE%.*}"
 baseFileName="$(basename -- $filename)"
-java -jar $baseFileName.jar > out_my
+java -jar $baseFileName.jar > out_my 2>&1
 
 echo ""
 echo "####### New output #######"
@@ -32,4 +34,7 @@ echo ""
 echo "\n###### DIFF output #######"
 #diff --ignore-space-change out_ref out_my -s
 diff out_ref out_my -s
-rm $baseFileName.jar out_ref out_my
+
+if [ -z "$2" ]; then
+    rm $baseFileName.jar out_ref out_my
+fi

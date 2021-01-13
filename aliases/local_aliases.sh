@@ -1,8 +1,8 @@
 if [[ $DEBUG == "1" ]]; then
     echo "Loading local aliases : $0"
 fi
-export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview5-SNAPSHOT"
-export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview4-SNAPSHOT"
+export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview9-SNAPSHOT"
+export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-Preview8-SNAPSHOT"
 
 alias src="cd /Users/rukshanp/Projects/ballerina-lang"
 alias build="cd /Users/rukshanp/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
@@ -11,7 +11,7 @@ alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/Library/Ballerina/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 alias bal1='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 alias balOriginial='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
-alias bal3='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
+alias bal4='export BALLERINA_TOOL="$HOME/Downloads/SDKs/Ballerina/slp6/ballerina-swan-lake-preview6-SNAPSHOT/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 
 #alias balSwanLake='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/ballerina-swan-lake-preview1-build2/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 
@@ -21,11 +21,13 @@ alias b0='bal0'
 alias b1='bal1'
 alias bo='balOriginial'
 alias b3='bal3'
+alias b4='bal4'
 
 # building ballerina
 alias buildNormal='/Users/rukshanp/MyScripts/balBuildNormal.sh'
 alias bbn='buildNormal';
 alias buildO='/Users/rukshanp/MyScripts/balBuildOnly.sh'
+alias bbdto='/Users/rukshanp/MyScripts/balDebugBuildTaskOnly.sh'
 alias bbo='buildO'
 alias bbDump='$BALLERINA_TOOL build --dump-bir';
 alias buildTO='/Users/rukshanp/MyScripts/balBuildTaskOnly.sh'
@@ -33,7 +35,7 @@ alias bbto='buildTO'
 alias buildOWB='/Users/rukshanp/MyScripts/balBuildNoBalos.sh'
 alias bbowb='buildOWB'
 alias buildCB='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh'
-alias bcb='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh; git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
+alias bcb='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh'
 alias bbOffline='/Users/rukshanp/MyScripts/balBuildOffline.sh; git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
 alias bcncb='/Users/rukshanp/MyScripts/balCleanBuildNoCacheOnly.sh; git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
 
@@ -54,18 +56,19 @@ alias balDiff='~/MyScripts/balDiff.sh'
 alias bro='bv; $BALLERINA_TOOL run --old-parser'
 alias bdi='~/MyScripts/balDiff.sh'
 alias bdi_bir='~/MyScripts/balDiffBir.sh'
-alias bra='bv; find . -type f -name "*.bal" -print -exec $BALLERINA_TOOL run {} \;'
+alias bra='bh; find . -type f -name "*.bal" -print -exec $BALLERINA_TOOL run {} \;'
 alias bda='find . -type f -name "*.bal" -exec ~/MyScripts/balDiff.sh {} \;'
-alias bdb='bv; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL build'
-alias bdr='bv; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL run'
+alias bdb='bh; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL build'
+alias bdr='bh; BAL_JAVA_DEBUG=5005 $BALLERINA_TOOL run'
 alias bdr6='bv; BAL_JAVA_DEBUG=5006 $BALLERINA_TOOL run'
-alias bh='echo $BALLERINA_TOOL;which ballerina'
+alias bh='$BALLERINA_TOOL home'
 #alias bs='balSwanLake'
 alias cf='cd ~/Testing/CompileFeatures/'
 alias ci='cd ~/Testing/CompileIssues/'
 
 alias cvim='cd ~/Projects/VimPlugin/vim-plug/ballerina-vim/'
 
+# git related aliases
 alias grst='git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
 
 if [ -f ~/local_aliases_projects.sh ]; then

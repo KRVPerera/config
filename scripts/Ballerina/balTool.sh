@@ -22,10 +22,11 @@ fi
 
 echo
 
-echo "$BALLERINA_TOOL -v"
+echo "$BALLERINA_TOOL"
 $BALLERINA_TOOL -v
+$BALLERINA_TOOL home
 echo
-echo "$BALLERINA_TOOL $tool_command --experimental $FILE"
+echo "ballerina $tool_command --experimental $FILE"
 
 if [[ $tool_command == "build" ]]; then
     echo "Building $FILE using ballerina"
