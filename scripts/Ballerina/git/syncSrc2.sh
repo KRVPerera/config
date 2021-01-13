@@ -1,4 +1,5 @@
 #!/bin/bash
+exit 1
 osascript -e 'display notification "Source2 build started" with title "syncSrc2.sh cronjob" subtitle "Build Ballerina"'
 if [[ $SILENT == "1" ]]; then
     osascript -e 'say "Source2 build started"'
