@@ -52,4 +52,4 @@ alias gw='./gradlew'
 alias silent='export SILENT="0"; echo "SILENT_ON=$SILENT_ON"'
 alias alert='export SILENT="1"; echo "SILENT_ON=$SILENT_ON"'
 
-alias mat="/Users/rukshanp/Applications/mat.app/Contents/MacOS/MemoryAnalyzer -vmargs -Xmx7g -XX:-UseGCOverheadLimit"
+alias mat="/Users/rukshanp/Applications/mat.app/Contents/MacOS/MemoryAnalyzer -vmargs -Xmx3g -XX:-UseGCOverheadLimit"
