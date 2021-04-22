@@ -164,7 +164,8 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-export BALLERINA_TOOL="ballerina"
+# set BALLERINA_TOOL variable
+b0
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -188,4 +189,3 @@ source $ZPLUG_HOME/init.zsh
 
 ## plugins
 zplug "djui/alias-tips"
-

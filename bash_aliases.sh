@@ -33,7 +33,7 @@ alias histg='history | grep'
 alias hg='history | grep'
 alias catn='cat -n'
 alias psBal='lsof -n | grep ballerina'
-alias rmJar='rm -r *jar'
+alias rmJar='rm -rf *jar'
 alias sub='git pull --recurse-submodule'
 
 # aliases for ballerina
