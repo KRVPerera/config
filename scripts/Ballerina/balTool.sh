@@ -26,7 +26,7 @@ echo "$BALLERINA_TOOL"
 $BALLERINA_TOOL -v
 $BALLERINA_TOOL home
 echo
-echo "ballerina $tool_command --experimental $FILE"
+echo "bal $tool_command --experimental $FILE"
 
 if [[ $tool_command == "build" ]]; then
     echo "Building $FILE using ballerina"
