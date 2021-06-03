@@ -1,22 +1,32 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+declare -i DEBUG=0
+while getopts d option; do
+    case $option in
+    d) DEBUG=1 ;;
+    ?) echo "Invalid option for $0 $OPTARG ";;
+    *) echo "Invalid argument $OPTARG";;
+    esac
+done
+
+allOptions=$*
+restOfOptions=${allOptions//-d/}
 
 osascript -e 'display notification "Ballerina build started" with title "Build started" subtitle "Build Ballerina"'
-echo "./gradlew build -x createJavadoc -x check -x test -x generateDocs $@"
-./gradlew build -x createJavadoc -x check -x test -x generateDocs $@
+echo "./gradlew build -x createJavadoc -x check -x test -x generateDocs $restOfOptions"
+
+./gradlew build -x createJavadoc -x check -x test -x generateDocs "$restOfOptions"
 buildStatus=$?
+
 if [[ $buildStatus -ne 0 ]]; then
-    osascript -e 'display notification "build FAILED" with title "BUILD FAILED" subtitle "Build ballerina"'
-    if [[ $SILENT == "1" ]]; then
-        osascript -e 'say "Ballerina build FAILED"'
-    fi
+    [[ $DEBUG == 1 ]] && osascript -e 'say "Ballerina build FAILED"'
     git restore '*.toml'
     exit 1
 fi
 
-if [[ $SILENT == "1" ]]; then
+if [[ $DEBUG == "1" ]]; then
     osascript -e 'say "Congratulations Ballerina Build without test SUCCESSFUL"'
 fi
 
-osascript -e 'display notification "Congratulations Ballerina Build without test SUCCESSFUL" with title "BUILD OK" subtitle "Build ballerina without test OK"'
 git restore '*.toml'
 sleep 1

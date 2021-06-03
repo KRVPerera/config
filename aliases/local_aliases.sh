@@ -1,8 +1,8 @@
 if [[ $DEBUG == "1" ]]; then
     echo "Loading local aliases : $0"
 fi
-export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-alpha9-SNAPSHOT"
-export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-alpha8-SNAPSHOT"
+export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.2-SNAPSHOT"
+export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.1-SNAPSHOT"
 
 alias src="cd /Users/rukshanp/Projects/ballerina-lang"
 alias build="cd /Users/rukshanp/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
@@ -11,6 +11,7 @@ alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/Library/Ballerina/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias balOriginial='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias balOriginialOld='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal4='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/bbe-Update/ballerina-swan-lake-alpha4-SNAPSHOT/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"' 
 
 #alias balSwanLake='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/ballerina-swan-lake-preview1-build2/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
@@ -20,6 +21,7 @@ alias bal4='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/bbe-
 alias b0='bal0'
 alias b1='bal1'
 alias bo='balOriginial'
+alias boo='balOriginialOld'
 alias b3='bal3'
 alias b4='bal4'
 
@@ -42,7 +44,7 @@ alias bcncb='/Users/rukshanp/MyScripts/balCleanBuildNoCacheOnly.sh; git restore 
 # Ballerina executors
 alias runBBE='~/MyScripts/runBBE.sh'
 alias extractBal='$HOME/MyScripts/extractBallerina.sh'
-alias br='~/MyScripts/balTool.sh run'
+alias br='~/MyScripts/balTool.sh -r'
 alias bb='~/MyScripts/balTool.sh build'
 alias b='$BALLERINA_TOOL'
 alias bv='echo $BALLERINA_TOOL; $BALLERINA_TOOL --version'
