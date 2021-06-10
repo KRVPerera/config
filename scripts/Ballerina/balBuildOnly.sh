@@ -13,9 +13,13 @@ allOptions=$*
 restOfOptions=${allOptions//-d/}
 
 osascript -e 'display notification "Ballerina build started" with title "Build started" subtitle "Build Ballerina"'
-echo "./gradlew build -x createJavadoc -x check -x test -x generateDocs $restOfOptions"
+echo "./gradlew build -x check -x test $restOfOptions"
 
-./gradlew build -x createJavadoc -x check -x test -x generateDocs "$restOfOptions"
+if [[ -z $restOfOptions ]]; then
+    ./gradlew build -x check -x test
+else
+    ./gradlew build -x check -x test "$restOfOptions"
+fi
 buildStatus=$?
 
 if [[ $buildStatus -ne 0 ]]; then
