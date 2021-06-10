@@ -62,7 +62,7 @@ echo -e $yellowB"--------------------------------\t\t"$none
 echo -e $yellowB"bal $tool_command $FILE\t\t"$none
 echo -e $yellowB"--------------------------------\t\t"$none
 
-if [[ MODULE_MODE == 0 ]]; then
+if [[ $MODULE_MODE == 0 ]]; then
     if [[ $tool_command == "build" ]]; then
         echo "Building $FILE using ballerina"
     elif [[ $tool_command == "run" ]]; then
@@ -97,7 +97,7 @@ if [[ $MODULE_MODE == 1 ]]; then
     fi
 else
     if [ $JAVA_DEBUG == 1 ]; then
-        eval "BAL_JAVA_DEBUG=$PORT ${FINAL_COMMAND[@]}"
+        eval "BAL_JAVA_DEBUG=$PORT ${FINAL_COMMAND[@]} $FILE"
     else
         ${FINAL_COMMAND[@]} $FILE
     fi
