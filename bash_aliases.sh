@@ -45,7 +45,10 @@ alias findTCPListenPorts='lsof -PiTCP -sTCP:LISTEN'
 alias downloadSongs="youtube-dl -f 'bestvideo[height<=360]+bestaudio/best[height<=360]' --download-archive Songs.txt https://www.youtube.com/playlist\?list\=PLKK_AU2B-pEoOIhsxTIKwlNTNReBQrLi3"
 alias frate="~/MyScripts/frate.sh"
 alias downWith5Cns="aria2c --file-allocation=none -c -x 5 --check-integrity=true"
+alias d2="aria2c --file-allocation=none -c -x 2 --check-integrity=true"
+alias d5=downWith5Cns
 alias downWithXCns="aria2c --file-allocation=none -c --check-integrity=true -x"
+alias du="youtube-dl -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'"
 
 alias gw='./gradlew'
 

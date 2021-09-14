@@ -14,8 +14,8 @@ export GRADLE_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=\"/Users/ru
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv anaconda vi_mode todo vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history command_execution_time battery root_indicator public_ip background_jobs)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # Add a space in the first prompt
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"

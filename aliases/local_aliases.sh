@@ -1,8 +1,8 @@
 if [[ $DEBUG == "1" ]]; then
     echo "Loading local aliases : $0"
 fi
-export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.3-SNAPSHOT"
-export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.2-SNAPSHOT"
+export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.4-SNAPSHOT"
+export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.3-SNAPSHOT"
 
 alias src="cd /Users/rukshanp/Projects/ballerina-lang"
 alias build="cd /Users/rukshanp/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
@@ -73,6 +73,10 @@ alias cvim='cd ~/Projects/VimPlugin/vim-plug/ballerina-vim/'
 
 # git related aliases
 alias grst='git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
+
+# super lazy aliases
+alias br1='br t1.bal'
+alias br2='br t2.bal'
 
 if [ -f ~/local_aliases_projects.sh ]; then
     . ~/local_aliases_projects.sh
