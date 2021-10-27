@@ -18,8 +18,11 @@ alias bal4='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/bbe-
 
 # Setting up BALLERINA_TOOL env variable
 
+alias bal2='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+
 alias b0='bal0'
 alias b1='bal1'
+alias b2='bal2'
 alias bo='balOriginial'
 alias boo='balOriginialOld'
 alias b3='bal3'
@@ -34,6 +37,7 @@ alias bbo='buildO'
 alias bbDump='$BALLERINA_TOOL build --dump-bir';
 alias buildTO='/Users/rukshanp/MyScripts/balBuildTaskOnly.sh'
 alias bbto='buildTO'
+alias bbt='buildTO :jballerina-unit-test:test --tests '
 alias buildOWB='/Users/rukshanp/MyScripts/balBuildNoBalos.sh'
 alias bbowb='buildOWB'
 alias buildCB='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh'
@@ -77,6 +81,8 @@ alias grst='git restore misc/testerina/modules/testerina-core/src/main/ballerina
 # super lazy aliases
 alias br1='br t1.bal'
 alias br2='br t2.bal'
+
+alias code='open -a "Visual Studio Code.app"'
 
 if [ -f ~/local_aliases_projects.sh ]; then
     . ~/local_aliases_projects.sh
