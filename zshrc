@@ -14,7 +14,7 @@ export GRADLE_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=\"/Users/ru
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv anaconda vi_mode todo vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vi_mode vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history command_execution_time battery root_indicator public_ip background_jobs)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # Add a space in the first prompt
@@ -56,12 +56,12 @@ DISABLE_UPDATE_PROMPT="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -69,7 +69,7 @@ DISABLE_UPDATE_PROMPT="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder

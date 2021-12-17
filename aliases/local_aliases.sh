@@ -1,31 +1,35 @@
 if [[ $DEBUG == "1" ]]; then
     echo "Loading local aliases : $0"
 fi
-export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.4-SNAPSHOT"
-export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.3-SNAPSHOT"
+export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.0.0-SNAPSHOT"
+export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.7-SNAPSHOT"
 
 alias src="cd /Users/rukshanp/Projects/ballerina-lang"
 alias build="cd /Users/rukshanp/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
 alias src2="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang"
+alias src3="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang-3/ballerina-lang"
 alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/Library/Ballerina/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
-alias balOriginial='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
-alias balOriginialOld='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal1_old='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal2='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal2_old='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal3='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang-3/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal3_old='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang-3/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal4='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/bbe-Update/ballerina-swan-lake-alpha4-SNAPSHOT/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"' 
 
 #alias balSwanLake='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/ballerina-swan-lake-preview1-build2/bin/ballerina"; echo "BALLERINA_TOOL=$BALLERINA_TOOL";which ballerina'
 
 # Setting up BALLERINA_TOOL env variable
 
-alias bal2='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 
 alias b0='bal0'
 alias b1='bal1'
+alias b1_old='bal1_old'
 alias b2='bal2'
-alias bo='balOriginial'
-alias boo='balOriginialOld'
+alias b2_old='bal2_old'
 alias b3='bal3'
+alias b3_old='bal3_old'
 alias b4='bal4'
 
 # building ballerina
@@ -52,37 +56,38 @@ alias br='~/MyScripts/balTool.sh -r -f'
 alias bb='~/MyScripts/balTool.sh -b -f'
 alias bt='~/MyScripts/balTool.sh'
 alias b='$BALLERINA_TOOL'
+
+# ballerina utils
 alias bv='echo $BALLERINA_TOOL; $BALLERINA_TOOL --version'
 alias caBat='cat ballerina-internal.log'
 alias caBatc='rm ballerina-internal.log'
 alias cb='caBat'
 alias cbc='caBatc'
 alias addMain='echo "public function main(){}" >>'
-
 alias balDiff='~/MyScripts/balDiff.sh'
-alias bro='bv; $BALLERINA_TOOL run --old-parser'
 alias bdi='~/MyScripts/balDiff.sh'
 alias bdi_bir='~/MyScripts/balDiffBir.sh'
+alias bh='$BALLERINA_TOOL home'
+
+# multi runners and debuggers
 alias bra='bh; find . -type f -name "*.bal" -print -exec $BALLERINA_TOOL run {} \;'
 alias bda='find . -type f -name "*.bal" -exec ~/MyScripts/balDiff.sh {} \;'
 alias bdb='bt -p 5005 -jb -f'
 alias bdr='bt -p 5005 -jr -f'
 alias bdr6='bt -p 5006 -jr -f'
-alias bh='$BALLERINA_TOOL home'
-#alias bs='balSwanLake'
+
+# ballerina dev folders
 alias cf='cd ~/Testing/CompileFeatures/'
 alias ci='cd ~/Testing/CompileIssues/'
-
 alias cvim='cd ~/Projects/VimPlugin/vim-plug/ballerina-vim/'
-
-# git related aliases
-alias grst='git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
 
 # super lazy aliases
 alias br1='br t1.bal'
 alias br2='br t2.bal'
 
 alias code='open -a "Visual Studio Code.app"'
+alias nbal='java -jar ~/CLionProjects/nballerina/compiler/target/bin/nballerina.jar'
+
 
 if [ -f ~/local_aliases_projects.sh ]; then
     . ~/local_aliases_projects.sh
