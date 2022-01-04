@@ -3,11 +3,13 @@ if [[ $DEBUG == "1" ]]; then
 fi
 export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.0.0-SNAPSHOT"
 export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.7-SNAPSHOT"
+export BALLERINA_TOOLS_SNAPSHOT_NAME_5="jballerina-tools-2.0.0-beta.5-SNAPSHOT"
+export BALLERINA_TOOLS_SNAPSHOT_NAME_6="jballerina-tools-2.0.0-beta.6-SNAPSHOT"
 
 alias src="cd /Users/rukshanp/Projects/ballerina-lang"
 alias build="cd /Users/rukshanp/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
 alias src2="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang"
-alias src3="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang-3/ballerina-lang"
+alias src3="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang-3/"
 alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/Library/Ballerina/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
@@ -15,6 +17,7 @@ alias bal1_old='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distributio
 alias bal2='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal2_old='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal3='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang-3/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal5='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME_5/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal3_old='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang-3/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal4='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/bbe-Update/ballerina-swan-lake-alpha4-SNAPSHOT/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"' 
 
@@ -29,6 +32,7 @@ alias b1_old='bal1_old'
 alias b2='bal2'
 alias b2_old='bal2_old'
 alias b3='bal3'
+alias b5='bal5'
 alias b3_old='bal3_old'
 alias b4='bal4'
 

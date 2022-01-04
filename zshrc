@@ -15,7 +15,7 @@ export GRADLE_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=\"/Users/ru
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vi_mode vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history command_execution_time battery root_indicator public_ip background_jobs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history command_execution_time root_indicator public_ip background_jobs)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # Add a space in the first prompt
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
@@ -79,7 +79,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git Alias-finder brew git-extras history-substring-search)
+plugins=(git brew git-extras history-substring-search yarn)
 
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 
@@ -121,7 +121,7 @@ fi
 ulimit -S -n 65000
 
 #export PATH=$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.3.0-SNAPSHOT/bin:$PATH
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Colorise the top Tabs of Iterm2 with the same color as background
 ## Just change the 18/26/33 wich are the rgb values
@@ -184,4 +184,8 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 ## plugins
-zplug "djui/alias-tips"
+zplug sei40kr/fast-alias-tips-bin, from:gh-r, as:command, rename-to:def-matcher
+zplug sei40kr/zsh-fast-alias-tips
+
+# zsh-bd
+. $HOME/.zsh/plugins/bd/bd.zsh
