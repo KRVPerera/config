@@ -11,8 +11,10 @@ alias build="cd /Users/rukshanp/Projects/ballerina-lang/distribution/zip/jballer
 alias src2="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang"
 alias src3="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang-3/"
 alias src4="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang-4/"
-alias chirans="cd /Users/rukshanp/Projects/Ballerina/chiran/"
-alias review="cd /Users/rukshanp/Projects/Ballerina/review/"
+alias srcChirans="cd /Users/rukshanp/Projects/Ballerina/chiran/"
+alias srcReview="cd /Users/rukshanp/Projects/Ballerina/review/"
+alias srcStageSwanLake="cd /Users/rukshanp/Projects/Ballerina/stage-swan-lake/"
+
 alias stage-swan-lake="cd /Users/rukshanp/Projects/Ballerina/stage-swan-lake/"
 alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/Library/Ballerina/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
@@ -39,7 +41,7 @@ alias b3='bal3'
 alias b5='bal5'
 alias b3_old='bal3_old'
 alias b4='bal4'
-alias chiran='balChirans'
+alias bchiran='balChirans'
 alias bReview='balReview'
 alias bSwanLake='balStageSwanLake'
 
