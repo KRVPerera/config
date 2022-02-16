@@ -19,6 +19,9 @@ Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'KRVPerera/ballerina-vim', { 'branch': 'stable' }
 "Plug '/Users/rukshanp/Projects/VimPlugin/vim-plug/ballerina-vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'altercation/vim-colors-solarized'
+Plug 'valloric/youcompleteme'
 
 call plug#end()
 
