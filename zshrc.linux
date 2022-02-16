@@ -79,7 +79,7 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git Alias-finder brew git-flow git-extras history-substring-search alias-tips)
+plugins=(git git-flow git-extras history-substring-search )
 
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 
@@ -121,7 +121,6 @@ fi
 ulimit -S -n 65000
 
 #export PATH=$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.3.0-SNAPSHOT/bin:$PATH
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
 
 # Colorise the top Tabs of Iterm2 with the same color as background
 ## Just change the 18/26/33 wich are the rgb values
@@ -174,9 +173,10 @@ unset __conda_setup
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
 ## plugins
 zplug "djui/alias-tips"
 
+source /home/krv/MyConfig/config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

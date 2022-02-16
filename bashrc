@@ -236,3 +236,5 @@ function bColor(){
 	echo "export PS1='\e[$light;$col_num m PS1 \e[m'"
 	PS1="\e["$light";"$col_num"m"$PS1"\e[m"
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
