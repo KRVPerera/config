@@ -92,4 +92,15 @@ else
     echo "##############################################"
 fi
 
+sudo apt install clang --install-suggests
+sudo apt install g++ --install-suggests
+sudo apt install openssl
+
+# install QT Desktop
+# install vscode
+
+source install_npm.sh
+## rust web assembly needs npm
+source install_rustc_things.sh
 #source install_zsh.sh
+sudo apt autoremove

@@ -1,4 +1,4 @@
-/usr/bin/env bash
+#!/usr/bin/env bash
 
 
 zshInstall=`grep /zsh$ /etc/shells | tail -1`
