@@ -63,6 +63,7 @@ git pull origin master
 echo "Copying aliases"
 mv ~/bash_aliases.sh ~/bash_aliases.bak
 ln -s $configPath/bash_aliases.sh ~/bash_aliases.sh
+ln -s $configPath/aliases/local_aliases.sh ~/local_aliases.sh
 
 echo "Copying bashrc"
 mv ~/.bashrc ~/.bashrc.bak

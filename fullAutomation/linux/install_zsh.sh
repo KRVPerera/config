@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-
+configPath=~/MyConfig/config
 zshInstall=`grep /zsh$ /etc/shells | tail -1`
 if [[ -z $zshInstall ]]; then
     sudo apt install zsh

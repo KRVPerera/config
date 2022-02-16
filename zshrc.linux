@@ -121,6 +121,7 @@ fi
 ulimit -S -n 65000
 
 #export PATH=$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.3.0-SNAPSHOT/bin:$PATH
+export PATH=$PATH:/home/krv/Projects/Programs/idea-IU-213.6777.52/bin:/home/krv/Projects/Programs/clion-2021.3.3/bin:/home/krv/Projects/Programs/WebStorm-213.6777.57/bin
 
 # Colorise the top Tabs of Iterm2 with the same color as background
 ## Just change the 18/26/33 wich are the rgb values
@@ -138,7 +139,6 @@ export CLASSPATH=".:/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH"
 bindkey -v
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
 export HISTCONTROL=ignoreboth:erasedups
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.

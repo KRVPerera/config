@@ -6,16 +6,16 @@ export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.7-SNAPSHOT
 export BALLERINA_TOOLS_SNAPSHOT_NAME_5="jballerina-tools-2.0.0-beta.5-SNAPSHOT"
 export BALLERINA_TOOLS_SNAPSHOT_NAME_6="jballerina-tools-2.0.0-beta.6-SNAPSHOT"
 
-alias src="cd /Users/rukshanp/Projects/ballerina-lang"
-alias build="cd /Users/rukshanp/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
-alias src2="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang"
-alias src3="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang-3/"
-alias src4="cd /Users/rukshanp/Projects/Ballerina/ballerina-lang-4/"
-alias srcChirans="cd /Users/rukshanp/Projects/Ballerina/chiran/"
-alias srcReview="cd /Users/rukshanp/Projects/Ballerina/review/"
-alias srcStageSwanLake="cd /Users/rukshanp/Projects/Ballerina/stage-swan-lake/"
+alias src="cd ~/Projects/ballerina-lang"
+alias build="cd ~/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
+alias src2="cd ~/Projects/Ballerina/ballerina-lang"
+alias src3="cd ~/Projects/Ballerina/ballerina-lang-3/"
+alias src4="cd ~/Projects/Ballerina/ballerina-lang-4/"
+alias srcChirans="cd ~/Projects/Ballerina/chiran/"
+alias srcReview="cd ~/Projects/Ballerina/review/"
+alias srcStageSwanLake="cd ~/Projects/Ballerina/stage-swan-lake/"
 
-alias stage-swan-lake="cd /Users/rukshanp/Projects/Ballerina/stage-swan-lake/"
+alias stage-swan-lake="cd ~/Projects/Ballerina/stage-swan-lake/"
 alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/Library/Ballerina/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
@@ -25,7 +25,7 @@ alias bal2_old='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/d
 alias bal3='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang-3/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal5='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME_5/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal3_old='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang-3/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
-alias bal4='export BALLERINA_TOOL="/Users/rukshanp/Downloads/SDKs/Ballerina/bbe-Update/ballerina-swan-lake-alpha4-SNAPSHOT/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"' 
+alias bal4='export BALLERINA_TOOL="~/Downloads/SDKs/Ballerina/bbe-Update/ballerina-swan-lake-alpha4-SNAPSHOT/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"' 
 alias balChirans='export BALLERINA_TOOL="$HOME/Projects/Ballerina/chiran/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias balReview='export BALLERINA_TOOL="$HOME/Projects/Ballerina/review/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias balStageSwanLake'export BALLERINA_TOOL="$HOME/Projects/Ballerina/stage-swan-lake/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
@@ -46,21 +46,21 @@ alias bReview='balReview'
 alias bSwanLake='balStageSwanLake'
 
 # building ballerina
-alias buildNormal='/Users/rukshanp/MyScripts/balBuildNormal.sh'
+alias buildNormal='~/MyScripts/balBuildNormal.sh'
 alias bbn='buildNormal';
-alias buildO='/Users/rukshanp/MyScripts/balBuildOnly.sh'
-alias bbdto='/Users/rukshanp/MyScripts/balDebugBuildTaskOnly.sh'
+alias buildO='~/MyScripts/balBuildOnly.sh'
+alias bbdto='~/MyScripts/balDebugBuildTaskOnly.sh'
 alias bbo='buildO'
 alias bbDump='$BALLERINA_TOOL build --dump-bir';
-alias buildTO='/Users/rukshanp/MyScripts/balBuildTaskOnly.sh'
+alias buildTO='~/MyScripts/balBuildTaskOnly.sh'
 alias bbto='buildTO'
 alias bbt='buildTO :jballerina-unit-test:test --tests '
-alias buildOWB='/Users/rukshanp/MyScripts/balBuildNoBalos.sh'
+alias buildOWB='~/MyScripts/balBuildNoBalos.sh'
 alias bbowb='buildOWB'
-alias buildCB='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh'
-alias bcb='/Users/rukshanp/MyScripts/balCleanBuildOnly.sh'
-alias bbOffline='/Users/rukshanp/MyScripts/balBuildOffline.sh; git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
-alias bcncb='/Users/rukshanp/MyScripts/balCleanBuildNoCacheOnly.sh; git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
+alias buildCB='~/MyScripts/balCleanBuildOnly.sh'
+alias bcb='~/MyScripts/balCleanBuildOnly.sh'
+alias bbOffline='~/MyScripts/balBuildOffline.sh; git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
+alias bcncb='~/MyScripts/balCleanBuildNoCacheOnly.sh; git restore misc/testerina/modules/testerina-core/src/main/ballerina/Ballerina.toml'
 
 # Ballerina executors
 alias runBBE='~/MyScripts/runBBE.sh'
