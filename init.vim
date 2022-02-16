@@ -14,8 +14,6 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-Plug 'vim-gitgutter'
-
 Plug 'honza/vim-snippets'
 
 Plug 'MattesGroeger/vim-bookmarks'
@@ -28,6 +26,15 @@ Plug 'mattn/emmet-vim'
 Plug 'reedes/vim-wordy'
 Plug 'klen/python-mode'
 Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'altercation/vim-colors-solarized'
+Plug 'valloric/youcompleteme'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'pangloss/vim-javascript'
+Plug 'bfrg/vim-cpp-modern'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -42,6 +49,8 @@ set showcmd
 filetype plugin indent on
 set hlsearch
 filetype plugin on
+
+set relativenumber
 
 " Quick saves
 noremap <C-Z> :update<CR>
@@ -79,7 +88,7 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 
-" set expandtab "only for blender python
+set expandtab "only for blender python
 set smarttab
 
 " auto -complete
