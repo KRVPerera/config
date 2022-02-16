@@ -22,6 +22,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 Plug 'valloric/youcompleteme'
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 call plug#end()
 
