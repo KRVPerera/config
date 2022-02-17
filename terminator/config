@@ -1,12 +1,20 @@
 [global_config]
+  focus = mouse
+  borderless = True
+  putty_paste_style_source_clipboard = True
 [keybindings]
 [profiles]
   [[default]]
-    background_color = "#282828"
+    background_color = "#002b36"
+    background_darkness = 0.47
+    background_type = transparent
     cursor_color = "#aaaaaa"
     font = MesloLGS NF 10
-    foreground_color = "#ebdbb2"
+    foreground_color = "#839496"
+    scroll_on_output = True
+    scrollback_infinite = True
     use_system_font = False
+    copy_on_selection = True
 [layouts]
   [[default]]
     [[[window0]]]
