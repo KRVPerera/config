@@ -1,21 +1,20 @@
 if [[ $DEBUG == "1" ]]; then
     echo "Loading local aliases : $0"
 fi
-export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.0.0-SNAPSHOT"
-export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.7-SNAPSHOT"
-export BALLERINA_TOOLS_SNAPSHOT_NAME_5="jballerina-tools-2.0.0-beta.5-SNAPSHOT"
-export BALLERINA_TOOLS_SNAPSHOT_NAME_6="jballerina-tools-2.0.0-beta.6-SNAPSHOT"
+BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.0.0-SNAPSHOT"
+BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.7-SNAPSHOT"
+BALLERINA_TOOLS_SNAPSHOT_NAME_5="jballerina-tools-2.0.0-beta.5-SNAPSHOT"
+BALLERINA_TOOLS_SNAPSHOT_NAME_6="jballerina-tools-2.0.0-beta.6-SNAPSHOT"
 
-alias src="cd ~/Projects/ballerina-lang"
-alias build="cd ~/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
-alias src2="cd ~/Projects/Ballerina/ballerina-lang"
-alias src3="cd ~/Projects/Ballerina/ballerina-lang-3/"
-alias src4="cd ~/Projects/Ballerina/ballerina-lang-4/"
-alias srcChirans="cd ~/Projects/Ballerina/chiran/"
-alias srcReview="cd ~/Projects/Ballerina/review/"
-alias srcStageSwanLake="cd ~/Projects/Ballerina/stage-swan-lake/"
+OFFICE_PROJECTS="$OFFICE_PROJECTS/office"
 
-alias stage-swan-lake="cd ~/Projects/Ballerina/stage-swan-lake/"
+alias src="cd $OFFICE_PROJECTS/ballerina-lang"
+alias build="cd $OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
+alias src2="cd $OFFICE_PROJECTS/Ballerina/ballerina-lang"
+alias src3="cd $OFFICE_PROJECTS/Ballerina/ballerina-lang-3/"
+alias srcReview="cd $OFFICE_PROJECTS/Ballerina/review/"
+alias srcStageSwanLake="cd $OFFICE_PROJECTS/Ballerina/stage-swan-lake/"
+
 alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/Library/Ballerina/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
@@ -92,7 +91,7 @@ alias bdr6='bt -p 5006 -jr -f'
 # ballerina dev folders
 alias cf='cd ~/Testing/CompileFeatures/'
 alias ci='cd ~/Testing/CompileIssues/'
-alias cvim='cd ~/Projects/VimPlugin/vim-plug/ballerina-vim/'
+alias cvim='cd $OFFICE_PROJECTS/VimPlugin/vim-plug/ballerina-vim/'
 
 # super lazy aliases
 alias br1='br t1.bal'
@@ -101,9 +100,9 @@ alias br2='br t2.bal'
 alias code='open -a "Visual Studio Code.app"'
 alias nbal='java -jar ~/CLionProjects/nballerina/compiler/target/bin/nballerina.jar'
 
-alias bare='cd ~/Projects/Ballerina/ballerina-lang-bare'
+alias bare='cd $OFFICE_PROJECTS/Ballerina/ballerina-lang-bare'
 alias gwp='git worktree prune'
-alias swl='stage-swan-lake'
+alias swl='srcStageSwanLake'
 
 if [ -f ~/local_aliases_projects.sh ]; then
     . ~/local_aliases_projects.sh
