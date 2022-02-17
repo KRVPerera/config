@@ -8,3 +8,6 @@ source $HOME/.cargo/env
 sudo apt install libssl-dev
 cargo install cargo-generate
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+## utils from rust
+cargo install du-dust
