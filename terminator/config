@@ -1,5 +1,6 @@
 [global_config]
   focus = mouse
+  window_state = fullscreen
   borderless = True
   tab_position = hidden
   putty_paste_style_source_clipboard = True
@@ -7,7 +8,7 @@
 [profiles]
   [[default]]
     background_color = "#002b36"
-    background_darkness = 0.47
+    background_darkness = 0.64
     background_type = transparent
     cursor_color = "#aaaaaa"
     font = MesloLGS NF 10

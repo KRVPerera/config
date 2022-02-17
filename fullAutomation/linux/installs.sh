@@ -97,6 +97,12 @@ sudo apt install clang --install-suggests
 sudo apt install g++ --install-suggests
 sudo apt install openssl
 
+### tiling window mgr
+sudo apt install neofetch
+sudo apt install w3m-img
+sudo apt install imagemagick
+sudo apt install ranger
+
 ### These are for vim YCM plugin
 sudo apt install build-essential cmake python3-dev
 sudo apt install mono-complete golang nodejs default-jdk npm
