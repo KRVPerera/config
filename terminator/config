@@ -1,6 +1,7 @@
 [global_config]
   focus = mouse
   borderless = True
+  tab_position = hidden
   putty_paste_style_source_clipboard = True
 [keybindings]
 [profiles]
