@@ -113,4 +113,5 @@ source install_npm.sh
 ## rust web assembly needs npm
 source install_rustc_things.sh
 #source install_zsh.sh
+source kitty.sh
 sudo apt autoremove
