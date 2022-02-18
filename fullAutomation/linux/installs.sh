@@ -1,7 +1,7 @@
 #!/bin/bash
-
+sudo apt update
 if [[ ! -f /usr/bin/git ]]; then
-    sudo apt install git
+    sudo apt install git git-gui gitk gitweb
 else
     echo ""
     echo "##############################################"
@@ -112,9 +112,9 @@ sudo apt install mono-complete golang nodejs default-jdk npm
 # install QT Desktop
 # install vscode
 
-source install_npm.sh
+# source install_npm.sh
 ## rust web assembly needs npm
-source install_rustc_things.sh
+# source install_rustc_things.sh
 #source install_zsh.sh
-source kitty.sh
+# source kitty.sh
 sudo apt autoremove
