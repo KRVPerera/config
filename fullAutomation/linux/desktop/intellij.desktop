@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=2021.3.2
+Type=Application
+Terminal=false
+Icon[en_US]=/home/krv/Programs/idea-IU-213.6777.52/bin/idea.png
+Name[en_US]=IntelliJ
+Exec=/home/krv/Programs/idea-IU-213.6777.52/bin/idea.sh
+Name=IntelliJ
+Icon=/home/krv/Programs/idea-IU-213.6777.52/bin/idea.png

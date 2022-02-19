@@ -6,7 +6,7 @@ BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2.0.0-beta.7-SNAPSHOT"
 BALLERINA_TOOLS_SNAPSHOT_NAME_5="jballerina-tools-2.0.0-beta.5-SNAPSHOT"
 BALLERINA_TOOLS_SNAPSHOT_NAME_6="jballerina-tools-2.0.0-beta.6-SNAPSHOT"
 
-OFFICE_PROJECTS="$OFFICE_PROJECTS/office"
+OFFICE_PROJECTS="~/Projects/office"
 
 alias src="cd $OFFICE_PROJECTS/ballerina-lang"
 alias build="cd $OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
