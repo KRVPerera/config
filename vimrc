@@ -41,13 +41,13 @@ let mapleader = ','
 set background=dark
 colorscheme solarized8
 
-"if has('gui_running')
-"    set guioptions-=T
-"    set guioptions-=m
-"    set guioptions-=r
-"else
-"    let g:solarized_termcolours=256
-"endif
+if has('gui_running')
+    set guioptions-=T
+    set guioptions-=m
+    set guioptions-=r
+else
+    let g:solarized_termcolours=256
+endif
 "
 set guifont=Inconsolata-g\ 12
 set omnifunc=syntaxComplete#Complete

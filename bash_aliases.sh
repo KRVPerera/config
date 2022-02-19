@@ -24,14 +24,10 @@ alias free='free -ht'
 alias top='htop'
 alias df='pydf'
 alias ipconfig='ifconfig'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias antlr4='java org.antlr.v4.Tool'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
 alias histg='history | grep'
 alias hg='history | grep'
-alias catn='cat -n'
 alias psBal='lsof -n | grep ballerina'
 alias rmJar='rm -rf *jar'
 alias sub='git pull --recurse-submodule'
@@ -56,3 +52,14 @@ alias silent='export SILENT="0"; echo "SILENT_ON=$SILENT_ON"'
 alias alert='export SILENT="1"; echo "SILENT_ON=$SILENT_ON"'
 
 alias mat="/Users/rukshanp/Applications/mat.app/Contents/MacOS/MemoryAnalyzer -vmargs -Xmx3g -XX:-UseGCOverheadLimit"
+
+alias config="cd ~/MyConfig/config"
+
+## exa alias
+alias ls=exa
+alias la="exa -al"
+alias ll="exa --all --long --header --icons --git --all"S
+alias l1="exa -al --tree --level=2"
+alias l2="exa -al --tree --level=3"
+alias l3="exa -al --tree --level=4"
+alias cat="bat"
