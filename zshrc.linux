@@ -178,6 +178,5 @@ export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
 ## plugins
-zplug "djui/alias-tips"
-
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/"
 source /home/krv/MyConfig/config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
