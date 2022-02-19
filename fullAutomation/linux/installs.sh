@@ -34,6 +34,9 @@ sudo apt install terminator
 ## dev tools
 sudo apt install git-extras
 
+## GUI
+sudo apt install libgl1-mesa-dev
+
 # Oh my zsh
 
 ## Java installation
