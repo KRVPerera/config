@@ -97,7 +97,7 @@ fi
 
 sudo apt install -y clang --install-suggests
 sudo apt install -y g++ --install-suggests
-sudo apt install openssl
+sudo apt install -y openssl
 
 ### tiling window mgr
 sudo apt install -y neofetch
@@ -105,6 +105,7 @@ sudo apt install -y w3m-img
 sudo apt install -y imagemagick
 sudo apt install -y ranger
 sudo apt install -y rofi
+sudo apt install -y thunar
 
 ### These are for vim YCM plugin
 sudo apt install build-essential cmake python3-dev
