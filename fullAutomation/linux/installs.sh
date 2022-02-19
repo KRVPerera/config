@@ -36,6 +36,7 @@ sudo apt install git-extras
 
 ## GUI
 sudo apt install libgl1-mesa-dev
+sudo apt install arandr
 
 # Oh my zsh
 
