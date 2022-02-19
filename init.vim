@@ -28,7 +28,6 @@ Plug 'klen/python-mode'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
-Plug 'valloric/youcompleteme'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

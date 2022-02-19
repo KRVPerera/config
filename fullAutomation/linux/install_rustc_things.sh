@@ -11,3 +11,9 @@ curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 ## utils from rust
 cargo install du-dust
+cargo install exa
+cargo install bat
+sudo apt install fd-find
+cargo install tokei
+cargo install procs
+cargo install alacritty

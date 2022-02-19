@@ -65,3 +65,7 @@ restore_unwanted_files() {
     echo -e "\n\033[32mgit restore '*.toml'\033[0m"
     git restore '*.toml'
 }
+
+vim_help() {
+    echo "ssh -L 6666:localhost:6666 ip.of.other.machine nvim --headless --listen localhost:6666"
+}
