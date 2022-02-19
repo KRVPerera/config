@@ -16,6 +16,7 @@ import qualified Data.Map        as M
 
 -- combinator setup
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageDocks
 
 -- Easy config
 import XMonad.Util.EZConfig
@@ -191,7 +192,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -264,7 +265,7 @@ myStartupHook = do
 --
 main = do 
     xmproc <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobarrc"
-    xmonad $ ewmh $ defaults
+    xmonad $ ewmh $ docks defaults
 
 -- These are my new key bindings
 
