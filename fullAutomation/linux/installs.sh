@@ -21,9 +21,9 @@ git config --global credential.helper 'cache --timeout=3600'
 
 ## utils
 ### monitoring tools
-sudo apt install htop pydf
+sudo apt install -y htop pydf
 
-sudo apt install curl
+sudo apt install -y curl xterm dmenu pcmanfm
 
 # sudo apt install vbetool
 ## sudo vbetool dpms off
@@ -49,8 +49,6 @@ else
     java -version
     echo "##############################################"
 fi
-
-sudo apt autoremove
 
 configPath=~/MyConfig/config
 cd ~
@@ -80,7 +78,7 @@ ln -s $configPath/terminator/config ~/.config/terminator/config
 ## vim setup
 if [[ ! -f /usr/bin/vim ]] ; then
     echo "Installing vim"
-    sudo apt install vim
+    sudo apt install -y vim
     echo "[VIM] install vim plug"
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     echo "[VIM] install vim solarized8"
@@ -97,18 +95,16 @@ else
     echo "##############################################"
 fi
 
-sudo apt install clang --install-suggests
-sudo apt install g++ --install-suggests
+sudo apt install -y clang --install-suggests
+sudo apt install -y g++ --install-suggests
 sudo apt install openssl
 
 ### tiling window mgr
-sudo apt install neofetch
-sudo apt install w3m-img
-sudo apt install imagemagick
-sudo apt install ranger
-
-### fast utils
-sudo apt install ripgrep
+sudo apt install -y neofetch
+sudo apt install -y w3m-img
+sudo apt install -y imagemagick
+sudo apt install -y ranger
+sudo apt install -y rofi
 
 ### These are for vim YCM plugin
 sudo apt install build-essential cmake python3-dev
