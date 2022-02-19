@@ -21,10 +21,11 @@ git config --global credential.helper 'cache --timeout=3600'
 
 ## utils
 ### monitoring tools
-sudo apt install htop
-sudo apt install pydf
+sudo apt install htop pydf
 
-sudo apt install vbetool
+sudo apt install curl
+
+# sudo apt install vbetool
 ## sudo vbetool dpms off
 
 ## terminal
