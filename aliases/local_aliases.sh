@@ -104,6 +104,8 @@ alias bare='cd $OFFICE_PROJECTS/Ballerina/ballerina-lang-bare'
 alias gwp='git worktree prune'
 alias swl='srcStageSwanLake'
 
+alias dwMusic='youtube-dl --extract-audio --audio-format mp3'
+
 if [ -f ~/local_aliases_projects.sh ]; then
     . ~/local_aliases_projects.sh
 fi
