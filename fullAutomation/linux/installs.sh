@@ -113,9 +113,9 @@ sudo apt install mono-complete golang nodejs default-jdk npm
 # install QT Desktop
 # install vscode
 
-# source install_npm.sh
-## rust web assembly needs npm
-# source install_rustc_things.sh
-#source install_zsh.sh
-# source kitty.sh
+source kitty.sh
+source term.sh
+
+## npm is needed for web assembly rust
+source install_npm.sh
 sudo apt autoremove
