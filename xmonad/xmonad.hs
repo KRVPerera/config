@@ -25,6 +25,12 @@ import XMonad.Util.EZConfig
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 
+-- TreeSelect import for workspaces
+import Data.Tree
+import XMonad.Actions.TreeSelect
+import XMonad.Hooks.WorkspaceHistory
+import qualified XMonad.StackSet as W
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
@@ -58,7 +64,20 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["cpp","web","office","4","5","6","7","8","9"]
+--myWorkspaces    = ["cpp","web","office","4","5","6","7","8","9"]
+myWorkspaces :: Forest String
+myWorkspaces = [ Node "Browser" [] -- a workspace for your browser
+               , Node "Home"       -- for everyday activity's
+                   [ Node "1" []   --  with 4 extra sub-workspaces, for even more activity's
+                   , Node "2" []
+                   , Node "3" []
+                   , Node "4" []
+                   ]
+               , Node "Programming" -- for all your programming needs
+                   [ Node "Haskell" []
+                   , Node "Docs"    [] -- documentation
+                   ]
+               ]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -74,7 +93,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run")
+    , ((modm,               xK_p     ), spawn "rofi -show drun")
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
@@ -244,7 +263,7 @@ myEventHook = ewmhDesktopsEventHook
 -- Perform an arbitrary action on each internal state change or X event.
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
-myLogHook = return ()
+myLogHook = workspaceHistoryHook
 
 ------------------------------------------------------------------------
 -- Startup hook
@@ -282,7 +301,7 @@ defaults = def {
         clickJustFocuses   = myClickJustFocuses,
         borderWidth        = myBorderWidth,
         modMask            = myModMask,
-        workspaces         = myWorkspaces,
+        workspaces         = toWorkspaces myWorkspaces,
         normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor,
 

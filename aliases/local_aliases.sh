@@ -9,6 +9,7 @@ BALLERINA_TOOLS_SNAPSHOT_NAME_6="jballerina-tools-2.0.0-beta.6-SNAPSHOT"
 OFFICE_PROJECTS="~/Projects/office"
 
 alias src="cd $OFFICE_PROJECTS/ballerina-lang"
+alias spec="cd $OFFICE_PROJECTS/ballerina-spec"
 alias build="cd $OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions"
 alias src2="cd $OFFICE_PROJECTS/Ballerina/ballerina-lang"
 alias src3="cd $OFFICE_PROJECTS/Ballerina/ballerina-lang-3/"
