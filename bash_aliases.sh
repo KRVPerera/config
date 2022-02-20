@@ -58,7 +58,7 @@ alias config="cd ~/MyConfig/config"
 ## exa alias
 alias ls=exa
 alias la="exa -al"
-alias ll="exa --all --long --header --icons --git --all"S
+alias ll="exa --all --long --header --icons --git --all"
 alias l1="exa -al --tree --level=2"
 alias l2="exa -al --tree --level=3"
 alias l3="exa -al --tree --level=4"
