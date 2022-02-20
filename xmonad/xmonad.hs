@@ -20,6 +20,7 @@ import XMonad.Hooks.ManageDocks
 
 -- Easy config
 import XMonad.Util.EZConfig
+import XMonad.Util.EZConfig(additionalKeys, additionalKeysP)
 
 -- Utils
 import XMonad.Util.SpawnOnce
@@ -30,6 +31,9 @@ import Data.Tree
 import XMonad.Actions.TreeSelect
 import XMonad.Hooks.WorkspaceHistory
 import qualified XMonad.StackSet as W
+
+-- media buttons
+import Graphics.X11.ExtraTypes.XF86
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -315,7 +319,16 @@ defaults = def {
         handleEventHook    = myEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
-    }
+    } `additionalKeysP` myKeysSet2
+
+myKeysSet2 =  [ 
+              ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")
+            , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@  -1.5%")
+            , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+            , ("M-<F1>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")    
+            , ("M-<F2>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -1.5%")    
+            , ("M-<F3>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")    
+            ]
 
 -- | Finally, a copy of the default bindings in simple textual tabular format.
 help :: String
