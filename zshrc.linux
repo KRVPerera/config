@@ -180,3 +180,6 @@ source $ZPLUG_HOME/init.zsh
 ## plugins
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/"
 source /home/krv/MyConfig/config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export XDG_CONFIG_HOME="~/.config"
+export PATH="$PATH:/home/krv/.local/bin"
