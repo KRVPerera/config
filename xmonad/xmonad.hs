@@ -68,20 +68,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
---myWorkspaces    = ["cpp","web","office","4","5","6","7","8","9"]
-myWorkspaces :: Forest String
-myWorkspaces = [ Node "Browser" [] -- a workspace for your browser
-               , Node "Home"       -- for everyday activity's
-                   [ Node "1" []   --  with 4 extra sub-workspaces, for even more activity's
-                   , Node "2" []
-                   , Node "3" []
-                   , Node "4" []
-                   ]
-               , Node "Programming" -- for all your programming needs
-                   [ Node "Haskell" []
-                   , Node "Docs"    [] -- documentation
-                   ]
-               ]
+myWorkspaces    = ["cpp","web","office","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -305,7 +292,7 @@ defaults = def {
         clickJustFocuses   = myClickJustFocuses,
         borderWidth        = myBorderWidth,
         modMask            = myModMask,
-        workspaces         = toWorkspaces myWorkspaces,
+        workspaces         = myWorkspaces,
         normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor,
 
