@@ -10,6 +10,9 @@
 import XMonad
 import Data.Monoid
 import System.Exit
+import XMonad.Hooks.DynamicLog
+
+import XMonad.Actions.DynamicProjects
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -34,6 +37,18 @@ import qualified XMonad.StackSet as W
 
 -- media buttons
 import Graphics.X11.ExtraTypes.XF86
+
+-- System
+import System.IO (hPutStrLn)
+
+import XMonad.Hooks.StatusBar         -- add status bar such as xmobar
+import XMonad.Hooks.StatusBar.PP      -- configure status bar printing printing
+import XMonad.Layout.Spacing          -- pad windows with some spacing
+import XMonad.Layout.Tabbed           -- tabbed windows layout
+import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
+import XMonad.Layout.NoBorders        -- provides smartBorders, noBorders
+
+import Colors.Molokai
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -66,9 +81,9 @@ myModMask       = mod4Mask
 --
 -- A tagging example:
 --
--- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
+myWorkspaces = ["bal", "spec", "js", "cpp" ] ++ map show [5..9]
 --
-myWorkspaces    = ["cpp","web","office","4","5","6","7","8","9"]
+--myWorkspaces    = map show [1..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -246,7 +261,6 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = ewmhDesktopsEventHook
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -255,7 +269,6 @@ myEventHook = ewmhDesktopsEventHook
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
 myLogHook = workspaceHistoryHook
-
 ------------------------------------------------------------------------
 -- Startup hook
 
@@ -267,16 +280,54 @@ myLogHook = workspaceHistoryHook
 myStartupHook = do 
     spawnOnce "nitrogen --restore &"
     spawnOnce "compton &"
+    spawnOnce "LG3D"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = do 
-    xmproc <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobarrc"
-    xmonad $ ewmh $ docks defaults
+main  = xmonad
+        . ewmhFullscreen
+        . ewmh
+        . withEasySB mySB defToggleStrutsKey
+        . docks
+        $ dynamicProjects projects myConfig
 
+
+myPP = xmobarPP
+    { ppCurrent = xmobarColor  myLightGreen "" . wrap "<box type=Bottom width=2> " " </box>"
+    , ppHidden  = pad
+    , ppUrgent  = xmobarColor "yello" "red" . wrap " " " "
+    , ppSep     = " "
+    , ppWsSep   = " "
+    , ppTitle   = xmobarColor "green" "" . pad
+    , ppLayout  = xmobarColor myLightMagenta ""
+    }
+
+mySB = statusBarProp "xmobar" (pure myPP)
+
+projects =
+    [ Project { projectName = "m"
+              , projectDirectory = "~/"
+              , projectStartHook = Just $ do spawn "tmux has-session -t neomutt || st -c neomutt -e tmux new -s neomutt neomutt"
+              }
+
+    , Project { projectName = "t"
+              , projectDirectory = "~/"
+              , projectStartHook = Just $ do spawn "tmux has-session -t scratchpad || st -c scratchpad -e tmux new -s scratchpad"
+              }
+
+    , Project { projectName = "w"
+              , projectDirectory = "~/"
+              , projectStartHook = Just $ do spawn "tmux has-session -t work || st -c work -e tmux new -s work"
+              }
+
+    , Project { projectName = "n"
+              , projectDirectory = "~/"
+              , projectStartHook = Just $ do spawn "st -e newsboat"
+              }
+    ]
 -- These are my new key bindings
 
 -- A structure containing your configuration settings, overriding
@@ -285,7 +336,7 @@ main = do
 --
 -- No need to modify this.
 --
-defaults = def {
+myConfig = def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -303,7 +354,6 @@ defaults = def {
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
     } `additionalKeysP` myKeysSet2
@@ -312,6 +362,7 @@ myKeysSet2 =  [
               ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")
             , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@  -1.5%")
             , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+            , ("<XF86ScreenSaver>", spawn "slock")
             , ("M-<F1>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")    
             , ("M-<F2>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -1.5%")    
             , ("M-<F3>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")    
