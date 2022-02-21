@@ -90,9 +90,9 @@ alias bdr='bt -p 5005 -jr -f'
 alias bdr6='bt -p 5006 -jr -f'
 
 # ballerina dev folders
-alias cf='cd ~/Testing/CompileFeatures/'
-alias ci='cd ~/Testing/CompileIssues/'
-alias cvim='cd $OFFICE_PROJECTS/VimPlugin/vim-plug/ballerina-vim/'
+alias cf="cd $OFFICE_PROJECTS/Testing/CompileFeatures"
+alias ci="cd $OFFICE_PROJECTS/Testing/CompileIssues"
+alias cvim="cd $OFFICE_PROJECTS/VimPlugin/vim-plug/ballerina-vim/"
 
 # super lazy aliases
 alias br1='br t1.bal'
@@ -101,7 +101,7 @@ alias br2='br t2.bal'
 alias code='open -a "Visual Studio Code.app"'
 alias nbal='java -jar ~/CLionProjects/nballerina/compiler/target/bin/nballerina.jar'
 
-alias bare='cd $OFFICE_PROJECTS/Ballerina/ballerina-lang-bare'
+alias bare="cd $OFFICE_PROJECTS/Ballerina/ballerina-lang-bare"
 alias gwp='git worktree prune'
 alias swl='srcStageSwanLake'
 
