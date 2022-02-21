@@ -18,6 +18,9 @@ git config --global core.editor "vim --wait"
 git config --global merge.conflictstyle diff3
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
+git config --global diff.tool vimdiff
+git config --global merge.tool vimdiff
+# git config --global difftool.prompt false # I disabled because have experience with 100s of vims opening at once
 
 ## utils
 ### monitoring tools
