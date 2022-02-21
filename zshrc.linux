@@ -183,3 +183,4 @@ source /home/krv/MyConfig/config/zsh/zsh-syntax-highlighting/zsh-syntax-highligh
 
 export XDG_CONFIG_HOME="~/.config"
 export PATH="$PATH:/home/krv/.local/bin"
+source "~/Projects/personal/emsdk/emsdk_env.sh"
