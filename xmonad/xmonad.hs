@@ -81,9 +81,9 @@ myModMask       = mod4Mask
 --
 -- A tagging example:
 --
-myWorkspaces = ["bal", "spec", "js", "cpp" ] ++ map show [5..9]
+-- myWorkspaces = ["bal", "spec", "js", "cpp" ] ++ map show [5..9]
 --
---myWorkspaces    = map show [1..9]
+myWorkspaces    = map show [1..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
