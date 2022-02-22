@@ -50,6 +50,9 @@ import XMonad.Layout.NoBorders        -- provides smartBorders, noBorders
 
 import Colors.Molokai
 
+-- spawning
+import XMonad.Actions.SpawnOn
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
@@ -272,12 +275,18 @@ myLogHook = workspaceHistoryHook
 ------------------------------------------------------------------------
 -- Startup hook
 
+spawnToWorkspace :: String -> String -> X ()
+spawnToWorkspace workspace program = do
+                                      spawn program
+                                      windows $ W.greedyView workspace
+
 -- Perform an arbitrary action each time xmonad starts or is restarted
 -- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
 myStartupHook = do 
+    spawnToWorkspace "1" "/krv/.local/kitty.app/bin/kitty"
     spawnOnce "nitrogen --restore &"
     spawnOnce "compton &"
     spawnOnce "LG3D"
@@ -353,7 +362,7 @@ myConfig = def {
 
       -- hooks, layouts
         layoutHook         = myLayout,
-        manageHook         = myManageHook,
+        manageHook         = manageSpawn <+> myManageHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
     } `additionalKeysP` myKeysSet2
@@ -366,6 +375,7 @@ myKeysSet2 =  [
             , ("M-<F1>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")    
             , ("M-<F2>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -1.5%")    
             , ("M-<F3>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")    
+            , ("M-x i", spawnOn "2" "~/Programs/idea-IU-213.6777.52/bin/idea.sh")    
             ]
 
 -- | Finally, a copy of the default bindings in simple textual tabular format.
