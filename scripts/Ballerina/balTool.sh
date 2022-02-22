@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /Users/rukshanp/bash_functions.sh
+source ~/bash_functions.sh
 
 red="\033[31;40m"
 blue="\033[34;40m"
@@ -56,8 +56,8 @@ echo
 
 echo -e "\033[30;43m--------------------------------"$none
 echo -e $yellowB"Tool path : $BALLERINA_TOOL\t\t"
-$BALLERINA_TOOL -v
-$BALLERINA_TOOL home
+eval "$BALLERINA_TOOL -v"
+eval "$BALLERINA_TOOL home"
 echo -e $yellowB"--------------------------------\t\t"$none
 echo -e $yellowB"bal $tool_command $FILE\t\t"$none
 echo -e $yellowB"--------------------------------\t\t"$none
@@ -88,6 +88,12 @@ fi
 
 FINAL_COMMAND=("$BALLERINA_TOOL" "$tool_command")
 
+if [[ $DEBUG_MODE == 1 ]]; then
+    echo "------------------------------------------"
+    echo "Final Command : ${FINAL_COMMAND[@]}"
+    echo "Running on : $FILE"
+    echo "------------------------------------------"
+fi
 
 if [[ $MODULE_MODE == 1 ]]; then
     if [ $JAVA_DEBUG == 1 ]; then
@@ -99,13 +105,26 @@ else
     if [ $JAVA_DEBUG == 1 ]; then
         eval "BAL_JAVA_DEBUG=$PORT ${FINAL_COMMAND[@]} $FILE"
     else
-        ${FINAL_COMMAND[@]} $FILE
+        eval "${FINAL_COMMAND[@]} $FILE"
     fi
 fi
 
 balStatus=$?
 if [[ $DEBUG_MODE == 1 && "$balStatus" -ne "0" ]]; then
     echo -e "\n"$red"FAILED \a"$none
-    osascript -e 'say "FAILED"'
+    unameOut="$(uname -s)"
+    case "${unameOut}" in
+        Linux*)     
+            machine=Linux;
+            echo "Hi Linux";
+            notify-send -u critical -h int:value:42 "Ballerina run failed ...";;
+        Darwin*)    
+            machine=Mac;
+            osascript -e 'say "FAILED"';;
+        CYGWIN*)    machine=Cygwin;;
+        MINGW*)     machine=MinGw;;
+        *)          machine="UNKNOWN:${unameOut}"
+    esac
+    echo ${machine}
 fi
 
