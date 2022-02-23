@@ -56,11 +56,13 @@ echo
 
 echo -e "\033[30;43m--------------------------------"$none
 echo -e $yellowB"Tool path : $BALLERINA_TOOL\t\t"
+echo -e "\033[30;43m--------------------------------"
 eval "$BALLERINA_TOOL -v"
 eval "$BALLERINA_TOOL home"
+echo -e "\033[30;43m--------------------------------"$none
 echo -e $yellowB"--------------------------------\t\t"$none
 echo -e $yellowB"bal $tool_command $FILE\t\t"$none
-echo -e $yellowB"--------------------------------\t\t"$none
+echo -e $yellowB"--------------------------------\t\t\n"$none
 
 if [[ $MODULE_MODE == 0 ]]; then
     if [[ $tool_command == "build" ]]; then
