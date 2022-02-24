@@ -43,6 +43,7 @@ import System.IO (hPutStrLn)
 
 import XMonad.Hooks.StatusBar         -- add status bar such as xmobar
 import XMonad.Hooks.StatusBar.PP      -- configure status bar printing printing
+import XMonad.Layout.SimpleFloat
 import XMonad.Layout.Spacing          -- pad windows with some spacing
 import XMonad.Layout.Tabbed           -- tabbed windows layout
 import XMonad.Actions.CycleWS         -- cycle through WSs, toggle last WS
@@ -220,7 +221,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full |||  simpleFloat)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
