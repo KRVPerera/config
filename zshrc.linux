@@ -187,3 +187,6 @@ source "$HOME/Projects/personal/emsdk/emsdk_env.sh"
 
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 export LOCALE_ARCHIVE="/usr/lib/locale/locale-archive"
+export CMAKE_PREFIX_PATH="/home/krv/Qt/6.2.3/gcc_64"
+export QT_DIR="/home/krv/Qt/6.2.3/gcc_64"
+export Qt6_DIR="/home/krv/Qt/6.2.3/gcc_64/lib/cmake/Qt6"
