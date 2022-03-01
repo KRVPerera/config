@@ -24,7 +24,6 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 
 -- Easy config
-import XMonad.Util.EZConfig
 import XMonad.Util.EZConfig(additionalKeys, additionalKeysP)
 
 -- Utils
@@ -87,7 +86,7 @@ myModMask       = mod4Mask
 --
 -- A tagging example:
 --
-myWorkspaces = ["1:idea", "2:terminal", "3:browser", "4"] ++ map show [5..9]
+myWorkspaces = ["1:idea", "2:terminal", "3:browser", "4:vscode"] ++ map show [5..9]
 --
 --myWorkspaces    = map show [1..9]
 
@@ -103,9 +102,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
-
-    -- launch dmenu
-    , ((modm,               xK_p     ), spawn "rofi -show drun")
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
@@ -376,6 +372,7 @@ myKeysSet2 =  [
             , ("M-<F3>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")    
                 , ("M-o", switchProjectPrompt promptConfig)
     , ("M-x", shiftToProjectPrompt promptConfig)
+            , ("M-p", spawn "rofi -show drun")
             ]
 
 
