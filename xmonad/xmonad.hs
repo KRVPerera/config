@@ -11,7 +11,9 @@ import XMonad
 import Data.Monoid
 import System.Exit
 import XMonad.Hooks.DynamicLog
+import qualified Nord as N
 
+import XMonad.Prompt
 import XMonad.Actions.DynamicProjects
 
 import qualified XMonad.StackSet as W
@@ -85,9 +87,9 @@ myModMask       = mod4Mask
 --
 -- A tagging example:
 --
--- myWorkspaces = ["bal", "spec", "js", "cpp" ] ++ map show [5..9]
+myWorkspaces = ["1:idea", "2:terminal", "3:browser", "4"] ++ map show [5..9]
 --
-myWorkspaces    = map show [1..9]
+--myWorkspaces    = map show [1..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -304,6 +306,24 @@ main  = xmonad
         . docks
         $ dynamicProjects projects myConfig
 
+projects :: [Project]
+projects =
+  [ Project { projectName      = "scratch"
+            , projectDirectory = "~/"
+            , projectStartHook = Nothing
+            }
+
+  , Project { projectName      = "work"
+            , projectDirectory = "~/download"
+            , projectStartHook = Just $ do 
+                    spawn "/snap/sbin/chat"
+                    spawn "/snap/bin/google-chrome"
+                    spawn "/snap/bin/code"
+                    spawn "/krv/.local/kitty.app/bin/kitty"
+            }
+  ]
+
+
 
 myPP = xmobarPP
     { ppCurrent = xmobarColor  myLightGreen "" . wrap "<box type=Bottom width=2> " " </box>"
@@ -317,27 +337,6 @@ myPP = xmobarPP
 
 mySB = statusBarProp "xmobar" (pure myPP)
 
-projects =
-    [ Project { projectName = "m"
-              , projectDirectory = "~/"
-              , projectStartHook = Just $ do spawn "tmux has-session -t neomutt || st -c neomutt -e tmux new -s neomutt neomutt"
-              }
-
-    , Project { projectName = "t"
-              , projectDirectory = "~/"
-              , projectStartHook = Just $ do spawn "tmux has-session -t scratchpad || st -c scratchpad -e tmux new -s scratchpad"
-              }
-
-    , Project { projectName = "w"
-              , projectDirectory = "~/"
-              , projectStartHook = Just $ do spawn "tmux has-session -t work || st -c work -e tmux new -s work"
-              }
-
-    , Project { projectName = "n"
-              , projectDirectory = "~/"
-              , projectStartHook = Just $ do spawn "st -e newsboat"
-              }
-    ]
 -- These are my new key bindings
 
 -- A structure containing your configuration settings, overriding
@@ -358,7 +357,6 @@ myConfig = def {
         focusedBorderColor = myFocusedBorderColor,
 
       -- key bindings
-        keys               = myKeys,
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
@@ -376,8 +374,28 @@ myKeysSet2 =  [
             , ("M-<F1>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")    
             , ("M-<F2>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -1.5%")    
             , ("M-<F3>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")    
-            , ("M-x i", spawnOn "2" "~/Programs/idea-IU-213.6777.52/bin/idea.sh")    
+                , ("M-o", switchProjectPrompt promptConfig)
+    , ("M-x", shiftToProjectPrompt promptConfig)
             ]
+
+
+promptConfig = def
+  { position          = Bottom
+  , alwaysHighlight   = True
+  , borderColor       = N.nord9
+  -- Normal
+  , bgColor           = N.nord9
+  , fgColor           = N.background
+  -- Selection
+  , bgHLight          = N.nord6
+  , fgHLight          = N.background
+  --
+  , defaultText       = ""
+  , font              = "xft:Iosevka Samae:style=Regular:size=8:charwidth=5"
+  , height            = 24
+  , promptBorderWidth = 5
+  }
+
 
 -- | Finally, a copy of the default bindings in simple textual tabular format.
 help :: String
