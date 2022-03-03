@@ -52,6 +52,9 @@ import XMonad.Layout.NoBorders        -- provides smartBorders, noBorders
 
 import Colors.Molokai
 
+-- swap workspaces
+import XMonad.Actions.SwapWorkspaces
+
 -- spawning
 import XMonad.Actions.SpawnOn
 
@@ -86,9 +89,9 @@ myModMask       = mod4Mask
 --
 -- A tagging example:
 --
-myWorkspaces = ["1:idea", "2:terminal", "3:browser", "4:vscode"] ++ map show [5..9]
+--myWorkspaces = ["1:idea", "2:terminal", "3:browser", "4:vscode"] ++ map show [5..9]
 --
---myWorkspaces    = map show [1..9]
+myWorkspaces    = map show [1..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -302,6 +305,8 @@ main  = xmonad
         . docks
         $ dynamicProjects projects myConfig
 
+-- Projects windows like office, work
+
 projects :: [Project]
 projects =
   [ Project { projectName      = "scratch"
@@ -309,8 +314,8 @@ projects =
             , projectStartHook = Nothing
             }
 
-  , Project { projectName      = "work"
-            , projectDirectory = "~/download"
+  , Project { projectName      = "2:office"
+            , projectDirectory = "~/Projects/office"
             , projectStartHook = Just $ do 
                     spawn "/snap/sbin/chat"
                     spawn "/snap/bin/google-chrome"
@@ -373,6 +378,7 @@ myKeysSet2 =  [
                 , ("M-o", switchProjectPrompt promptConfig)
     , ("M-x", shiftToProjectPrompt promptConfig)
             , ("M-p", spawn "rofi -show drun")
+            , ("M-a", toggleWS)
             ]
 
 
