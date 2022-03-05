@@ -379,7 +379,7 @@ myKeysSet2 =  [
     , ("M-x", shiftToProjectPrompt promptConfig)
             , ("M-p", spawn "rofi -show drun")
             , ("M-a", toggleWS)
-            , ("M-s", spawn "kitty --session ~/Projects/office/office_session.conf")
+            , ("M-s", spawn "kitty --single-instance --session ~/Projects/office/office_session.conf")
             ]
 
 
