@@ -61,7 +61,7 @@ import XMonad.Actions.SpawnOn
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "/home/krv/.local/kitty.app/bin/kitty"
+myTerminal      = "/home/krv/.local/kitty.app/bin/kitty --single-instance"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -288,7 +288,7 @@ spawnToWorkspace workspace program = do
 --
 -- By default, do nothing.
 myStartupHook = do 
-    spawnToWorkspace "1" "/krv/.local/kitty.app/bin/kitty"
+    spawnToWorkspace "1" "/krv/.local/kitty.app/bin/kitty --single-instance"
     spawnOnce "nitrogen --restore &"
     spawnOnce "compton &"
     spawnOnce "LG3D"
@@ -380,6 +380,7 @@ myKeysSet2 =  [
             , ("M-p", spawn "rofi -show drun")
             , ("M-a", toggleWS)
             , ("M-s", spawn "kitty --single-instance --session ~/Projects/office/office_session.conf")
+            , ("M-<Home>", spawn "kitty --single-instance --session ~/MyConfig/config/kitty/home.conf")
             ]
 
 
