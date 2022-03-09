@@ -80,10 +80,10 @@ alias addMain='echo "public function main(){}" >>'
 alias balDiff='~/MyScripts/balDiff.sh'
 alias bdi='~/MyScripts/balDiff.sh'
 alias bdi_bir='~/MyScripts/balDiffBir.sh'
-alias bh='$BALLERINA_TOOL home'
+alias bh='eval "$BALLERINA_TOOL home"'
 
 # multi runners and debuggers
-alias bra='bh; find . -type f -name "*.bal" -print -exec $BALLERINA_TOOL run {} \;'
+#alias bra='find . -type f -name "*.bal" -print -exec "$BALLERINA_TOOL" run {} \;'
 alias bda='find . -type f -name "*.bal" -exec ~/MyScripts/balDiff.sh {} \;'
 alias bdb='bt -p 5005 -jb -f'
 alias bdr='bt -p 5005 -jr -f'
