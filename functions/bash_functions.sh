@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+bra() {
+    bh
+    find . -type f -name "*.bal" -print -exec bash -c '
+    ret=0
+    for file do
+        eval "$BALLERINA_TOOL" run "$file" || ret=$?
+    done
+    exit "$ret"' bash {} \;
+}
+
 find_ballerina_file() {
     # echo -e "\033[0m"
     FILE=$1
