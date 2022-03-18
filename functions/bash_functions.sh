@@ -5,7 +5,15 @@ bra() {
     find . -type f -name "*.bal" -print -exec bash -c '
     ret=0
     for file do
+        echo ""
+        echo -e "----------------------- RUN $file ---------------"
+        echo ""
         eval "$BALLERINA_TOOL" run "$file" || ret=$?
+        echo ""
+        echo "----------------------- FINISHED $file ---------"
+        echo ""
+        echo ""
+        echo ""
     done
     exit "$ret"' bash {} \;
 }

@@ -107,6 +107,13 @@ alias swl='srcStageSwanLake'
 alias scr='~/.screenlayout/three.sh'
 alias dwMusic='youtube-dl --extract-audio --audio-format mp3'
 
+
+## developer friendly productive apps
+alias fp='flatpak'
+alias fpl='flatpak list'
+alias fpr='flatpak run'
+
+
 if [ -f ~/local_aliases_projects.sh ]; then
     . ~/local_aliases_projects.sh
 fi
