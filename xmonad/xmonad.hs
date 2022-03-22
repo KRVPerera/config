@@ -91,7 +91,7 @@ myModMask       = mod4Mask
 --
 --myWorkspaces = ["1:idea", "2:terminal", "3:browser", "4:vscode"] ++ map show [5..9]
 --
-myWorkspaces    = map show [1..8] ++ ["9:chat"]
+myWorkspaces    = map show [1..7] ++ ["8:vlc"] ++ ["9:chat"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -381,6 +381,7 @@ myKeysSet2 =  [
             , ("M-a", toggleWS)
             , ("M-s", spawn "kitty --single-instance --session ~/Projects/office/office_session.conf")
             , ("M-<Home>", spawn "kitty --single-instance --session ~/MyConfig/config/kitty/home.conf")
+            , ("C-S-p-t", spawn "flatpak run org.gnome.Solanum")
             ]
 
 
