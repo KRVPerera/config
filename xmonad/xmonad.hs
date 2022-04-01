@@ -381,6 +381,7 @@ myKeysSet2 =  [
             , ("M-a", toggleWS)
             , ("M-s", spawn "kitty --single-instance --session ~/Projects/office/office_session.conf")
             , ("M-<Home>", spawn "kitty --single-instance --session ~/MyConfig/config/kitty/home.conf")
+            , ("M-h", spawn "kitty --single-instance --session ~/MyConfig/config/kitty/hack.conf")
             , ("C-S-p-t", spawn "flatpak run org.gnome.Solanum")
             ]
 
