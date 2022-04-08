@@ -2,7 +2,7 @@ if [[ $DEBUG == "1" ]]; then
     echo "Loading local aliases : $0"
 fi
 BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.0.2-SNAPSHOT"
-BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2201.0.1-SNAPSHOT"
+BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2201.0.3-SNAPSHOT"
 BALLERINA_TOOLS_SNAPSHOT_NAME_5="jballerina-tools-2.0.0-beta.5-SNAPSHOT"
 BALLERINA_TOOLS_SNAPSHOT_NAME_6="jballerina-tools-2.0.0-beta.6-SNAPSHOT"
 
@@ -20,7 +20,7 @@ alias refresh='~/MyCrons/SyncMaster.sh'
 alias bal0='export BALLERINA_TOOL="/usr/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal2='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang-2/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
-alias bal1_old='export BALLERINA_TOOL="$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal1_old='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal2_old='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal3='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang-3/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal5='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME_5/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
@@ -108,6 +108,7 @@ alias scr='~/.screenlayout/three.sh'
 alias dwMusic='youtube-dl --extract-audio --audio-format mp3'
 
 
+alias tools='~/MyScripts/tools.sh'
 ## developer friendly productive apps
 alias fp='flatpak'
 alias fpl='flatpak list'
