@@ -66,7 +66,9 @@ alias bcncb='~/MyScripts/balCleanBuildNoCacheOnly.sh; git restore misc/testerina
 alias runBBE='~/MyScripts/runBBE.sh'
 alias extractBal='$HOME/MyScripts/extractBallerina.sh'
 alias br='~/MyScripts/balTool.sh -r -f'
+alias brm='~/MyScripts/balTool.sh -r -m'
 alias bb='~/MyScripts/balTool.sh -b -f'
+alias bbm='~/MyScripts/balTool.sh -b -m'
 alias bt='~/MyScripts/balTool.sh'
 alias b='$BALLERINA_TOOL'
 
