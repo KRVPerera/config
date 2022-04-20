@@ -8,19 +8,22 @@ green="\033[32;40m"
 none="\033[0m"
 yellowB="\033[30;43m"
 
+
 declare -i HELP=0
 declare -i JAVA_DEBUG=0
+declare -i DUMP_BIR=0
 declare -i DEBUG_MODE=0
 declare -i MODULE_MODE=0
-while getopts mjdhrbf:p: option; do
+while getopts mjdhrbef:p: option; do
     case $option in
+        m) MODULE_MODE=1 ;;
+        j) JAVA_DEBUG=1 ;;
         d) DEBUG_MODE=1;;
         h) HELP=1 ;;
-        f) file=$OPTARG ;;
         r) tool_command="run" ;;
         b) tool_command="build" ;;
-        j) JAVA_DEBUG=1 ;;
-        m) MODULE_MODE=1 ;;
+        f) file=$OPTARG ;;
+        e) DUMP_BIR=1 ;;
         p) port=$OPTARG ;;
         ?) echo "Invalid option for $0 $OPTARG" ;;
         *) echo "Invalid argument $OPTARG" ;;
@@ -86,6 +89,11 @@ fi
 
 if [[ $JAVA_DEBUG == 1 ]]; then
     echo -e $green"Running ballerina in debug mode on port $PORT"$none
+fi
+
+if [[ $DUMP_BIR == 1 ]]; then
+    tool_command="$tool_command --dump-bir"
+    echo $tool_command
 fi
 
 FINAL_COMMAND=("$BALLERINA_TOOL" "$tool_command")

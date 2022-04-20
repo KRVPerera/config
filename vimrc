@@ -49,7 +49,10 @@ else
     let g:solarized_termcolours=256
 endif
 "
-set guifont=Mononoki\ 15.5
+
+if has("unix")
+    set guifont=Mononoki\ 14,Monospace\ 12
+endif
 set omnifunc=syntaxComplete#Complete
 set dictionary+=/usr/share/dict/words
 
