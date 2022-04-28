@@ -1,6 +1,6 @@
 #!/bin/bash -f
 
-source /Users/rukshanp/bash_functions.sh
+source ~/MyConfig/config/scripts/bash/functions/find_ballerina_file.sh
 
 echo "**** Extracting $1****"
 echo ""
@@ -39,7 +39,7 @@ jar -xf ${filename}.jar
 
 echo ""
 echo "**** Decompiling ${filename}.class ****"
-java -jar /Applications/procyon.jar ${filename}.class
+java -jar ~/Projects/office/jars/procyon-decompiler-0.6.0.jar ${filename}.class
 
 if [[ -z "$2" ]]; then
    exit 0 
