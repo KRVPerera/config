@@ -63,3 +63,6 @@ alias l1="exa -al --tree --level=2"
 alias l2="exa -al --tree --level=3"
 alias l3="exa -al --tree --level=4"
 alias cat="bat"
+
+## emacs life
+alias emacs="emacsclient -c -a 'emacs'"
