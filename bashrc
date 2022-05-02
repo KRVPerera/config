@@ -122,6 +122,7 @@ export JAVA_HOME="/usr/lib/jvm/jdk.1.8.0_92"
 export JRE_HOME="$JAVA_HOME/jre"
 export PYTHONPATH=~/Programs/xgboost/python-package
 export PATH="$JAVA_HOME/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 function smp() {
 	printf '\n---------------- Set mora proxy env --------------\n'
