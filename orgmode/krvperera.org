@@ -1,0 +1,77 @@
+#+title: KRV Home Office
+#+author: KRV Perera
+#+creator: KRV Perera
+#+email: rukshan.viduranga@gmail.com
+
+
+* First Heading
+
+Here is some content
+
+** This is a sub heading
+
+More
+
+* Second Heading
+
+
+* life and jobs
+
+** TODO Cover letter and CV
+DEADLINE: <2022-05-05 Thu>
+** TODO QT course
+DEADLINE: <2022-05-04 Wed>
+** TODO Other courses
+DEADLINE: <2022-07-04 Mon>
+** TODO JavaScript course
+DEADLINE: <2022-06-04 Sat>
+
+* Office tasks
+
+** TODO closure annotations - fields
+** TODO closure start actions
+** code reviews
+*** dulmina
+
+**** TODO spec conformance test
+
+*** gimantha
+
+**** TODO COMMENT PR I need to review
+
+*** lochana
+
+**** TODO isSameType [[https://github.com/ballerina-platform/ballerina-lang/pull/35925][pr]]
+
+#+BEGIN_SRC java
+      TypePair pair = new TypePair(source, target);
+      if (unresolvedTypes.contains(pair)) {
+          return true; // THIS IS TRUE FOR CYCLIC TYPES, NOT FOR OTHER TYPES.
+      }
+      unresolvedTypes.add(pair);
+      BTypeVisitor<BType, Boolean> sameTypeVisitor = new BSameTypeVisitor(unresolvedTypes);
+      boolean result = target.accept(sameTypeVisitor, source);
+      if (result) {
+          return true;
+      }
+      unresolvedTypes.remove(pair);
+      return false;
+#+END_SRC
+
+#+BEGIN_SRC ruby
+def fact(n)
+  if n== 0
+    1
+  else
+    n * fact(n - 1)
+  end
+end
+fact(5)
+#+END_SRC
+
+#+RESULTS:
+: 120
+
+* Latex Integration
+
+- Characters: \alpha \rightarrow \beta

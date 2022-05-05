@@ -51,3 +51,5 @@
 (package! tldr)
 (package! dashboard)
 (package! evil-tutor)
+(package! org-bullets)
+(package! key-chord)
