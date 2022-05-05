@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "KRV Perera"
+      user-mail-address "rukshan.viduranga@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -76,14 +76,33 @@
 ;; they are implemented.
 
 ;; trying to get vim settings for unknown file types
+
 (setq display-line-numbers 'relative)
 (setq display-line-numbers-current-absolute :true)
+
 ;; set type of line numbering (global variable)
+
 (setq display-line-numbers-type 'relative)
 
 ;; activate line numbering in all buffers/modes
+
 (global-display-line-numbers-mode)
 
 
 ;; setting the theme
+
 (setq doom-theme 'doom-oceanic-next)
+
+;; org mode changes
+
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(setq org-log-done 'time)
+(setq org-agenda-files '("~/MyConfig/config/orgmode"))
+
+;; Exit insert mode by pressing jj
+(setq key-chord-two-keys-delay 0.5)
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-mode 1)
+
+;;; (provide 'config)\n;;; $DOOMDIR/config.el ends here
