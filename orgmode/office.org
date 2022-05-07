@@ -1,0 +1,53 @@
+#+title: Office
+#+author: KRV Perera
+#+email: rukshan.viduranga@gmail.com
+
+
+* Office tasks
+
+** TODO closure annotations - fields
+DEADLINE: <2022-05-07 Sat>
+** TODO closure start actions
+DEADLINE: <2022-05-08 Sun>
+** code reviews
+*** dulmina
+
+**** TODO spec conformance test
+
+*** gimantha
+
+**** TODO COMMENT PR I need to review
+DEADLINE: <2022-05-07 Sat>
+
+*** lochana
+
+**** TODO isSameType [[https://github.com/ballerina-platform/ballerina-lang/pull/35925][pr]]
+
+#+BEGIN_SRC java
+      TypePair pair = new TypePair(source, target);
+      if (unresolvedTypes.contains(pair)) {
+          return true; // THIS IS TRUE FOR CYCLIC TYPES, NOT FOR OTHER TYPES.
+      }
+      unresolvedTypes.add(pair);
+      BTypeVisitor<BType, Boolean> sameTypeVisitor = new BSameTypeVisitor(unresolvedTypes);
+      boolean result = target.accept(sameTypeVisitor, source);
+      if (result) {
+          return true;
+      }
+      unresolvedTypes.remove(pair);
+      return false;
+#+END_SRC
+
+#+BEGIN_SRC ruby
+def fact(n)
+  if n== 0
+    1
+  else
+    n * fact(n - 1)
+  end
+end
+fact(5)
+#+END_SRC
+
+#+RESULTS:
+: 120
