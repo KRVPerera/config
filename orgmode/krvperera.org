@@ -1,10 +1,12 @@
 #+title: KRV Home Office
 #+author: KRV Perera
-#+creator: KRV Perera
 #+email: rukshan.viduranga@gmail.com
 
-
 * First Heading
+:PROPERTIES:
+:CUSTOM_ID: TOP
+:END:
+[[#BOTTOM][BOTTOM]]
 
 Here is some content
 
@@ -14,22 +16,29 @@ More
 
 * Second Heading
 
+* Watch videos to learn
+
+** TODO Running a Buffer Overflow Attack - [[https://www.youtube.com/watch?v=1S0aBV-Waeo][ComputerPhile]]
+** TODO[[https://www.youtube.com/watch?v=SzA2YODtgK4][ Getting Started With Org Mode]]
+** TODO [[https://www.youtube.com/watch?v=j0_u26Vpb4w][Forbidden C++ - javidx9]]
 
 * life and jobs
 
+** TODO Linux course
+DEADLINE: <2022-05-07 Sat>
 ** TODO Cover letter and CV
-DEADLINE: <2022-05-05 Thu>
+DEADLINE: <2022-05-14 Sat>
 ** TODO QT course
-DEADLINE: <2022-05-04 Wed>
+DEADLINE: <2022-05-28 Sat>
 ** TODO Other courses
-DEADLINE: <2022-07-04 Mon>
 ** TODO JavaScript course
-DEADLINE: <2022-06-04 Sat>
 
 * Office tasks
 
 ** TODO closure annotations - fields
+DEADLINE: <2022-05-07 Sat>
 ** TODO closure start actions
+DEADLINE: <2022-05-08 Sun>
 ** code reviews
 *** dulmina
 
@@ -38,6 +47,7 @@ DEADLINE: <2022-06-04 Sat>
 *** gimantha
 
 **** TODO COMMENT PR I need to review
+DEADLINE: <2022-05-07 Sat>
 
 *** lochana
 
@@ -72,6 +82,16 @@ fact(5)
 #+RESULTS:
 : 120
 
+
+* [[file:EldenRing.org][Elden Ring]]
+** TODO [[file:EldenRing.org::#FIGHTINCOWBOY][Elden Ring Walk Through - FightinCowboy]]
+** [[file:EldenRing.org::#CHANNELS][Channels]]
+
 * Latex Integration
 
 - Characters: \alpha \rightarrow \beta
+* Bottom navigation
+:PROPERTIES:
+:CUSTOM_ID: BOTTOM
+:END:
+[[#TOP][TOP]]

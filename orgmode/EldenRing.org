@@ -1,0 +1,36 @@
+#+title: Elden Ring Walkthrough
+#+author: KRV Perera
+#+email: rukshan.viduranga@gmail.com
+
+* Navigation
+:PROPERTIES:
+:CUSTOM_ID: TOP
+:END:
+
+[[file:krvperera.org][Home]] [[#BOTTOM][BOTTOM]]
+
+* Walk Through
+** FightinCowboy
+:PROPERTIES:
+:CUSTOM_ID: FIGHTINCOWBOY
+:END:
+*** TODO [[https://www.youtube.com/watch?v=p4uxeniQsg4&list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&index=11][Stormbeil Castle]]
+
+* Channels
+:PROPERTIES:
+:CUSTOM_ID: CHANNELS
+:END:
+** [[https://www.youtube.com/watch?v=iSjviLX1x1g][KhrazeGaming]]
+
+
+
+
+
+
+
+[[#TOP][TOP]]
+
+* Bottom Navigation
+:PROPERTIES:
+:CUSTOM_ID: BOTTOM
+:END:
