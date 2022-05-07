@@ -53,3 +53,4 @@
 (package! evil-tutor)
 (package! org-bullets)
 (package! key-chord)
+(package! ox-twbs)
