@@ -292,6 +292,7 @@ myStartupHook = do
     spawnOnce "nitrogen --restore &"
     spawnOnce "compton &"
     spawnOnce "LG3D"
+    spawnOnce "/usr/bin/emacs -daemon"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
