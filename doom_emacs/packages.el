@@ -54,3 +54,4 @@
 (package! org-bullets)
 (package! key-chord)
 (package! ox-twbs)
+(package! which-key)

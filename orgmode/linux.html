@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-08 ඉ 01:06 -->
+<!-- 2022-05-08 ඉ 01:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Elden Ring Walkthrough</title>
+<title>Linux</title>
 <meta name="author" content="KRV Perera" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -196,77 +196,87 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Elden Ring Walkthrough</h1>
+<h1 class="title">Linux</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#TOP">1. Navigation</a></li>
-<li><a href="#orge3b905d">2. Walk Through</a>
+<li><a href="#TOP">1. TOP</a></li>
+<li><a href="#orgc35a7c3">2. BOOT</a>
 <ul>
-<li><a href="#FIGHTINCOWBOY">2.1. FightinCowboy</a>
-<ul>
-<li><a href="#org4364be6">2.1.1. <span class="todo TODO">TODO</span> Stormbeil Castle</a></li>
+<li><a href="#orgda295e4">2.1. custom boot entry</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#CHANNELS">3. Channels</a>
-<ul>
-<li><a href="#org35ecc7d">3.1. KhrazeGaming</a></li>
-</ul>
-</li>
-<li><a href="#BOTTOM">4. Bottom Navigation</a></li>
+<li><a href="#BOTTOM">3. BOTTOM</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-TOP" class="outline-2">
-<h2 id="TOP"><span class="section-number-2">1.</span> Navigation</h2>
+<h2 id="TOP"><span class="section-number-2">1.</span> TOP</h2>
 <div class="outline-text-2" id="text-TOP">
 <p>
-<a href="krvperera.html">Home</a> <a href="office.html">OFFICE</a> <a href="linux.html">LINUX</a> <a href="#BOTTOM">BOTTOM</a>
+<a href="krvperera.html">HOME</a> <a href="office.html">OFFICE</a> <a href="EldenRing.html">Elden Ring</a> <a href="#BOTTOM">BOTTOM</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge3b905d" class="outline-2">
-<h2 id="orge3b905d"><span class="section-number-2">2.</span> Walk Through</h2>
+<div id="outline-container-orgc35a7c3" class="outline-2">
+<h2 id="orgc35a7c3"><span class="section-number-2">2.</span> BOOT</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-FIGHTINCOWBOY" class="outline-3">
-<h3 id="FIGHTINCOWBOY"><span class="section-number-3">2.1.</span> FightinCowboy</h3>
-<div class="outline-text-3" id="text-FIGHTINCOWBOY">
+<div id="outline-container-orgda295e4" class="outline-3">
+<h3 id="orgda295e4"><span class="section-number-3">2.1.</span> custom boot entry</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #65737E;">#</span><span style="color: #65737E;">!/bin/</span><span style="color: #C594C5;">sh</span>
+<span style="color: #C594C5;">exec</span> tail -n +3 $<span style="color: #F99157; font-weight: bold;">0</span>
+<span style="color: #65737E;"># </span><span style="color: #65737E;">This file provides an easy way to add custom menu entries.  Simply type the</span>
+<span style="color: #65737E;"># </span><span style="color: #65737E;">menu entries you want to add after this comment.  Be careful not to change</span>
+<span style="color: #65737E;"># </span><span style="color: #65737E;">the 'exec tail' line above.</span>
+
+menuentry <span style="color: #99C794;">'Custom Linux Boot Entry Experiment'</span> --class ubuntu --class gnu-linux --class gnu --class os $<span style="color: #F99157;">menuentry_id_option</span> <span style="color: #99C794;">'gnulinux-simple-2f08e4ee-1c5a-4fc3-9b18-ebaa55ded15c'</span> <span style="color: #6699CC;">{</span>
+     recordfail
+     load_video
+     gfxmode $<span style="color: #F99157;">linux_gfx_mode</span>
+     insmod gzio
+     <span style="color: #C594C5;">if</span> <span style="color: #E27E8D;">[</span> x$<span style="color: #F99157;">grub_platform</span> = xxen <span style="color: #E27E8D;">]</span>; <span style="color: #C594C5;">then</span> insmod xzio; insmod lzopio; <span style="color: #C594C5;">fi</span>
+     insmod part_gpt
+     insmod ext2
+     <span style="color: #EC5f67;">set</span> <span style="color: #F99157;">root</span>=<span style="color: #99C794;">'hd0,gpt3'</span>
+     <span style="color: #C594C5;">if</span> <span style="color: #E27E8D;">[</span> x$<span style="color: #F99157;">feature_platform_search_hint</span> = xy <span style="color: #E27E8D;">]</span>; <span style="color: #C594C5;">then</span>
+       search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  2f08e4ee-1c5a-4fc3-9b18-ebaa55ded15c
+     <span style="color: #C594C5;">else</span>
+       search --no-floppy --fs-uuid --set=root 2f08e4ee-1c5a-4fc3-9b18-ebaa55ded15c
+     <span style="color: #C594C5;">fi</span>
+     linux   /boot/vmlinuz-5.15.0-27-generic <span style="color: #F99157;">root</span>=<span style="color: #F99157;">UUID</span>=2f08e4ee-1c5a-4fc3-9b18-ebaa55ded15c ro initcall_debug quiet splash $<span style="color: #F99157;">vt_handoff</span>
+    initrd  /boot/initrd.img-5.15.0-27-generic
+<span style="color: #6699CC;">}</span>
+
+</pre>
 </div>
-<div id="outline-container-org4364be6" class="outline-4">
-<h4 id="org4364be6"><span class="section-number-4">2.1.1.</span> <span class="todo TODO">TODO</span> <a href="https://www.youtube.com/watch?v=p4uxeniQsg4&amp;list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&amp;index=11">Stormbeil Castle</a></h4>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #FAC863;">sudo</span> grub-mkconfig -o /boot/grub/grub.cfg
+</pre>
+</div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-CHANNELS" class="outline-2">
-<h2 id="CHANNELS"><span class="section-number-2">3.</span> Channels</h2>
-<div class="outline-text-2" id="text-CHANNELS">
-</div>
-<div id="outline-container-org35ecc7d" class="outline-3">
-<h3 id="org35ecc7d"><span class="section-number-3">3.1.</span> <a href="https://www.youtube.com/watch?v=iSjviLX1x1g">KhrazeGaming</a></h3>
-<div class="outline-text-3" id="text-3-1">
+
+<div id="outline-container-BOTTOM" class="outline-2">
+<h2 id="BOTTOM"><span class="section-number-2">3.</span> BOTTOM</h2>
+<div class="outline-text-2" id="text-BOTTOM">
 <p>
 <a href="#TOP">TOP</a>
 </p>
 </div>
 </div>
 </div>
-
-<div id="outline-container-BOTTOM" class="outline-2">
-<h2 id="BOTTOM"><span class="section-number-2">4.</span> Bottom Navigation</h2>
-<div class="outline-text-2" id="text-BOTTOM">
-</div>
-</div>
-</div>
 <div id="postamble" class="status">
 <p class="author">Author: KRV Perera</p>
-<p class="date">Created: 2022-05-08 ඉ 01:06</p>
+<p class="date">Created: 2022-05-08 ඉ 01:03</p>
 </div>
 </body>
 </html>
