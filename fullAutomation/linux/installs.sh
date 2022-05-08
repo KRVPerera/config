@@ -123,3 +123,5 @@ source term.sh
 ## npm is needed for web assembly rust
 source install_npm.sh
 sudo apt autoremove
+
+curl -sLf https://spacevim.org/install.sh | bash
