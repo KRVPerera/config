@@ -105,4 +105,17 @@
 (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
 (key-chord-mode 1)
 
+(setq projectile-project-search-path '("~/Projects/personal" "~/Projects/office" "~/Projects/tools" "~/Projects/office/Testing"))
+
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
+(use-package treemacs
+  :ensure t
+  :bind
+  (("<f8>" . teemacs)
+   ("C-<f8>"  . treemacs-select-window)
+   ))
+
 ;;; (provide 'config)\n;;; $DOOMDIR/config.el ends here

@@ -7,7 +7,7 @@
 :CUSTOM_ID: TOP
 :END:
 
-[[file:krvperera.org][Home]] [[#BOTTOM][BOTTOM]]
+[[file:krvperera.org][Home]] [[file:office.org][OFFICE]] [[file:linux.org][LINUX]] [[#BOTTOM][BOTTOM]]
 
 * Walk Through
 ** FightinCowboy

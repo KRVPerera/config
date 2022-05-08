@@ -1,0 +1,51 @@
+#+title: Linux
+#+author: KRV Perera
+#+email: rukshan.viduranga@gmail.com
+
+* TOP
+:PROPERTIES:
+:CUSTOM_ID: TOP
+:END:
+[[file:krvperera.org][HOME]] [[file:office.org][OFFICE]] [[file:EldenRing.org][Elden Ring]] [[BOTTOM][BOTTOM]]
+
+* BOOT
+
+** custom boot entry
+
+#+BEGIN_SRC bash
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+menuentry 'Custom Linux Boot Entry Experiment' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-simple-2f08e4ee-1c5a-4fc3-9b18-ebaa55ded15c' {
+     recordfail
+     load_video
+     gfxmode $linux_gfx_mode
+     insmod gzio
+     if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+     insmod part_gpt
+     insmod ext2
+     set root='hd0,gpt3'
+     if [ x$feature_platform_search_hint = xy ]; then
+       search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  2f08e4ee-1c5a-4fc3-9b18-ebaa55ded15c
+     else
+       search --no-floppy --fs-uuid --set=root 2f08e4ee-1c5a-4fc3-9b18-ebaa55ded15c
+     fi
+     linux   /boot/vmlinuz-5.15.0-27-generic root=UUID=2f08e4ee-1c5a-4fc3-9b18-ebaa55ded15c ro initcall_debug quiet splash $vt_handoff
+    initrd  /boot/initrd.img-5.15.0-27-generic
+}
+
+#+END_SRC
+
+#+BEGIN_SRC bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+#+END_SRC
+
+
+* BOTTOM
+:PROPERTIES:
+:CUSTOM_ID: BOTTOM
+:END:
+[[#TOP][TOP]]
