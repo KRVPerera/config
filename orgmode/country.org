@@ -1,0 +1,17 @@
+#+title: Country
+#+author: KRV Perera
+#+email: rukshan.viduranga@gmail.com
+
+* TOP
+:PROPERTIES:
+:CUSTOM_ID: TOP
+:END:
+[[file:krvperera.org][HOME]] [[file:office.org][Office]] [[file:linux.org][LINUX]] [[file:EldenRing.org][Elden Ring]] [[#BOTTOM][BOTTOM]]
+
+
+
+* BOTTOM
+:PROPERTIES:
+:CUSTOM_ID: BOTTOM
+:END:
+[[#TOP][TOP]]

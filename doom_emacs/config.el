@@ -117,8 +117,10 @@
   (("<f8>" . teemacs)
    ("C-<f8>"  . treemacs-select-window)))
 
-  (add-to-list 'package-archives
-               '("melpa" . "https://melpa.org/packages/") t)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
 
 
 ;;; (provide 'config)\n;;; $DOOMDIR/config.el ends here
