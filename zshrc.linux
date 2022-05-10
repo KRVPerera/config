@@ -194,4 +194,4 @@ export QT_DIR="/home/krv/Qt/6.2.3/gcc_64"
 export Qt6_DIR="/home/krv/Qt/6.2.3/gcc_64/lib/cmake/Qt6"
 
 fm6000 -c red -dog -n -m 8 -g 8  -l 25
-neofetch
+neofetch --config $HOME/.config/neofetch/config.conf 

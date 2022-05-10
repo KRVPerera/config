@@ -2,6 +2,13 @@
 #+author: KRV Perera
 #+email: rukshan.viduranga@gmail.com
 
+
+* TOP
+:PROPERTIES:
+:CUSTOM_ID: TOP
+:END:
+[[file:office.org][Office]]  [[#BOTTOM][Bottom]]
+
 * First Heading
 :PROPERTIES:
 :CUSTOM_ID: TOP
@@ -35,7 +42,12 @@ DEADLINE: <2022-05-28 Sat>
 ** TODO Other courses
 ** TODO JavaScript course
 
+
 * [[file:office.org][Office Tasks]]
+
+
+* QT course
+
 
 
 

@@ -28,16 +28,26 @@ CLOCK: [2022-05-08 ඉ 11:30]
 Refactoring is done. Some changes done to process arrow expression is breaking the build. Target is to first fix the annotation fields.
 Current problem is with the function related to the field is not added in a context or in a body.
 
+*** DEBUG
+    annot_func$_0 is function (LAMDA)
+    {HSCsa: {hostRecField: hosty}.cloneReadOnly()}
+
 ** TODO closure start actions
 DEADLINE: <2022-05-08 Sun>
 ** code reviews
 *** dulmina
+
+**** TODO [[https://github.com/ballerina-platform/ballerina-lang/pull/36044][Fix NPE when variable of undefined type used in from and join clauses]]
 
 **** TODO spec conformance test
 
 *** gimantha
 
 **** TODO COMMENT PR I need to review
+
+[[https://github.com/ballerina-platform/ballerina-lang/pull/35960][PR Lin]]
+added a comment checking the situation with `var`
+
 DEADLINE: <2022-05-07 Sat>
 
 *** lochana
