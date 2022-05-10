@@ -2,8 +2,8 @@ if [[ $DEBUG == "1" ]]; then
     echo "Loading local aliases : $0"
 fi
 BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.1.1-SNAPSHOT"
-BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2201.1.0-rc1.1-SNAPSHOT"
-BALLERINA_TOOLS_OLD_SNAPSHOT_NAME_1="jballerina-tools-2201.1.0-rc1-SNAPSHOT"
+BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2201.1.0-rc1.3-SNAPSHOT"
+BALLERINA_TOOLS_OLD_SNAPSHOT_NAME_1="jballerina-tools-2201.1.0-rc1.3-SNAPSHOT"
 
 OFFICE_PROJECTS="~/Projects/office"
 
@@ -19,12 +19,12 @@ alias refresh='~/MyCrons/SyncMaster.sh'
 
 # Setting up BALLERINA_TOOL env variable
 
-alias bal0='export BALLERINA_TOOL="/usr/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal0='export BALLERINA_TOOL="~/Downloads/ballerina-2201.1.0-swan-lake/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal2='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang-2/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1_old='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1_very_old='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME_1/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
-alias bal2_old='export BALLERINA_TOOL="$HOME/Projects/Ballerina/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal2_old='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang-2/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 
 
 alias b0='bal0'

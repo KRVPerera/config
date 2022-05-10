@@ -122,5 +122,11 @@
              '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+;; EMMS basic configuration
+  (require 'emms-setup)
+  (emms-all)
+  (emms-default-players)
+  (setq emms-source-file-default-directory "~/Music/") ;; Change to your music folder
+
 
 ;;; (provide 'config)\n;;; $DOOMDIR/config.el ends here
