@@ -7,7 +7,7 @@
 :PROPERTIES:
 :CUSTOM_ID: TOP
 :END:
-[[file:office.org][Office]]  [[#BOTTOM][Bottom]]
+[[file:office.org][Office]] [[file:linux.org][Linux]] [[file:EldenRing.org][Elden Ring]] [[file:country.org][Country]] [[#BOTTOM][Bottom]]
 
 * First Heading
 :PROPERTIES:
@@ -21,7 +21,11 @@ Here is some content
 
 More
 
-* Second Heading
+* New technologies
+** [[https://pyscript.net/][Py Script.net]]
+*** Change krvperera.html to use this technology
+** Gatsby
+*** Use this for the trees
 
 * Watch videos to learn
 
@@ -30,6 +34,12 @@ More
 ** TODO [[https://www.youtube.com/watch?v=j0_u26Vpb4w][Forbidden C++ - javidx9]]
 ** Emacs
 *** TODO[[https://www.youtube.com/watch?v=Bu7nF9hPSts][ Emacs -10 - treemacs - Lukewh]]
+
+*** TODO [[https://www.youtube.com/watch?v=oJTwQvgfgMM][Org-mode - a system for note-taking and project planning]]
+*** TODO [[https://www.youtube.com/watch?v=S4f-GUxu3CY][Ord mode and spacemacs : The Absolute Minimum you need to know]]
+*** TODO [[https://www.youtube.com/watch?v=oFH4GcnBxIg][Spacemacs to Doom Emacs | A Non-Coder's Perspective]]
+*** TODO [[https://www.youtube.com/watch?v=hHdM2wVM1PI][Doom Emacs or Spacemacs? Use both with Chemacs2]]
+*** TODO [[https://www.youtube.com/watch?v=s0ed8Da3mjE][Thee HUDE Mistakes New Emacs Users Make]]
 
 * life and jobs
 

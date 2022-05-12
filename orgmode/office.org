@@ -28,9 +28,25 @@ CLOCK: [2022-05-08 ඉ 11:30]
 Refactoring is done. Some changes done to process arrow expression is breaking the build. Target is to first fix the annotation fields.
 Current problem is with the function related to the field is not added in a context or in a body.
 
+ .
+
 *** DEBUG
-    annot_func$_0 is function (LAMDA)
-    {HSCsa: {hostRecField: hosty}.cloneReadOnly()}
+    classDef    : class $annonType$_1 { string xField = hosty; }
+    function    : annot_func$_0 is function (LAMDA)
+    mapLiteral  : {HSCsa: {hostRecField: hosty}.cloneReadOnly()}
+
+**** Fields
+***** attachments
+HSCfa       : expr ( {hostRecField: hosty} )
+
+function    : [LAMBDA] $annot_func$_1([]) (map) Body: {}
+mapLiteral  : "{HSCfa: {hostRecField: hosty}.cloneReadOnly()}"
+
+mapLiteral  :
+    HSCsa: {hostRecField: hosty}.cloneReadOnly()
+    $field$.xField: $annot_func$_1()
+
+
 
 ** TODO closure start actions
 DEADLINE: <2022-05-08 Sun>

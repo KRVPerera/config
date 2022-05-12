@@ -91,7 +91,8 @@ myModMask       = mod4Mask
 --
 --myWorkspaces = ["1:idea", "2:terminal", "3:browser", "4:vscode"] ++ map show [5..9]
 --
-myWorkspaces    = map show [1..3] ++ ["4:officeChrome", "5:tomato", "6:Notes", "7:myChrome", "8:vlc", "9:chat"]
+
+myWorkspaces    = map show [1..2] ++ ["3:emacs", "4:officeChrome", "5:tomato", "6:Notes", "7:myChrome", "8:debugger", "9:chat", "0", "y", "u"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -190,6 +191,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
         | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+
+        -- myExtraWorkspaces
 
 
 ------------------------------------------------------------------------
@@ -303,29 +306,7 @@ main  = xmonad
         . ewmhFullscreen
         . ewmh
         . withEasySB mySB defToggleStrutsKey
-        . docks
-        $ dynamicProjects projects myConfig
-
--- Projects windows like office, work
-
-projects :: [Project]
-projects =
-  [ Project { projectName      = "scratch"
-            , projectDirectory = "~/"
-            , projectStartHook = Nothing
-            }
-
-  , Project { projectName      = "2:office"
-            , projectDirectory = "~/Projects/office"
-            , projectStartHook = Just $ do 
-                    spawn "/snap/sbin/chat"
-                    spawn "/snap/bin/google-chrome"
-                    spawn "/snap/bin/code"
-                    spawn "/krv/.local/kitty.app/bin/kitty"
-            }
-  ]
-
-
+        . docks $ myConfig
 
 myPP = xmobarPP
     { ppCurrent = xmobarColor  myLightGreen "" . wrap "<box type=Bottom width=2> " " </box>"
@@ -376,33 +357,18 @@ myKeysSet2 =  [
             , ("M-<F1>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")    
             , ("M-<F2>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -1.5%")    
             , ("M-<F3>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")    
-                , ("M-o", switchProjectPrompt promptConfig)
-    , ("M-x", shiftToProjectPrompt promptConfig)
             , ("M-p", spawn "rofi -show drun")
             , ("M-a", toggleWS)
             , ("M-s", spawn "kitty --single-instance --session ~/Projects/office/office_session.conf")
             , ("M-<Home>", spawn "kitty --single-instance --session ~/MyConfig/config/kitty/home.conf")
             , ("M-h", spawn "kitty --single-instance --session ~/MyConfig/config/kitty/hack.conf")
-            , ("C-S-p-t", spawn "flatpak run org.gnome.Solanum")
+            , ("M-0", windows $ W.greedyView "0")
+            , ("M-S-0", (windows $ W.shift "0") >> (windows $ W.greedyView "0"))
+            , ("M-y", windows $ W.greedyView "y")
+            , ("M-S-y", (windows $ W.shift "y") >> (windows $ W.greedyView "y"))
+            , ("M-u", windows $ W.greedyView "u")
+            , ("M-S-u", (windows $ W.shift "u") >> (windows $ W.greedyView "u"))
             ]
-
-
-promptConfig = def
-  { position          = Bottom
-  , alwaysHighlight   = True
-  , borderColor       = N.nord9
-  -- Normal
-  , bgColor           = N.nord9
-  , fgColor           = N.background
-  -- Selection
-  , bgHLight          = N.nord6
-  , fgHLight          = N.background
-  --
-  , defaultText       = ""
-  , font              = "xft:Iosevka Samae:style=Regular:size=8:charwidth=5"
-  , height            = 24
-  , promptBorderWidth = 5
-  }
 
 
 -- | Finally, a copy of the default bindings in simple textual tabular format.
