@@ -1,8 +1,8 @@
 if [[ $DEBUG == "1" ]]; then
     echo "Loading local aliases : $0"
 fi
-BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.1.1-SNAPSHOT"
-BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2201.1.0-rc1.3-SNAPSHOT"
+BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.2.0-SNAPSHOT"
+BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2201.1.0-rc1.6-SNAPSHOT"
 BALLERINA_TOOLS_OLD_SNAPSHOT_NAME_1="jballerina-tools-2201.1.0-rc1.3-SNAPSHOT"
 
 OFFICE_PROJECTS="~/Projects/office"
