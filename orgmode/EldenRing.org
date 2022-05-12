@@ -7,14 +7,47 @@
 :CUSTOM_ID: TOP
 :END:
 
-[[file:krvperera.org][Home]] [[file:office.org][OFFICE]] [[file:linux.org][LINUX]] [[file:country.org][Country]] [[#BOTTOM][BOTTOM]]
+[[file:krvperera.org][Home]] [[file:office.org][OFFICE]] [[file:linux.org][LINUX]] [[file:country.org][Country]] [[file:EldenRing.org][Elden Ring]] [[file:org-mode-reference-in.org][HotKeys]] [[#BOTTOM][BOTTOM]]
+
+
+* Main ideas
+
+** Assasin
+*** Golden parry
+This is royal capital need to wait some time
+**** Buckler parry
+**** Best small shield
+Iron Roundshield
+
+*** Good bow
+*** Good Crit Damage
+*** Stance break
+*** Poise Armor
+*** Flame of the Redmanes - Fort Gael
+*** Assassin's Cerulean Dagger - Black Knife Catacombs - NE Liurnia Of the Lakes
+*** Stormveil Main Armory - Grab the Misericorde
 
 * Walk Through
 ** FightinCowboy
 :PROPERTIES:
 :CUSTOM_ID: FIGHTINCOWBOY
 :END:
-*** TODO [[https://www.youtube.com/watch?v=p4uxeniQsg4&list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&index=11][Stormbeil Castle]]
+*** TODO [[https://www.youtube.com/watch?v=p4uxeniQsg4&list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&index=11][Stormveil Castle]]
+
+**** TODO Defeat the Crucible Knight
+**** TODO Grab the Misericorde  High Crit Damage (Wow may work with parry)
+
+*** TODO Part 12 - [[https://www.youtube.com/watch?v=EQzBxb_ZQWQ&list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&index=12][Godrick the Grafted]]
+**** Get Nepheli Loux, warrior
+Need to go with giant at the entrance to the boss fight.
+Need to get Nephuli to help with the fight.
+**** Fire grease
+**** Need to get smithing stones stuck using the giant at boss entrance
+
+* Assasin Stealth
+[[https://www.youtube.com/watch?v=xCKi6g-Fm_E][Assasing Stealth]]
+[[https://www.youtube.com/watch?v=DxCpnGtO1ns][ELDEN RING - The Best CRITICAL HIT VAMPIRIC BUILD for EVERYTHING: PARRY, STANCE BREAK & BACKSTABS]]
+
 
 * Channels
 :PROPERTIES:
