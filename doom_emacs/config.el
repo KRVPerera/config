@@ -105,7 +105,7 @@
 (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
 (key-chord-mode 1)
 
-(setq projectile-project-search-path '("~/Projects/personal" "~/Projects/office" "~/Projects/tools" "~/Projects/office/Testing"))
+(setq projectile-project-search-path '("~/Projects/personal" "~/Projects/office" "~/Projects/tools" "~/Projects/office/Testing" "~/Projects/office/Testing/Reviews"))
 
 (use-package which-key
   :ensure t
