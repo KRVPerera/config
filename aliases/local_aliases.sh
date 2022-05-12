@@ -19,7 +19,7 @@ alias refresh='~/MyCrons/SyncMaster.sh'
 
 # Setting up BALLERINA_TOOL env variable
 
-alias bal0='export BALLERINA_TOOL="~/Downloads/ballerina-2201.1.0-swan-lake/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal0='export BALLERINA_TOOL="/usr/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal2='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang-2/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1_old='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
