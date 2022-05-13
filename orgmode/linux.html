@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-08 ඉ 21:01 -->
+<!-- 2022-05-14 සෙ 00:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linux</title>
@@ -202,9 +202,10 @@
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#TOP">1. TOP</a></li>
-<li><a href="#org389ad99">2. BOOT</a>
+<li><a href="#org912f203">2. BOOT</a>
 <ul>
-<li><a href="#org62382a2">2.1. custom boot entry</a></li>
+<li><a href="#org1158668">2.1. custom boot entry</a></li>
+<li><a href="#org3051700">2.2. My First module</a></li>
 </ul>
 </li>
 <li><a href="#BOTTOM">3. BOTTOM</a></li>
@@ -216,17 +217,17 @@
 <h2 id="TOP"><span class="section-number-2">1.</span> TOP</h2>
 <div class="outline-text-2" id="text-TOP">
 <p>
-<a href="krvperera.html">HOME</a> <a href="office.html">OFFICE</a> <a href="EldenRing.html">Elden Ring</a> <a href="country.html">Country</a> <a href="#BOTTOM">BOTTOM</a>
+<a href="krvperera.html">HOME</a> <a href="office.html">OFFICE</a> <a href="EldenRing.html">Elden Ring</a> <a href="country.html">Country</a> <a href="org-mode-reference-in.html">HotKeys</a> <a href="#BOTTOM">BOTTOM</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org389ad99" class="outline-2">
-<h2 id="org389ad99"><span class="section-number-2">2.</span> BOOT</h2>
+<div id="outline-container-org912f203" class="outline-2">
+<h2 id="org912f203"><span class="section-number-2">2.</span> BOOT</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org62382a2" class="outline-3">
-<h3 id="org62382a2"><span class="section-number-3">2.1.</span> custom boot entry</h3>
+<div id="outline-container-org1158668" class="outline-3">
+<h3 id="org1158668"><span class="section-number-3">2.1.</span> custom boot entry</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #65737E;">#</span><span style="color: #65737E;">!/bin/</span><span style="color: #C594C5;">sh</span>
@@ -262,8 +263,34 @@ menuentry <span style="color: #99C794;">'Custom Linux Boot Entry Experiment'</sp
 </div>
 </div>
 </div>
-</div>
 
+<div id="outline-container-org3051700" class="outline-3">
+<h3 id="org3051700"><span class="section-number-3">2.2.</span> My First module</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #5FB3B3; font-weight: bold;">#include</span> <span style="color: #6699CC;">&lt;</span><span style="color: #99C794;">linux/module.h</span><span style="color: #6699CC;">&gt;</span>
+<span style="color: #5FB3B3; font-weight: bold;">#include</span> <span style="color: #6699CC;">&lt;</span><span style="color: #99C794;">linux/init.h</span><span style="color: #6699CC;">&gt;</span>
+<span style="color: #5FB3B3; font-weight: bold;">#include</span> <span style="color: #6699CC;">&lt;</span><span style="color: #99C794;">linux/sched.h</span><span style="color: #6699CC;">&gt;</span>
+
+<span style="color: #F99157;">MODULE_AUTHOR</span><span style="color: #6699CC;">(</span><span style="color: #99C794;">"Rukshan Perera"</span><span style="color: #6699CC;">)</span>;
+<span style="color: #F99157;">MODULE_DESCRIPTION</span><span style="color: #6699CC;">(</span><span style="color: #99C794;">"My first module"</span><span style="color: #6699CC;">)</span>;
+
+<span style="color: #FAC863;">int</span> <span style="color: #6699CC;">my_init_module</span><span style="color: #6699CC;">(</span><span style="color: #FAC863;">void</span><span style="color: #6699CC;">)</span> <span style="color: #6699CC;">{</span>
+    printk<span style="color: #E27E8D;">(</span><span style="color: #99C794;">"hello from your kernel module\n"</span><span style="color: #E27E8D;">)</span>;
+<span style="color: #6699CC;">}</span>
+
+<span style="color: #FAC863;">void</span> <span style="color: #6699CC;">my_cleanup_module</span><span style="color: #6699CC;">(</span><span style="color: #FAC863;">void</span><span style="color: #6699CC;">)</span> <span style="color: #6699CC;">{</span>
+    printk<span style="color: #E27E8D;">(</span><span style="color: #99C794;">"goodbye from your kernel module\n"</span><span style="color: #E27E8D;">)</span>;
+<span style="color: #6699CC;">}</span>
+
+<span style="color: #6699CC;">module_exit</span><span style="color: #6699CC;">(</span>my_cleanup_module<span style="color: #6699CC;">)</span>;
+<span style="color: #6699CC;">module_init</span><span style="color: #6699CC;">(</span>my_init_module<span style="color: #6699CC;">)</span>;
+<span style="color: #F99157;">MODULE_LICENSE</span><span style="color: #6699CC;">(</span><span style="color: #99C794;">"GPL"</span><span style="color: #6699CC;">)</span>;
+</pre>
+</div>
+</div>
+</div>
+</div>
 
 <div id="outline-container-BOTTOM" class="outline-2">
 <h2 id="BOTTOM"><span class="section-number-2">3.</span> BOTTOM</h2>
@@ -276,7 +303,7 @@ menuentry <span style="color: #99C794;">'Custom Linux Boot Entry Experiment'</sp
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: KRV Perera</p>
-<p class="date">Created: 2022-05-08 ඉ 21:01</p>
+<p class="date">Created: 2022-05-14 සෙ 00:42</p>
 </div>
 </body>
 </html>

@@ -9,6 +9,91 @@
 
 [[file:krvperera.org][Home]] [[file:office.org][OFFICE]] [[file:linux.org][LINUX]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[#BOTTOM][BOTTOM]]
 
+* Builds
+
+** Spellsword Build - The Exiled Mage [[https://www.youtube.com/watch?v=BLTmyVRAMrw&list=PL7RtZMiaOk8gF9ezBWxRgN6awSM91rAeT&index=13][Link]]
+
+| Stat         | value |
+|--------------+-------|
+| Vigor        |    60 |
+| Mind         |    22 |
+| Endurance    |    30 |
+| Strength     |    30 |
+| Dexterity    |    18 |
+| Intelligence |    50 |
+| Faith        |    14 |
+| Arcane       |     9 |
+|--------------+-------|
+| Total        |   233 |
+#+TBLFM: @>$2=vsum(@I..@II)
+
+| Item                      | Effect             | Value | Level |                 |
+|---------------------------+--------------------+-------+-------+-----------------|
+| Magic Nightrider Glaive   | Attack Power       |   727 |    25 | Sword Dance     |
+| Lordsworns Straight Sword | Attack Power       |   517 |    25 | Hearfrost Stomp |
+| Erdtree Great Shield      | Golden Retaliation |   517 |    10 |                 |
+| Academy Glintstone Staff  | Sorcery Scaling    |   269 |    25 |                 |
+| Loretta's War Sickle      |                    |       |    10 |                 |
+|---------------------------+--------------------+-------+-------+-----------------|
+
+Erdtree Favour, Marika's Soreseal, Radagon Icon, Graven-Mass Talisman
+
+** Quality
+
+| Stat         | value |
+|--------------+-------|
+| Vigor        |    60 |
+| Mind         |    13 |
+| Endurance    |    34 |
+| Strength     |    55 |
+| Dexterity    |    55 |
+| Intelligence |     9 |
+| Faith        |    14 |
+| Arcane       |     9 |
+|--------------+-------|
+| Total        |   249 |
+#+TBLFM: @>$2=vsum(@I..@II)
+
+** Faith Build - Golden God [[https://www.youtube.com/watch?v=DFRYbiwYajE&list=PL7RtZMiaOk8gF9ezBWxRgN6awSM91rAeT&index=9][Link]]
+
+| Stat         | value |
+|--------------+-------|
+| Vigor        |    60 |
+| Mind         |    25 |
+| Endurance    |    25 |
+| Strength     |    17 |
+| Dexterity    |    25 |
+| Intelligence |     9 |
+| Faith        |    80 |
+| Arcane       |     9 |
+|--------------+-------|
+| Total        |   250 |
+#+TBLFM: @>$2=vsum(@I..@II)
+
+** Hybrid Caster Build - The Pursuer
+
+| Stat         | value |
+|--------------+-------|
+| Vigor        |    60 |
+| Mind         |    41 |
+| Endurance    |    10 |
+| Strength     |    12 |
+| Dexterity    |    12 |
+| Intelligence |    50 |
+| Faith        |    50 |
+| Arcane       |    14 |
+|--------------+-------|
+| Total        |   249 |
+#+TBLFM: @>$2=vsum(@I..@II)
+
+| Item                     | Effect              | Value | Level |
+|--------------------------+---------------------+-------+-------|
+| Sword of Night and Flame | Attack Power        |   701 |    10 |
+| Golden Order seal        | Incantation Scaling |   345 |    10 |
+| Prince of Deaths Staff   | Sorcery Scaling     |   286 |    25 |
+|--------------------------+---------------------+-------+-------|
+
+Erdtree Favour, Marika's Soreseal, Radagon Icon, Graven-Mass Talisman
 
 * Main ideas
 
