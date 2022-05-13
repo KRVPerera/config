@@ -43,6 +43,28 @@ menuentry 'Custom Linux Boot Entry Experiment' --class ubuntu --class gnu-linux 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 #+END_SRC
 
+** My First module
+
+#+BEGIN_SRC c
+#include <linux/module.h>
+#include <linux/init.h>
+#include <linux/sched.h>
+
+MODULE_AUTHOR("Rukshan Perera");
+MODULE_DESCRIPTION("My first module");
+
+int my_init_module(void) {
+    printk("hello from your kernel module\n");
+}
+
+void my_cleanup_module(void) {
+    printk("goodbye from your kernel module\n");
+}
+
+module_exit(my_cleanup_module);
+module_init(my_init_module);
+MODULE_LICENSE("GPL");
+#+END_SRC
 
 * BOTTOM
 :PROPERTIES:
