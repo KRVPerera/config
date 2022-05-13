@@ -53,3 +53,7 @@ name = 'lsp'
 
 [[layers]]
 name = 'ctrlp'
+
+[[custom_plugins]]
+repo = 'KRVPerera/ballerina-vim'
+merged = false

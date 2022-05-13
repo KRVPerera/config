@@ -8,7 +8,7 @@
 :PROPERTIES:
 :CUSTOM_ID: TOP
 :END:
-[[file:krvperera.org][HOME]] [[file:linux.org][LINUX]] [[file:EldenRing.org][Elden Ring]] [[file:country.org][Country]] [[#BOTTOM][BOTTOM]]
+[[file:krvperera.org][HOME]] [[file:linux.org][LINUX]] [[file:EldenRing.org][Elden Ring]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[#BOTTOM][BOTTOM]]
 
 * Office tasks
 
