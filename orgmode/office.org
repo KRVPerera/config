@@ -28,7 +28,7 @@ CLOCK: [2022-05-08 ඉ 11:30]
 Refactoring is done. Some changes done to process arrow expression is breaking the build. Target is to first fix the annotation fields.
 Current problem is with the function related to the field is not added in a context or in a body.
 
- .
+Annotations are fixed successfully may have to change the key now need to test on native side
 
 *** DEBUG
     classDef    : class $annonType$_1 { string xField = hosty; }
