@@ -6,7 +6,7 @@
 :PROPERTIES:
 :CUSTOM_ID: TOP
 :END:
-[[file:krvperera.org][HOME]] [[file:office.org][Office]] [[file:linux.org][LINUX]] [[file:EldenRing.org][Elden Ring]] [[#BOTTOM][BOTTOM]]
+[[file:krvperera.org][HOME]] [[file:office.org][Office]] [[file:linux.org][LINUX]] [[file:EldenRing.org][Elden Ring]] [[file:org-mode-reference-in.org][HotKeys]] [[#BOTTOM][BOTTOM]]
 
 * Chamuditha
 ** TODO Sunil Handunnetti <2022-03-24 බ්‍ර> [[https://www.youtube.com/watch?v=p486rYctV8o][YouTube link]]
