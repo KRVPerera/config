@@ -45,6 +45,27 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ** My First module
 
+*** Install Dependencies
+
+#+BEGIN_SRC bash
+sudo apt-get install build-essential linux-headers-`uname -r`
+#+END_SRC
+
+*** make-module.sh
+
+#+BEGIN_SRC bash
+#!/bin/bash
+make -C /lib/modules/$(uname -r)/build M=$PWD modules
+#+END_SRC
+
+*** Makefile
+
+#+BEGIN_SRC Makefile
+obj-m: lab.o
+#+END_SRC
+
+*** lab.c
+
 #+BEGIN_SRC c
 #include <linux/module.h>
 #include <linux/init.h>
@@ -64,6 +85,60 @@ void my_cleanup_module(void) {
 module_exit(my_cleanup_module);
 module_init(my_init_module);
 MODULE_LICENSE("GPL");
+#+END_SRC
+
+*** run.sh
+
+#+BEGIN_SRC bash
+#!/bin/bash
+make -C /lib/modules/$(unbame -r)/build M=$PWD modules
+sudo insmod lab.koala
+sudo dmesg | tail
+lsmod | grep lab
+sudo rmmod lab
+sudo dmesg | tail
+#+END_SRC
+
+*** modinfo
+
+modinfo -p / -a / -d
+
+*** Parameters
+
+#+BEGIN_SRC c
+
+#include <linux/module.h>
+#include <linux/init.h>
+#include <linux/sched.h>
+
+MODULE_AUTHOR("Rukshan Perera");
+MODULE_DESCRIPTION("My first module");
+
+static int number = 24601;
+static char* word = "blueberry";
+
+module_param(number, int , S_IRUGO);
+MODULE_PARM_DESC(number, "A sample integer modifiable parameter");
+
+module_param(word, charp , S_IRUGO);
+MODULE_PARM_DESC(number, "A sample string modifiable parameter");
+
+int my_init_module(void) {
+    printk("hello from your kernel module\n");
+}
+
+void my_cleanup_module(void) {
+    printk("goodbye from your kernel module\n");
+}
+
+module_exit(my_cleanup_module);
+module_init(my_init_module);
+MODULE_LICENSE("GPL");
+#+END_SRC
+
+**** change parameters
+#+BEGIN_SRC bash
+sudo insmod lab.ko number=9988 word="hotdog"
 #+END_SRC
 
 * BOTTOM

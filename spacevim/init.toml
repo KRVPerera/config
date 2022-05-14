@@ -27,6 +27,8 @@
     automatic_update = true
 #    bootstrap_before = 'myspacevim#before'
 #    bootstrap_after = 'myspacevim#after'
+    default_indent = 4
+    expand_tab = true
 
 # Enable autocomplete layer
 [[layers]]
@@ -36,7 +38,7 @@ auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
 name = 'shell'
-default_position = 'top'
+default_position = 'bottom'
 default_height = 30
 
 [[layers]]
@@ -57,3 +59,6 @@ name = 'ctrlp'
 [[custom_plugins]]
 repo = 'KRVPerera/ballerina-vim'
 merged = false
+
+
+
