@@ -19,3 +19,9 @@ tags
 [._]*.un~
 
 [._]DS_Store
+
+# ord mode exports
+orgmode/*.html
+orgmode/*.tex
+orgmode/*.pdf
+
