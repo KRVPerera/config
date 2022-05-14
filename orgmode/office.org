@@ -10,6 +10,10 @@
 :END:
 [[file:krvperera.org][HOME]] [[file:linux.org][LINUX]] [[file:EldenRing.org][Elden Ring]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[#BOTTOM][BOTTOM]]
 
+* Special links
+
+[[https://ballerina.io/spec/lang/master/][Live Spec]]
+
 * Office tasks
 
 ** TODO closure annotations - fields
@@ -51,22 +55,23 @@ mapLiteral  :
 ** TODO closure start actions
 DEADLINE: <2022-05-08 Sun>
 ** code reviews
-*** dulmina
+*** [[https://github.com/rdulmina][rdulmina]]
 
 **** TODO [[https://github.com/ballerina-platform/ballerina-lang/pull/36044][Fix NPE when variable of undefined type used in from and join clauses]]
 
 **** TODO spec conformance test
 
-*** gimantha
+*** [[https://github.com/gimantha][gimantha]]
 
 **** TODO COMMENT PR I need to review
 
 [[https://github.com/ballerina-platform/ballerina-lang/pull/35960][PR Lin]]
 added a comment checking the situation with `var`
 
-DEADLINE: <2022-05-07 Sat>
+Gimantha : No contextually expected type is missing
 
-*** lochana
+
+*** [[https://github.com/lochana-chathura][lochana-chathura]]
 
 **** TODO isSameType [[https://github.com/ballerina-platform/ballerina-lang/pull/35925][pr]]
 
@@ -85,19 +90,12 @@ DEADLINE: <2022-05-07 Sat>
       return false;
 #+END_SRC
 
-#+BEGIN_SRC ruby
-def fact(n)
-  if n== 0
-    1
-  else
-    n * fact(n - 1)
-  end
-end
-fact(5)
-#+END_SRC
+Created a new issue [[https://github.com/ballerina-platform/ballerina-lang/issues/36069][36069]]
 
-#+RESULTS:
-: 120
+*** [[https://github.com/suleka96][suleka96]]
+
+**** TODO Fix several integer related issues : [[https://github.com/ballerina-platform/ballerina-lang/pull/34622][PR]]
+
 
 * BOTTOM
 :PROPERTIES:
