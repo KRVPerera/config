@@ -8,6 +8,28 @@
 :END:
 [[file:krvperera.org][HOME]] [[file:office.org][OFFICE]] [[file:EldenRing.org][Elden Ring]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[BOTTOM][BOTTOM]]
 
+* Survery
+- lshw
+- lspci
+- lsusb
+- lsbk
+- lscpu
+- lsdev
+
+- hdparm
+- proc, dev, sys
+- inb, outb
+
+- /usr/src/linux-headers-5.15.0-27/include/uapi/asm-generic
+  - unistd.h
+
+** dmesg
+    /var/log/messages
+    dmesg | grep command
+    journalctl -t kernel
+** proc
+interrupts
+
 * BOOT
 
 ** custom boot entry
@@ -139,6 +161,50 @@ MODULE_LICENSE("GPL");
 **** change parameters
 #+BEGIN_SRC bash
 sudo insmod lab.ko number=9988 word="hotdog"
+#+END_SRC
+
+* Source code
+- CentOS
+  yumdownloader -source kernel
+
+- Ubuntu
+  git clone git://kernel.ubuntu.com/ubuntu/ubuntu-release-codename/git
+
+ - RPM based
+   rpm -i kernel*.rpm
+   cd ~/rpmbuild/SPECS
+//
+   rpmbuild -bp kernel.spec
+   cd ../BUILD
+   ls
+
+** make help
+
+clean, mrproper, distclean
+
+
+* [[https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel][BuildYourOwnKernel]]
+
+Official kernel source : kernel.org/pub/linux/kernel
+
+** commands
+kernel version - hostnamectl, cat /proc/version , uname -r
+release name - lsb_release -a
+
+#+BEGIN_SRC bash
+sudo apt-get build-dep linux linux-image-$(uname -r)
+sudo apt-get install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf
+sudo apt-get install git
+lsb_release -a
+apt-get source linux-image-unsigned-$(uname -r)
+git clone git://kernel.ubuntu.com/ubuntu/ubuntu-jammy.git // did not work
+#+END_SRC
+
+*** /etc/apt/sources.list
+
+#+BEGIN_SRC sh
+deb-src http://archive.ubuntu.com/ubuntu disco main
+deb-src http://archive.ubuntu.com/ubuntu disco-updates main
 #+END_SRC
 
 * BOTTOM
