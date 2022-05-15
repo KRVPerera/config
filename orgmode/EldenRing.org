@@ -7,9 +7,21 @@
 :CUSTOM_ID: TOP
 :END:
 
-[[file:krvperera.org][Home]] [[file:office.org][OFFICE]] [[file:linux.org][LINUX]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[#BOTTOM][BOTTOM]]
+[[file:krvperera.org][Home]] [[file:office.org][OFFICE]] [[file:linux.org][LINUX]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[file:Professional.org][Professional]] [[#BOTTOM][BOTTOM]]
 
 * Builds
+
+
+| Stat         | cap1 |   cap2 | cap3 |
+|--------------+------+--------+------|
+| Vigor        |   40 |        |   60 |
+| Mind         |      |     55 |   60 |
+| Endurance    |      |     50 |      |
+| Strength     |   20 |     55 |   80 |
+| Dexterity    |   20 |     55 |   80 |
+| Intelligence |   20 | 50, 60 |   80 |
+| Faith        |   20 | 50, 60 |   80 |
+| Arcane       |   20 | 50, 60 |   80 |
 
 ** Spellsword Build - The Exiled Mage [[https://www.youtube.com/watch?v=BLTmyVRAMrw&list=PL7RtZMiaOk8gF9ezBWxRgN6awSM91rAeT&index=13][Link]]
 
@@ -120,6 +132,9 @@ Iron Roundshield
 
 *** TODO PART 12 - [[https://www.youtube.com/watch?v=EQzBxb_ZQWQ&list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&index=12][Godrick the Grafted]]
 **** TODO Seed beast - door is open from Rampart tower
+
+There is one thing you missed in Limgrave, an artist shack that will allow you to get the Incantation Scarab. Start at the Murkwater Coast grace, take the nearby spirit spring east to find the Artist Shack grace. Examine the painting and then go to the Seaside Ruins grace (south of Dragon-Burnt Ruins) and go northwest along the cliffs until the guy in the chair spawns. He will disappear after a second and leave behind the Incantation Scarab.
+
 
 *** TODO
 * Assasin Stealth
