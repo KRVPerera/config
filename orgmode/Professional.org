@@ -24,3 +24,18 @@ Look back at the career and look for the problems you solved and your contributi
 Interview
 *** TODO Linkedin [[https://www.linkedin.com/interview-prep/assessments/urn:li:fs_assessment:(1,a)/question/urn:li:fs_assessmentQuestion:(10011,aq11)/][Questions]]
 *** TODO Blind 75 Must Do Leetcode [[https://leetcode.com/list/xi4ci4ig/][Link]]
+
+** Current Courses
+*** LinkedIn
+**** TODO Advanced Linux: The Linux Kernel
+**** TODO Linux Device Drivers
+**** TODO Python Parallel Programming Solutions
+**** TODO AWK Essential Training
+**** TODO Transitioning from Individual Contributor to Manager
+*** Udemy
+**** TODO The Complete JavaScript Course 2022: From Zero to Expert!
+**** TODO Qt 6 Core Intermediate with C++ - [[https://www.udemy.com/course/qt-6-core-intermediate/learn/lecture/26715920#content][Link]]
+**** TODO Docker and Kubernetes: The Complete Guide - [[https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11436678#overview][Link]]
+**** TODO Gatsby.js Tutorial and Projects Course - [[https://www.udemy.com/course/gatsby-tutorial-and-projects-course/learn/lecture/14891808?start=0#overview][Link]]
+***** TODO Build trees site using Gatsby - [[http://www.krvperera.com/TreesInAnuradhapura/][Link]]
+**** TODO Complete React Developer in 2022 (w/ Redux, Hooks, GraphQL) - [[https://www.udemy.com/course/complete-react-developer-zero-to-mastery/learn/lecture/14754858?start=0#overview][Link]]
