@@ -1,0 +1,26 @@
+#+title: Professional
+#+author: KRV Perera
+#+email: rukshan.viduranga@gmail.com
+
+
+* Research topics
+** AWS
+*** TODO Internet topics
+**** TODO browsers
+**** TODO DNS lookup
+**** TODO TCP/IP
+**** TODO socket connections
+
+** TODO Distributed Computing
+*** TODO Service-oriented architectures
+*** TODO map-reduce
+*** TODO distributed caching
+
+* Job prepare
+
+Look back at the career and look for the problems you solved and your contributions.
+
+** Interview prepare
+Interview
+*** TODO Linkedin [[https://www.linkedin.com/interview-prep/assessments/urn:li:fs_assessment:(1,a)/question/urn:li:fs_assessmentQuestion:(10011,aq11)/][Questions]]
+*** TODO Blind 75 Must Do Leetcode [[https://leetcode.com/list/xi4ci4ig/][Link]]

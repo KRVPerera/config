@@ -6,9 +6,9 @@
 :PROPERTIES:
 :CUSTOM_ID: TOP
 :END:
-[[file:krvperera.org][HOME]] [[file:office.org][OFFICE]] [[file:EldenRing.org][Elden Ring]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[BOTTOM][BOTTOM]]
+[[file:krvperera.org][HOME]] [[file:office.org][OFFICE]] [[file:EldenRing.org][Elden Ring]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[file:Professional.org][Professional]] [[BOTTOM][BOTTOM]]
 
-* Survery
+* Survery:w
 - lshw
 - lspci
 - lsusb
@@ -198,6 +198,8 @@ sudo apt-get install git
 lsb_release -a
 apt-get source linux-image-unsigned-$(uname -r)
 git clone git://kernel.ubuntu.com/ubuntu/ubuntu-jammy.git // did not work
+
+git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/jammy // CORRECT
 #+END_SRC
 
 *** /etc/apt/sources.list
