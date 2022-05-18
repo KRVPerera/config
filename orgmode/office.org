@@ -57,13 +57,15 @@ DEADLINE: <2022-05-08 Sun>
 ** code reviews
 *** [[https://github.com/rdulmina][rdulmina]]
 
-**** TODO [[https://github.com/ballerina-platform/ballerina-lang/pull/36044][Fix NPE when variable of undefined type used in from and join clauses]]
+**** DONE [[https://github.com/ballerina-platform/ballerina-lang/pull/36044][Fix NPE when variable of undefined type used in from and join clauses]]
+CLOSED: [2022-05-18 බ 14:13]
 
 **** TODO spec conformance test
 
 *** [[https://github.com/gimantha][gimantha]]
 
-**** TODO COMMENT PR I need to review
+**** DONE COMMENT PR I need to review
+CLOSED: [2022-05-18 බ 14:13]
 
 [[https://github.com/ballerina-platform/ballerina-lang/pull/35960][PR Lin]]
 added a comment checking the situation with `var`
@@ -73,29 +75,25 @@ Gimantha : No contextually expected type is missing
 
 *** [[https://github.com/lochana-chathura][lochana-chathura]]
 
-**** TODO isSameType [[https://github.com/ballerina-platform/ballerina-lang/pull/35925][pr]]
-
-#+BEGIN_SRC java
-      TypePair pair = new TypePair(source, target);
-      if (unresolvedTypes.contains(pair)) {
-          return true; // THIS IS TRUE FOR CYCLIC TYPES, NOT FOR OTHER TYPES.
-      }
-      unresolvedTypes.add(pair);
-      BTypeVisitor<BType, Boolean> sameTypeVisitor = new BSameTypeVisitor(unresolvedTypes);
-      boolean result = target.accept(sameTypeVisitor, source);
-      if (result) {
-          return true;
-      }
-      unresolvedTypes.remove(pair);
-      return false;
-#+END_SRC
+**** DONE isSameType [[https://github.com/ballerina-platform/ballerina-lang/pull/35925][pr]]
+CLOSED: [2022-05-18 බ 14:12]
 
 Created a new issue [[https://github.com/ballerina-platform/ballerina-lang/issues/36069][36069]]
+
+**** DONE Fix issue cloning BLangLiteral [[https://github.com/ballerina-platform/ballerina-lang/pull/36177][PR]]
+CLOSED: [2022-05-18 බ 14:12]
+
 
 *** [[https://github.com/suleka96][suleka96]]
 
 **** TODO Fix several integer related issues : [[https://github.com/ballerina-platform/ballerina-lang/pull/34622][PR]]
 
+*** [[https://github.com/KavinduZoysa][KavinduZoysa]]
+
+**** TODO Create identifiers for anon types : [[https://github.com/ballerina-platform/ballerina-lang/pull/36168][PR]]
+**** TODO Add tests to test visibility of non-public symbols : [[https://github.com/ballerina-platform/ballerina-lang/pull/36188][PR]]
+**** TODO Disallow named-args that specify field of included-record which is an arg : [[https://github.com/ballerina-platform/ballerina-lang/pull/35800][PR]]
+    Small comment on the data structure usage
 
 * BOTTOM
 :PROPERTIES:
