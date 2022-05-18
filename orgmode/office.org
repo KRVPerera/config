@@ -51,6 +51,8 @@ mapLiteral  :
     $field$.xField: $annot_func$_1()
 
 
+*** TODO ArrowExpr debugging
+
 
 ** TODO closure start actions
 DEADLINE: <2022-05-08 Sun>
@@ -87,13 +89,19 @@ CLOSED: [2022-05-18 බ 14:12]
 *** [[https://github.com/suleka96][suleka96]]
 
 **** TODO Fix several integer related issues : [[https://github.com/ballerina-platform/ballerina-lang/pull/34622][PR]]
+DEADLINE: <2022-05-21 සෙ>
+
 
 *** [[https://github.com/KavinduZoysa][KavinduZoysa]]
 
 **** TODO Create identifiers for anon types : [[https://github.com/ballerina-platform/ballerina-lang/pull/36168][PR]]
+DEADLINE: <2022-05-18 බ>
+
 **** TODO Add tests to test visibility of non-public symbols : [[https://github.com/ballerina-platform/ballerina-lang/pull/36188][PR]]
+DEADLINE: <2022-05-19 බ්‍ර>
+
 **** TODO Disallow named-args that specify field of included-record which is an arg : [[https://github.com/ballerina-platform/ballerina-lang/pull/35800][PR]]
-    Small comment on the data structure usage
+    Small comment on the data structure usage. Logic should already reviwed by others
 
 * BOTTOM
 :PROPERTIES:
