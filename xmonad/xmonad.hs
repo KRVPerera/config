@@ -296,6 +296,7 @@ myStartupHook = do
     spawnOnce "compton &"
     spawnOnce "LG3D"
     spawnOnce "/usr/bin/emacs -daemon"
+    spawnOnce "/home/krv/.screenlayout/only_lap.sh"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
