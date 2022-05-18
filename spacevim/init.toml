@@ -18,7 +18,7 @@
     enable_guicolors = true
     # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
-    guifont = "SauceCodePro: h15"
+    guifont = "mononoki 14"
     statusline_separator = "arrow"
     statusline_iseparator = "arrow"
     buffer_index_type = 4
