@@ -53,9 +53,17 @@ mapLiteral  :
 
 *** TODO ArrowExpr debugging
 
+main
+    blockMap = $map$block$oce$_1
+    classMap = $map$objectCtor_block
+
+    Debugging me
+
 
 ** TODO closure start actions
 DEADLINE: <2022-05-08 Sun>
+
+
 ** code reviews
 *** [[https://github.com/rdulmina][rdulmina]]
 
@@ -96,12 +104,14 @@ DEADLINE: <2022-05-21 සෙ>
 
 **** TODO Create identifiers for anon types : [[https://github.com/ballerina-platform/ballerina-lang/pull/36168][PR]]
 DEADLINE: <2022-05-18 බ>
+    added few comments about API and usage
 
 **** TODO Add tests to test visibility of non-public symbols : [[https://github.com/ballerina-platform/ballerina-lang/pull/36188][PR]]
 DEADLINE: <2022-05-19 බ්‍ර>
 
 **** TODO Disallow named-args that specify field of included-record which is an arg : [[https://github.com/ballerina-platform/ballerina-lang/pull/35800][PR]]
     Small comment on the data structure usage. Logic should already reviwed by others
+    Fixed the issue I mentioned
 
 * BOTTOM
 :PROPERTIES:

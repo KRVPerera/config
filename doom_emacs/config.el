@@ -40,7 +40,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/MyConfig/config/orgmode/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -107,9 +107,14 @@
 
 (setq projectile-project-search-path '("~/Projects/personal" "~/Projects/office" "~/Projects/tools" "~/Projects/office/Testing" "~/Projects/office/Testing/Reviews"))
 
+(setq org-default-notes-file (concat org-directory "/krvperera.org"))
+
 (use-package which-key
   :ensure t
   :config (which-key-mode))
+
+(add-function :after after-focus-change-function
+              (lambd () (org-save-all-org-buffers)))
 
 (use-package treemacs
   :ensure t
