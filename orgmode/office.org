@@ -53,12 +53,14 @@ mapLiteral  :
 
 *** TODO ArrowExpr debugging
 
-main
+**** main
     blockMap = $map$block$oce$_1
     classMap = $map$objectCtor_block
 
-    Debugging me
-
+**** update object init method
+#+BEGIN_SRC
+    self.$map$objectCtor_block = $map$block$oce$_1
+#+END_SRC
 
 ** TODO closure start actions
 DEADLINE: <2022-05-08 Sun>

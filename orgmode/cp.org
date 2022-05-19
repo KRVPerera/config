@@ -1,0 +1,77 @@
+#+title: Competitive programming
+#+author: KRV Perera
+#+email: rukshan.viduranga@gmail.com
+
+=ox-twbs=
+
+[[file:Professional.org][Professional]]
+
+* Blind 75 Must Do Leetcode
+
+** Two sum
+
+#+BEGIN_SRC cpp
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+
+        vector<int> result(2);
+        std::unordered_map<int, int> restValueToIndex;
+
+        int j = 0;
+        for (const auto num : nums) {
+
+
+            auto found = restValueToIndex.find(num);
+
+            if (found != restValueToIndex.end()) {
+                result[0] = found->second;
+                result[1] = j;
+                return result;
+            }
+            int restValue = target - num;
+            restValueToIndex.insert({restValue, j});
+            ++j;
+        }
+
+        return result;
+    }
+};
+#+END_SRC
+
+
+** Logest Substring Without Repeating characters
+
+#+BEGIN_SRC cpp
+class Solution {
+public:
+    int lengthOfLongestSubstring(std::string s) {
+
+    std::unordered_set<char> liveSet(s.size());
+
+    int left = 0;
+    int longestSubStringSize = 0;
+
+    int stringSize = s.length();
+
+    for (int i = 0; i < stringSize; ++i) {
+
+        char current = s[i];
+
+        while (liveSet.find(current) != liveSet.end()) {
+            liveSet.erase(s[left]);
+            left++;
+        }
+
+        liveSet.insert(current);
+
+        int currentLength = i - left + 1;
+        if (longestSubStringSize < currentLength) {
+            longestSubStringSize = currentLength;
+        }
+    }
+
+    return longestSubStringSize;
+    }
+};
+#+END_SRC

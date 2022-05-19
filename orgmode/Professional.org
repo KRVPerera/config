@@ -2,7 +2,7 @@
 #+author: KRV Perera
 #+email: rukshan.viduranga@gmail.com
 
-[[file:krvperera.org][Home]] [[file:org-mode-reference-in.org][HotKeys]]
+[[file:krvperera.org][Home]] [[file:cp.org][Competitive Programming]] [[file:org-mode-reference-in.org][HotKeys]]
 
 * Research topics
 ** AWS
