@@ -9,6 +9,24 @@
 
 [[file:krvperera.org][Home]] [[file:office.org][OFFICE]] [[file:linux.org][LINUX]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[file:Professional.org][Professional]] [[#BOTTOM][BOTTOM]]
 
+* My Current Build
+
+electrify armamment,
+
+| Stat         | value | FightinCowboy |
+|--------------+-------+---------------|
+| Vigor        |    27 |            35 |
+| Mind         |    16 |            10 |
+| Endurance    |    15 |            23 |
+| Strength     |    19 |            21 |
+| Dexterity    |    19 |            21 |
+| Intelligence |    18 |             9 |
+| Faith        |    19 |             9 |
+| Arcane       |    13 |             7 |
+|--------------+-------+---------------|
+| Total        |   233 |               |
+#+TBLFM: @>$2=vsum(@I..@II)
+
 * Builds
 
 
@@ -130,13 +148,14 @@ Iron Roundshield
 *** TODO [[https://www.youtube.com/watch?v=p4uxeniQsg4&list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&index=11][Stormveil Castle]]
 **** TODO Defeat the Crucible Knight
 
-*** TODO PART 12 - [[https://www.youtube.com/watch?v=EQzBxb_ZQWQ&list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&index=12][Godrick the Grafted]]
-**** TODO Seed beast - door is open from Rampart tower
+*** DONE PART 12 - [[https://www.youtube.com/watch?v=EQzBxb_ZQWQ&list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&index=12][Godrick the Grafted]]
+CLOSED: [2022-05-19 බ්‍ර 15:15]
+**** DONE Seed beast - door is open from Rampart tower
+CLOSED: [2022-05-19 බ්‍ර 15:15]
 
-There is one thing you missed in Limgrave, an artist shack that will allow you to get the Incantation Scarab. Start at the Murkwater Coast grace, take the nearby spirit spring east to find the Artist Shack grace. Examine the painting and then go to the Seaside Ruins grace (south of Dragon-Burnt Ruins) and go northwest along the cliffs until the guy in the chair spawns. He will disappear after a second and leave behind the Incantation Scarab.
+*** TODO Abandoned Cave [[https://www.youtube.com/watch?v=orecZ59sHj8&list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&index=30][Link]]
+    45, 15, 32, 35, 26, 14, 14, 12
 
-
-*** TODO
 * Assasin Stealth
 [[https://www.youtube.com/watch?v=xCKi6g-Fm_E][Assasing Stealth]]
 [[https://www.youtube.com/watch?v=DxCpnGtO1ns][ELDEN RING - The Best CRITICAL HIT VAMPIRIC BUILD for EVERYTHING: PARRY, STANCE BREAK & BACKSTABS]]
