@@ -9,23 +9,34 @@
 
 [[file:krvperera.org][Home]] [[file:office.org][OFFICE]] [[file:linux.org][LINUX]] [[file:country.org][Country]] [[file:org-mode-reference-in.org][HotKeys]] [[file:Professional.org][Professional]] [[#BOTTOM][BOTTOM]]
 
-* My Current Build
+* Items I need to farming
 
-electrify armamment,
+** Exalted Flesh
+
+| Item            | place                                                  | count |
+|-----------------+--------------------------------------------------------+-------|
+| Rowa fruit      |                                                        |     5 |
+| Lump of flesh   | Animals kills, Bell bearing at night in Church of vows |     1 |
+| Hefty Best bone |                                                        |     1 |
+| Arteria leaf    |                                                        |     1 |
+
+
+* My Current Build
 
 | Stat         | value | FightinCowboy |
 |--------------+-------+---------------|
-| Vigor        |    27 |            35 |
-| Mind         |    16 |            10 |
-| Endurance    |    15 |            23 |
-| Strength     |    19 |            21 |
-| Dexterity    |    19 |            21 |
-| Intelligence |    18 |             9 |
-| Faith        |    19 |             9 |
+| Vigor        |    31 |            35 |
+| Mind         |    17 |            10 |
+| Endurance    |    18 |            23 |
+| Strength     |    22 |            21 |
+| Dexterity    |    22 |            21 |
+| Intelligence |    12 |             9 |
+| Faith        |    20 |             9 |
 | Arcane       |    13 |             7 |
 |--------------+-------+---------------|
-| Total        |   233 |               |
+| Total        |   233 |           135 |
 #+TBLFM: @>$2=vsum(@I..@II)
+#+TBLFM: @>$3=vsum(@I..@II)
 
 * Builds
 
@@ -40,6 +51,11 @@ electrify armamment,
 | Intelligence |   20 | 50, 60 |   80 |
 | Faith        |   20 | 50, 60 |   80 |
 | Arcane       |   20 | 50, 60 |   80 |
+|--------------+------+--------+------|
+| Total        |  140 |        |  520 |
+#+TBLFM: @>$2=vsum(@I..@II)
+#+TBLFM: @>$4=vsum(@I..@II)
+
 
 ** Spellsword Build - The Exiled Mage [[https://www.youtube.com/watch?v=BLTmyVRAMrw&list=PL7RtZMiaOk8gF9ezBWxRgN6awSM91rAeT&index=13][Link]]
 
@@ -159,6 +175,18 @@ CLOSED: [2022-05-19 බ්‍ර 15:15]
 * Assasin Stealth
 [[https://www.youtube.com/watch?v=xCKi6g-Fm_E][Assasing Stealth]]
 [[https://www.youtube.com/watch?v=DxCpnGtO1ns][ELDEN RING - The Best CRITICAL HIT VAMPIRIC BUILD for EVERYTHING: PARRY, STANCE BREAK & BACKSTABS]]
+
+
+* Weapons
+
+Item Discovery - Smoldering Church west of starting og Caleid
+
+Bandits Curved Sword - farming - Church of Pilgrimage
+
+* Crafting Items
+[[https://www.youtube.com/watch?v=QjxsxIefaAI][5 secret items]]
+    Gravity stone chunks
+    Exalted Flesh - increase damage
 
 
 * Channels

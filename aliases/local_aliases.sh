@@ -99,6 +99,8 @@ alias bare="cd $OFFICE_PROJECTS/Ballerina/ballerina-lang-bare"
 alias gwp='git worktree prune'
 alias swl='srcStageSwanLake'
 alias scr='~/.screenlayout/three.sh'
+alias sc1='~/.screenlayout/only_lap.sh'
+
 alias dwMusic='youtube-dl --extract-audio --audio-format mp3'
 
 
