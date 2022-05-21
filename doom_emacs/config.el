@@ -108,13 +108,14 @@
 (setq projectile-project-search-path '("~/Projects/personal" "~/Projects/office" "~/Projects/tools" "~/Projects/office/Testing" "~/Projects/office/Testing/Reviews"))
 
 (setq org-default-notes-file (concat org-directory "/krvperera.org"))
+      initial-buffer-choice org-default-notes-file)
 
 (use-package which-key
   :ensure t
   :config (which-key-mode))
 
 (add-function :after after-focus-change-function
-              (lambd () (org-save-all-org-buffers)))
+              (lambda () (org-save-all-org-buffers)))
 
 (use-package treemacs
   :ensure t
