@@ -1,11 +1,8 @@
-if [[ $DEBUG == "1" ]]; then
-    echo "Loading local aliases : $0"
-fi
-BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.2.0-SNAPSHOT"
-BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2201.1.0-rc1.6-SNAPSHOT"
-BALLERINA_TOOLS_OLD_SNAPSHOT_NAME_1="jballerina-tools-2201.1.0-rc1.3-SNAPSHOT"
+export BALLERINA_TOOLS_SNAPSHOT_NAME="jballerina-tools-2201.2.0-SNAPSHOT"
+export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME="jballerina-tools-2201.1.0-rc1.6-SNAPSHOT"
+export BALLERINA_TOOLS_OLD_SNAPSHOT_NAME_1="jballerina-tools-2201.1.0-rc1.3-SNAPSHOT"
 
-OFFICE_PROJECTS="~/Projects/office"
+export OFFICE_PROJECTS="~/Projects/office"
 
 alias src="cd $OFFICE_PROJECTS/ballerina-lang"
 alias spec="cd $OFFICE_PROJECTS/ballerina-spec"
@@ -110,8 +107,3 @@ alias tools='~/MyScripts/tools.sh'
 alias fp='flatpak'
 alias fpl='flatpak list'
 alias fpr='flatpak run'
-
-
-if [ -f ~/local_aliases_projects.sh ]; then
-    . ~/local_aliases_projects.sh
-fi
