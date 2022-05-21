@@ -1,11 +1,3 @@
-if [[ $DEBUG == "1" ]]; then
-    echo "Loading aliases $0"
-fi
-
-if [ -f ~/local_aliases.sh ]; then
-    . ~/local_aliases.sh
-fi
-
 alias soc='. ~/.zshrc'
 alias cls='clear'
 alias c='clear'
@@ -17,9 +9,6 @@ alias v='gvim'
 alias rm='rm -i'
 alias sd='sudo shutdown -h now'
 alias p='python3'
-alias sdir="PS1='[\\u@\\h:\\W] \\$ '"
-alias sdird="PS1='[\\@][\\u@\\h:\\W][\\!] \\$ '"
-alias ssdir="PS1='$ '"
 alias free='free -ht'
 alias top='htop'
 alias df='pydf'
