@@ -7,4 +7,6 @@ source ~/MyConfig/config/aliases/local_aliases.sh
 alias src="cd ~/Projects/office/ballerina-lang"
 
 fish_add_path -P /Users/rukshanp/.cargo/bin
+fish_add_path -P /Users/rukshanp/.emacs.d/bin
+fish_add_path -P ~/MyScripts
 
