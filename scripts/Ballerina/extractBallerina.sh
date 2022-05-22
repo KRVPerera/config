@@ -1,4 +1,4 @@
-#!/bin/bash -f
+#!/usr/bin/env bash -f
 
 source ~/MyConfig/config/scripts/bash/functions/find_ballerina_file.sh
 
@@ -14,10 +14,10 @@ fi
 echo ""
 echo "**** Building $FILE ****"
 echo "Using Ballerina path : $BALLERINA_TOOL"
-$BALLERINA_TOOL --version
+eval "$BALLERINA_TOOL --version"
 echo ""
 echo "Building the ballerina file"
-$BALLERINA_TOOL build $FILE
+eval "$BALLERINA_TOOL build $FILE"
 filename="${FILE%.*}"
 extractedDir="${filename}_jar"
 
