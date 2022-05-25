@@ -87,3 +87,20 @@ restore_unwanted_files() {
 vim_help() {
     echo "ssh -L 6666:localhost:6666 ip.of.other.machine nvim --headless --listen localhost:6666"
 }
+
+
+get_machine() {
+
+    unameOut="$(uname -s)"
+    case "${unameOut}" in
+        Linux*)     
+            machine=Linux;;
+        Darwin*)    
+            machine=Mac;;
+        CYGWIN*)    machine=Cygwin;;
+        MINGW*)     machine=MinGw;;
+        *)          machine="UNKNOWN:${unameOut}"
+    esac
+
+    echo ${machine}
+}

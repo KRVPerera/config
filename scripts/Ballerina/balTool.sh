@@ -96,6 +96,7 @@ if [[ $DUMP_BIR == 1 ]]; then
     echo $tool_command
 fi
 
+machine=$(get_machine)
 FINAL_COMMAND=("$BALLERINA_TOOL" "$tool_command")
 
 if [[ $DEBUG_MODE == 1 ]]; then
@@ -119,22 +120,14 @@ else
     fi
 fi
 
+
 balStatus=$?
 if [[ $DEBUG_MODE == 1 && "$balStatus" -ne "0" ]]; then
     echo -e "\n"$red"FAILED \a"$none
-    unameOut="$(uname -s)"
-    case "${unameOut}" in
-        Linux*)     
-            machine=Linux;
-            echo "Hi Linux";
-            notify-send -u critical -h int:value:42 "Ballerina run failed ...";;
-        Darwin*)    
-            machine=Mac;
-            osascript -e 'say "FAILED"';;
-        CYGWIN*)    machine=Cygwin;;
-        MINGW*)     machine=MinGw;;
-        *)          machine="UNKNOWN:${unameOut}"
-    esac
-    echo ${machine}
+    if [[ $machine == "Mac" ]]; then
+        notify-send -u critical -h int:value:42 "Ballerina run failed ..."
+    else
+        osascript -e 'say "FAILED"'
+    fi
 fi
 
