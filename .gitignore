@@ -26,3 +26,4 @@ orgmode/*.tex
 orgmode/*.pdf
 orgmode/*.odt
 
+.idea

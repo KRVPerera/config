@@ -1,4 +1,6 @@
 #!/usr/bin/env bash 
+
+source ~/bash_functions.sh
 echo "./gradlew build -x check -x test --configure-on-demand $restOfOptions"
 
 if [[ -z $restOfOptions ]]; then
@@ -9,21 +11,17 @@ else
 fi
 buildStatus=$?
 
+machine=$(get_machine)
+echo ${machine}
+
 if [[ "$balStatus" -ne "0" ]]; then
     echo -e "\n"$red"FAILED \a"$none
-    unameOut="$(uname -s)"
-    case "${unameOut}" in
-        Linux*)     
-            machine=Linux;
-            notify-send -u critical -h int:value:42 "Ballerina build FAILED ...";;
-        Darwin*)    
-            machine=Mac;
-            [[ $DEBUG == 1 ]] && osascript -e 'say "Ballerina build FAILED"';;
-        CYGWIN*)    machine=Cygwin;;
-        MINGW*)     machine=MinGw;;
-        *)          machine="UNKNOWN:${unameOut}"
-    esac
-    echo ${machine}
+    if [[ $machine == "Mac" ]]; then
+        osascript -e 'display notification "Ballerina Build without test FAILED"'
+        [[ $DEBUG == 1 ]] && osascript -e 'say "Ballerina build FAILED"'
+    else
+        notify-send -u critical -h int:value:42 "Ballerina build FAILED ..."
+    fi
 fi
 
 if [[ $buildStatus -ne 0 ]]; then
@@ -32,11 +30,16 @@ if [[ $buildStatus -ne 0 ]]; then
 fi
 
 if [[ $DEBUG == "1" ]]; then
-    if [[ machine == "Mac" ]]; then
+    if [[ $machine == "Mac" ]]; then
         osascript -e 'say "Congratulations Ballerina Build without test SUCCESSFUL"'
     fi
 fi
-notify-send -u normal -h int:value:42 "Ballerina build without test SUCCESSFUL ..."
+
+if [[ $machine == "Mac" ]]; then
+    osascript -e 'display notification "Congratulations Ballerina Build without test SUCCESSFUL"'
+else
+    notify-send -u normal -h int:value:42 "Ballerina build without test SUCCESSFUL ..."
+fi
 
 git restore '*.toml'
 sleep 1
