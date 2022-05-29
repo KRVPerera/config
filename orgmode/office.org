@@ -62,8 +62,15 @@ mapLiteral  :
     self.$map$objectCtor_block = $map$block$oce$_1
 #+END_SRC
 
+
+**** MyFunc body update debugging
+    1 - Closure desugar from top level nodes
+        because the receiver is a closure symbol
+
+
+
 ** TODO closure start actions
-DEADLINE: <2022-05-08 Sun>
+DEADLINE: <2022-05-08 Sun   >
 
 
 ** code reviews
@@ -92,8 +99,15 @@ CLOSED: [2022-05-18 බ 14:12]
 
 Created a new issue [[https://github.com/ballerina-platform/ballerina-lang/issues/36069][36069]]
 
-**** DONE Fix issue cloning BLangLiteral [[https://github.com/ballerina-platform/ballerina-lang/pull/36177][PR]]
+**** DONE Fix issue cloning BLangLiteral [[https://github.com/ballerina-platform/ballerina-lang/pull/36177][PR
+]]
 CLOSED: [2022-05-18 බ 14:12]
+
+
+
+**** TODO Fix issuw in block-stmt parsing context back [[https://github.com/ballerina-platform/ballerina-lang/pull/36297][PR]]
+
+**** TODO Allot inference for spread operator with variable length arrays [[https://github.com/ballerina-platform/ballerina-lang/pull/36248][PR]]
 
 
 *** [[https://github.com/suleka96][suleka96]]
@@ -107,6 +121,7 @@ DEADLINE: <2022-05-21 සෙ>
 **** TODO Create identifiers for anon types : [[https://github.com/ballerina-platform/ballerina-lang/pull/36168][PR]]
 DEADLINE: <2022-05-18 බ>
     added few comments about API and usage
+    Need to review string builder usage and string object creations in loops
 
 **** TODO Add tests to test visibility of non-public symbols : [[https://github.com/ballerina-platform/ballerina-lang/pull/36188][PR]]
 DEADLINE: <2022-05-19 බ්‍ර>
