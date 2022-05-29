@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <!-- 2022-05-29 Sun 09:44 -->
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=us-ascii" />
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1" />
+
+  <title>Office</title>
+  <meta name="author" content="KRV Perera" />
+  <meta name="generator" content="Org Mode" />
+  <style type="text/css">
+/*<![CDATA[*/
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+  /*]]>*/
+  </style>
+  <script type="text/x-mathjax-config">
+<![CDATA[
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+  });
+  ]]>
+  </script>
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"
+  type="text/javascript">
+</script>
+</head>
+
+<body>
+  <div id="content" class="content">
+    <h1 class="title">Office</h1>
+
+    <div id="table-of-contents" role="doc-toc">
+      <h2>Table of Contents</h2>
+
+      <div id="text-table-of-contents" role="doc-toc">
+        <ul>
+          <li><a href="#TOP">1. TOP</a></li>
+
+          <li><a href="#org0e9a0a6">2. Special links</a></li>
+
+          <li>
+            <a href="#org3371d4f">3. Office tasks</a>
+
+            <ul>
+              <li>
+                <a href="#org6cf1757">3.1. <span class=
+                "todo TODO">TODO</span> closure annotations -
+                fields</a>
+
+                <ul>
+                  <li><a href="#org64905b5">3.1.1. DEBUG</a></li>
+
+                  <li><a href="#orgc89154b">3.1.2. <span class=
+                  "todo TODO">TODO</span> ArrowExpr
+                  debugging</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#orgffef3c5">3.2. <span class=
+              "todo TODO">TODO</span> closure start
+              actions</a></li>
+
+              <li>
+                <a href="#org48f4a10">3.3. code reviews</a>
+
+                <ul>
+                  <li><a href="#org8123c15">3.3.1.
+                  rdulmina</a></li>
+
+                  <li><a href="#org0125b38">3.3.2.
+                  gimantha</a></li>
+
+                  <li><a href="#org094cde0">3.3.3.
+                  lochana-chathura</a></li>
+
+                  <li><a href="#orgae8f7e8">3.3.4.
+                  suleka96</a></li>
+
+                  <li><a href="#org981b855">3.3.5.
+                  KavinduZoysa</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="#BOTTOM">4. BOTTOM</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p><code>ox-twbs</code></p>
+
+    <div id="outline-container-TOP" class="outline-2">
+      <h2 id="TOP"><span class="section-number-2">1.</span>
+      TOP</h2>
+
+      <div class="outline-text-2" id="text-TOP">
+        <p><a href="krvperera.html">HOME</a> <a href=
+        "linux.html">LINUX</a> <a href="EldenRing.html">Elden
+        Ring</a> <a href="country.html">Country</a> <a href=
+        "org-mode-reference-in.html">HotKeys</a> <a href=
+        "Professional.html">Professional</a> <a href=
+        "#BOTTOM">BOTTOM</a></p>
+      </div>
+    </div>
+
+    <div id="outline-container-org0e9a0a6" class="outline-2">
+      <h2 id="org0e9a0a6"><span class="section-number-2">2.</span>
+      Special links</h2>
+
+      <div class="outline-text-2" id="text-2">
+        <p><a href="https://ballerina.io/spec/lang/master/">Live
+        Spec</a></p>
+      </div>
+    </div>
+
+    <div id="outline-container-org3371d4f" class="outline-2">
+      <h2 id="org3371d4f"><span class="section-number-2">3.</span>
+      Office tasks</h2>
+
+      <div class="outline-text-2" id="text-3"></div>
+
+      <div id="outline-container-org6cf1757" class="outline-3">
+        <h3 id="org6cf1757"><span class=
+        "section-number-3">3.1.</span> <span class=
+        "todo TODO">TODO</span> closure annotations - fields</h3>
+
+        <div class="outline-text-3" id="text-3-1">
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <caption class="t-above">
+              <span class="table-number">Table 1:</span> Clock
+              summary at <span class=
+              "timestamp-wrapper"><span class=
+              "timestamp">[2022-05-08 Sun 11:31]</span></span>
+            </caption>
+
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-left" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Headline</th>
+
+                <th scope="col" class="org-left">Time</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left"><b>Total time</b></td>
+
+                <td class="org-left"><b>0:00</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Refactoring is done. Some changes done to process
+          arrow expression is breaking the build. Target is to
+          first fix the annotation fields. Current problem is with
+          the function related to the field is not added in a
+          context or in a body.</p>
+
+          <p>Annotations are fixed successfully may have to change
+          the key now need to test on native side</p>
+        </div>
+
+        <div id="outline-container-org64905b5" class="outline-4">
+          <h4 id="org64905b5"><span class=
+          "section-number-4">3.1.1.</span> DEBUG</h4>
+
+          <div class="outline-text-4" id="text-3-1-1">
+            <p>classDef : class $annonType$<sub>1</sub> { string
+            xField = hosty; } function :
+            annot<sub>func</sub>$<sub>0</sub> is function (LAMDA)
+            mapLiteral : {HSCsa: {hostRecField:
+            hosty}.cloneReadOnly()}</p>
+          </div>
+
+          <ol class="org-ol">
+            <li>
+              <a id="orgd5126aa" name="orgd5126aa"></a>Fields<br />
+
+              <ol class="org-ol">
+                <li>
+                  <a id="org3ccc1f9" name=
+                  "org3ccc1f9"></a>attachments<br />
+
+                  <div class="outline-text-6" id="text-3-1-1-1-1">
+                    <p>HSCfa : expr ( {hostRecField: hosty} )</p>
+
+                    <p>function : [LAMBDA]
+                    $annot<sub>func</sub>$<sub>1</sub>([]) (map)
+                    Body: {} mapLiteral : &ldquo;{HSCfa:
+                    {hostRecField:
+                    hosty}.cloneReadOnly()}&rdquo;</p>
+
+                    <p>mapLiteral : HSCsa: {hostRecField:
+                    hosty}.cloneReadOnly() \(field\).xField:
+                    $annot<sub>func</sub>$<sub>1</sub>()</p>
+                  </div>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+        <div id="outline-container-orgc89154b" class="outline-4">
+          <h4 id="orgc89154b"><span class=
+          "section-number-4">3.1.2.</span> <span class=
+          "todo TODO">TODO</span> ArrowExpr debugging</h4>
+
+          <div class="outline-text-4" id="text-3-1-2"></div>
+
+          <ol class="org-ol">
+            <li>
+              <a id="orgd0db06f" name="orgd0db06f"></a>main<br />
+
+              <div class="outline-text-5" id="text-3-1-2-1">
+                <p>blockMap = $map$block$oce$<sub>1</sub> classMap
+                = $map$objectCtor<sub>block</sub></p>
+              </div>
+            </li>
+
+            <li>
+              <a id="org6639f7c" name="org6639f7c"></a>update
+              object init method<br />
+
+              <div class="outline-text-5" id="text-3-1-2-2">
+                <pre class="example">
+    self.$map$objectCtor_block = $map$block$oce$_1
+</pre>
+              </div>
+            </li>
+
+            <li>
+              <a id="org53a4891" name="org53a4891"></a>MyFunc body
+              update debugging<br />
+
+              <div class="outline-text-5" id="text-3-1-2-3">
+                <p>1 - Closure desugar from top level nodes because
+                the receiver is a closure symbol</p>
+
+                <p>ClosureDesugar:523,</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div id="outline-container-orgffef3c5" class="outline-3">
+        <h3 id="orgffef3c5"><span class=
+        "section-number-3">3.2.</span> <span class=
+        "todo TODO">TODO</span> closure start actions</h3>
+
+        <div class="outline-text-3" id="text-3-2"></div>
+      </div>
+
+      <div id="outline-container-org48f4a10" class="outline-3">
+        <h3 id="org48f4a10"><span class=
+        "section-number-3">3.3.</span> code reviews</h3>
+
+        <div class="outline-text-3" id="text-3-3"></div>
+
+        <div id="outline-container-org8123c15" class="outline-4">
+          <h4 id="org8123c15"><span class=
+          "section-number-4">3.3.1.</span> <a href=
+          "https://github.com/rdulmina">rdulmina</a></h4>
+
+          <div class="outline-text-4" id="text-3-3-1"></div>
+
+          <ol class="org-ol">
+            <li>
+              <a id="org66714d1" name="org66714d1"></a><span class=
+              "done DONE">DONE</span> <a href=
+              "https://github.com/ballerina-platform/ballerina-lang/pull/36044">
+              Fix NPE when variable of undefined type used in from
+              and join clauses</a><br />
+
+              <div class="outline-text-5" id="text-3-3-1-1"></div>
+            </li>
+
+            <li><a id="org3b696a3" name=
+            "org3b696a3"></a><span class="todo TODO">TODO</span>
+            spec conformance test<br /></li>
+          </ol>
+        </div>
+
+        <div id="outline-container-org0125b38" class="outline-4">
+          <h4 id="org0125b38"><span class=
+          "section-number-4">3.3.2.</span> <a href=
+          "https://github.com/gimantha">gimantha</a></h4>
+        </div>
+
+        <div id="outline-container-org094cde0" class="outline-4">
+          <h4 id="org094cde0"><span class=
+          "section-number-4">3.3.3.</span> <a href=
+          "https://github.com/lochana-chathura">lochana-chathura</a></h4>
+
+          <div class="outline-text-4" id="text-3-3-3"></div>
+
+          <ol class="org-ol">
+            <li>
+              <a id="orgbafbb2f" name="orgbafbb2f"></a><span class=
+              "done DONE">DONE</span> isSameType <a href=
+              "https://github.com/ballerina-platform/ballerina-lang/pull/35925">
+              pr</a><br />
+
+              <div class="outline-text-5" id="text-3-3-3-1">
+                <p>Created a new issue <a href=
+                "https://github.com/ballerina-platform/ballerina-lang/issues/36069">
+                36069</a></p>
+              </div>
+            </li>
+
+            <li>
+              <a id="org543b547" name="org543b547"></a><span class=
+              "done DONE">DONE</span> Fix issue cloning
+              BLangLiteral [[<a href=
+              "https://github.com/ballerina-platform/ballerina-lang/pull/36177">https://github.com/ballerina-platform/ballerina-lang/pull/36177</a>][PR<br />
+
+
+              <div class="outline-text-5" id="text-3-3-3-2">
+                <p>]] CLOSED: <span class=
+                "timestamp-wrapper"><span class=
+                "timestamp">[2022-05-18 Wed
+                14:12]</span></span></p>
+              </div>
+            </li>
+
+            <li>
+              <a id="org54e20c1" name="org54e20c1"></a><span class=
+              "done DONE">DONE</span> Fix issuw in block-stmt
+              parsing context back <a href=
+              "https://github.com/ballerina-platform/ballerina-lang/pull/36297">
+              PR</a><br />
+
+              <div class="outline-text-5" id="text-3-3-3-3"></div>
+            </li>
+
+            <li><a id="org579844e" name=
+            "org579844e"></a><span class="todo TODO">TODO</span>
+            Allot inference for spread operator with variable
+            length arrays <a href=
+            "https://github.com/ballerina-platform/ballerina-lang/pull/36248">
+            PR</a><br /></li>
+          </ol>
+        </div>
+
+        <div id="outline-container-orgae8f7e8" class="outline-4">
+          <h4 id="orgae8f7e8"><span class=
+          "section-number-4">3.3.4.</span> <a href=
+          "https://github.com/suleka96">suleka96</a></h4>
+
+          <div class="outline-text-4" id="text-3-3-4"></div>
+
+          <ol class="org-ol">
+            <li>
+              <a id="orgfa2af3f" name="orgfa2af3f"></a><span class=
+              "todo TODO">TODO</span> Fix several integer related
+              issues : <a href=
+              "https://github.com/ballerina-platform/ballerina-lang/pull/34622">
+              PR</a><br />
+
+              <div class="outline-text-5" id="text-3-3-4-1"></div>
+            </li>
+          </ol>
+        </div>
+
+        <div id="outline-container-org981b855" class="outline-4">
+          <h4 id="org981b855"><span class=
+          "section-number-4">3.3.5.</span> <a href=
+          "https://github.com/KavinduZoysa">KavinduZoysa</a></h4>
+
+          <div class="outline-text-4" id="text-3-3-5"></div>
+
+          <ol class="org-ol">
+            <li>
+              <a id="org578765c" name="org578765c"></a><span class=
+              "todo TODO">TODO</span> Create identifiers for anon
+              types : <a href=
+              "https://github.com/ballerina-platform/ballerina-lang/pull/36168">
+              PR</a><br />
+
+              <div class="outline-text-5" id="text-3-3-5-1">
+                <p>added few comments about API and usage Need to
+                review string builder usage and string object
+                creations in loops</p>
+              </div>
+            </li>
+
+            <li>
+              <a id="org2e8dc42" name="org2e8dc42"></a><span class=
+              "done DONE">DONE</span> Add tests to test visibility
+              of non-public symbols : <a href=
+              "https://github.com/ballerina-platform/ballerina-lang/pull/36188">
+              PR</a><br />
+
+              <div class="outline-text-5" id="text-3-3-5-2"></div>
+            </li>
+
+            <li>
+              <a id="org64749dc" name="org64749dc"></a><span class=
+              "todo TODO">TODO</span> Disallow named-args that
+              specify field of included-record which is an arg :
+              <a href=
+              "https://github.com/ballerina-platform/ballerina-lang/pull/35800">
+              PR</a><br />
+
+              <div class="outline-text-5" id="text-3-3-5-3">
+                <p>Small comment on the data structure usage. Logic
+                should already reviwed by others Fixed the issue I
+                mentioned</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div id="outline-container-BOTTOM" class="outline-2">
+      <h2 id="BOTTOM"><span class="section-number-2">4.</span>
+      BOTTOM</h2>
+
+      <div class="outline-text-2" id="text-BOTTOM">
+        <p><a href="#TOP">TOP</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="postamble" class="status">
+    <p class="author">Author: KRV Perera</p>
+
+    <p class="date">Created: 2022-05-29 Sun 09:44</p>
+  </div>
+</body>
+</html>
