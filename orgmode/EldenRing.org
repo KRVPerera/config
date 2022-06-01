@@ -25,21 +25,22 @@
 
 | Stat         | value | FightinCowboy |
 |--------------+-------+---------------|
-| Vigor        |    31 |            35 |
+| Vigor        |    31 |            33 |
 | Mind         |    17 |            10 |
-| Endurance    |    18 |            23 |
-| Strength     |    22 |            21 |
-| Dexterity    |    22 |            21 |
+| Endurance    |    18 |            20 |
+| Strength     |    22 |            18 |
+| Dexterity    |    22 |            18 |
 | Intelligence |    12 |             9 |
 | Faith        |    20 |             9 |
 | Arcane       |    13 |             7 |
 |--------------+-------+---------------|
-| Total        |   233 |           135 |
+| Total        |   155 |           124 |
 #+TBLFM: @>$2=vsum(@I..@II)
 #+TBLFM: @>$3=vsum(@I..@II)
 
 * Builds
 
+** Stats caps
 
 | Stat         | cap1 |   cap2 | cap3 |
 |--------------+------+--------+------|
@@ -55,6 +56,70 @@
 | Total        |  140 |        |  520 |
 #+TBLFM: @>$2=vsum(@I..@II)
 #+TBLFM: @>$4=vsum(@I..@II)
+
+** Immortal Paladin [[https://www.youtube.com/watch?v=Z9BDkcTpHNE&t=123s][Link]]
+
+
+| Stat         | value |
+|--------------+-------|
+| Vigor        |    40 |
+| Mind         |    20 |
+| Endurance    |    30 |
+| Strength     |    65 |
+| Dexterity    |    17 |
+| Intelligence |    13 |
+| Faith        |    31 |
+| Arcane       |     9 |
+|--------------+-------|
+| Total        |   229 |
+#+TBLFM: @>$2=vsum(@I..@II)
+
+Clawmark seal
+Shard of Alexander
+Sacred Scoprion Charm
+Erdtree's Flavour +2
+Radagon source seal
+
+Dragoncrest GreatShield Talisman - Enormously Boosts physical damage
+
+| Item                                | Effect           | Value | Level |   |
+|-------------------------------------+------------------+-------+-------+---|
+| Iron Great, Inseparable great sword | Blade Dance      |       |    25 |   |
+| Banished Knight Great Sword         | Blade Dance      |       |    25 |   |
+| Heavy Greate Stars                  | Prayerful Strike |       |    25 |   |
+|-------------------------------------+------------------+-------+-------+---|
+
+Shard of Alexander - Greatly boosts the attack power of skills
+
+
+** Wall of frenzy [[https://youtu.be/prB2e-yKGD4?t=729][Link]]
+
+
+| Stat         | value |
+|--------------+-------|
+| Vigor        |    60 |
+| Mind         |    21 |
+| Endurance    |    44 |
+| Strength     |    48 |
+| Dexterity    |    20 |
+| Intelligence |     9 |
+| Faith        |    18 |
+| Arcane       |     9 |
+|--------------+-------|
+| Total        |   229 |
+#+TBLFM: @>$2=vsum(@I..@II)
+
+Fingerprint Armor - poise
+
+| Item                           | Effect             | Value | Level |   |
+|--------------------------------+--------------------+-------+-------+---|
+| Heavy fingerprint Stone Shield | Shield Bash        |       |    25 |   |
+| Vyke's Was Spear               | Frenzyflame Thrust |       |    10 |   |
+|--------------------------------+--------------------+-------+-------+---|
+
+Shard of Alexander - Greatly boosts the attack power of skills
+
+
 
 
 ** Spellsword Build - The Exiled Mage [[https://www.youtube.com/watch?v=BLTmyVRAMrw&list=PL7RtZMiaOk8gF9ezBWxRgN6awSM91rAeT&index=13][Link]]
