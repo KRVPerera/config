@@ -9,9 +9,9 @@
 	conflictstyle = diff3
 	tool = vimdiff
 [diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
+    tool = vimdiff
+[difftool "vimdiff"]
+    cmd = vimdiff "$LOCAL" "$REMOTE"
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
@@ -24,3 +24,6 @@
     c = commit
     a = add
     p = push
+    co = checkout
+    rv = remote -v
+    fa = fetch --all
