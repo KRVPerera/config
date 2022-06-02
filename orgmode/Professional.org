@@ -28,11 +28,13 @@ Interview
 
 ** Current Courses
 *** LinkedIn
-**** TODO [#A] Advanced Linux: The Linux Kernel
+**** DONE [#A] Advanced Linux: The Linux Kernel
+CLOSED: [2022-06-02 බ්‍ර 09:55]
 **** TODO [#A] Linux Device Drivers
 **** TODO Python Parallel Programming Solutions
 **** TODO AWK Essential Training
 **** TODO Transitioning from Individual Contributor to Manager
+**** TODO C++ Design Patterns: Creational
 *** Udemy
 **** TODO [#B] The Complete JavaScript Course 2022: From Zero to Expert!
 **** TODO [#A] Qt 6 Core Intermediate with C++ - [[https://www.udemy.com/course/qt-6-core-intermediate/learn/lecture/26715920#content][Link]]

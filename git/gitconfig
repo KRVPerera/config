@@ -1,0 +1,25 @@
+[user]
+	name = KRVPerera
+	email = rukshan.viduranga@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = vim
+[merge]
+	conflictstyle = diff3
+	tool = vimdiff
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[alias]
+    logline = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    st = status
+    l = pull
+    cmsg = commit -m
+    c = commit
+    a = add

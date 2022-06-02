@@ -1,0 +1,10 @@
+#+title: Design_patterns
+#+author: KRV Perera
+#+email: rukshan.viduranga@gmail.com
+
+[[file:krvperera.org][Home]] [[file:office.org][Office]] [[file:Professional.org][Professional]] [[file:cp.org][Competitive Programming]] [[file:org-mode-reference-in.org][HotKeys]]
+
+
+* Creational
+
+** Factory method
