@@ -4,6 +4,9 @@
 
 [[file:krvperera.org][Home]] [[file:office.org][Office]] [[file:cp.org][Competitive Programming]] [[file:org-mode-reference-in.org][HotKeys]]
 
+
+ "Make each every day as the first day of your job" -- KRV
+
 * Research topics
 ** AWS
 *** TODO Internet topics
@@ -17,9 +20,9 @@
 *** TODO map-reduce
 *** TODO distributed caching
 
-* Job prepare
+* Job prepare : [[file:jobs.org][Jobs]]
 
-Look back at the career and look for the problems you solved and your contributions.
+Look back at the career and look for the problems you solved and your contributions. Due to condition in the country better to be prepare for anything.
 
 ** Interview prepare
 Interview
