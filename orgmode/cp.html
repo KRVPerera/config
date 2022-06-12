@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <!-- 2022-05-29 Sun 09:54 -->
+  <!-- 2022-06-12 Sun 19:54 -->
   <meta http-equiv="Content-Type" content=
   "text/html; charset=us-ascii" />
   <meta name="viewport" content=
@@ -211,13 +211,33 @@
       <div id="text-table-of-contents" role="doc-toc">
         <ul>
           <li>
-            <a href="#orga1a065e">1. Blind 75 Must Do Leetcode</a>
+            <a href="#org40096d5">1. Blind 75 Must Do Leetcode</a>
 
             <ul>
-              <li><a href="#org06d8d3c">1.1. Two sum</a></li>
+              <li><a href="#orgf9e73ae">1.1. <span class=
+              "done DONE">DONE</span> Two sum</a></li>
 
-              <li><a href="#org27e90a6">1.2. Logest Substring
-              Without Repeating characters</a></li>
+              <li><a href="#org036ee56">1.2. <span class=
+              "done DONE">DONE</span> Logest Substring Without
+              Repeating characters</a></li>
+
+              <li><a href="#org2e7e1c3">1.3. <span class=
+              "done DONE">DONE</span> Logest Palindromic
+              Substring</a></li>
+
+              <li><a href="#org5550900">1.4. <span class=
+              "done DONE">DONE</span> Container With Most
+              Water</a></li>
+
+              <li><a href="#orgf5d8166">1.5. <span class=
+              "done DONE">DONE</span> 3Sum</a></li>
+
+              <li><a href="#org028f929">1.6. <span class=
+              "done DONE">DONE</span> Search in Rotated Sorted
+              Array</a></li>
+
+              <li><a href="#org1b771f8">1.7. <span class=
+              "done DONE">DONE</span> Climbing Stairs</a></li>
             </ul>
           </li>
         </ul>
@@ -228,185 +248,67 @@
 
     <p><a href="Professional.html">Professional</a></p>
 
-    <div id="outline-container-orga1a065e" class="outline-2">
-      <h2 id="orga1a065e"><span class="section-number-2">1.</span>
+    <div id="outline-container-org40096d5" class="outline-2">
+      <h2 id="org40096d5"><span class="section-number-2">1.</span>
       Blind 75 Must Do Leetcode</h2>
 
       <div class="outline-text-2" id="text-1"></div>
 
-      <div id="outline-container-org06d8d3c" class="outline-3">
-        <h3 id="org06d8d3c"><span class=
-        "section-number-3">1.1.</span> Two sum</h3>
+      <div id="outline-container-orgf9e73ae" class="outline-3">
+        <h3 id="orgf9e73ae"><span class=
+        "section-number-3">1.1.</span> <span class=
+        "done DONE">DONE</span> Two sum</h3>
 
-        <div class="outline-text-3" id="text-1-1">
-          <div class="org-src-container">
-            <pre class="src src-cpp">
-<span style="color: #C594C5;">class</span> <span style=
-"color: #FAC863;">Solution</span> <span style=
-"color: #6699CC;">{</span>
-<span style="color: #C594C5;">public</span>:
-    <span style="color: #FAC863;">vector</span><span style=
-"color: #E27E8D;">&lt;</span><span style=
-"color: #FAC863;">int</span><span style=
-"color: #E27E8D;">&gt;</span> <span style=
-"color: #6699CC;">twoSum</span><span style=
-"color: #E27E8D;">(</span><span style=
-"color: #FAC863;">vector</span><span style=
-"color: #99C794;">&lt;</span><span style=
-"color: #FAC863;">int</span><span style=
-"color: #99C794;">&gt;</span>&amp; <span style=
-"color: #F99157;">nums</span>, <span style=
-"color: #FAC863;">int</span> <span style=
-"color: #F99157;">target</span><span style=
-"color: #E27E8D;">)</span> <span style="color: #E27E8D;">{</span>
-
-        <span style="color: #FAC863;">vector</span><span style=
-"color: #99C794;">&lt;</span><span style=
-"color: #FAC863;">int</span><span style=
-"color: #99C794;">&gt;</span> <span style=
-"color: #F99157;">result</span><span style=
-"color: #99C794;">(</span><span style=
-"color: #F99157; font-weight: bold;">2</span><span style=
-"color: #99C794;">)</span>;
-        <span style="color: #F99157;">std</span>::<span style=
-"color: #FAC863;">unordered_map</span><span style=
-"color: #99C794;">&lt;</span><span style=
-"color: #FAC863;">int</span>, <span style=
-"color: #FAC863;">int</span><span style=
-"color: #99C794;">&gt;</span> <span style=
-"color: #F99157;">restValueToIndex</span>;
-
-        <span style="color: #FAC863;">int</span> <span style=
-"color: #F99157;">j</span> = <span style=
-"color: #F99157; font-weight: bold;">0</span>;
-        <span style="color: #C594C5;">for</span> <span style=
-"color: #99C794;">(</span><span style=
-"color: #C594C5;">const</span> <span style=
-"color: #C594C5;">auto</span> <span style=
-"color: #F99157;">num</span> : nums<span style=
-"color: #99C794;">)</span> <span style="color: #99C794;">{</span>
-
-
-            <span style="color: #C594C5;">auto</span> <span style=
-"color: #F99157;">found</span> = restValueToIndex.find<span style=
-"color: #C594C5;">(</span>num<span style=
-"color: #C594C5;">)</span>;
-
-            <span style="color: #C594C5;">if</span> <span style=
-"color: #C594C5;">(</span>found != restValueToIndex.end<span style=
-"color: #6699CC;">()</span><span style=
-"color: #C594C5;">)</span> <span style="color: #C594C5;">{</span>
-                result<span style=
-"color: #6699CC;">[</span><span style=
-"color: #F99157; font-weight: bold;">0</span><span style=
-"color: #6699CC;">]</span> = found-&gt;second;
-                result<span style=
-"color: #6699CC;">[</span><span style=
-"color: #F99157; font-weight: bold;">1</span><span style=
-"color: #6699CC;">]</span> = j;
-                <span style="color: #C594C5;">return</span> result;
-            <span style="color: #C594C5;">}</span>
-            <span style="color: #FAC863;">int</span> <span style=
-"color: #F99157;">restValue</span> = target - num;
-            restValueToIndex.insert<span style=
-"color: #C594C5;">(</span><span style=
-"color: #6699CC;">{</span>restValue, j<span style=
-"color: #6699CC;">}</span><span style="color: #C594C5;">)</span>;
-            ++j;
-        <span style="color: #99C794;">}</span>
-
-        <span style="color: #C594C5;">return</span> result;
-    <span style="color: #E27E8D;">}</span>
-<span style="color: #6699CC;">}</span>;
-</pre>
-          </div>
-        </div>
+        <div class="outline-text-3" id="text-1-1"></div>
       </div>
 
-      <div id="outline-container-org27e90a6" class="outline-3">
-        <h3 id="org27e90a6"><span class=
-        "section-number-3">1.2.</span> Logest Substring Without
-        Repeating characters</h3>
+      <div id="outline-container-org036ee56" class="outline-3">
+        <h3 id="org036ee56"><span class=
+        "section-number-3">1.2.</span> <span class=
+        "done DONE">DONE</span> Logest Substring Without Repeating
+        characters</h3>
 
-        <div class="outline-text-3" id="text-1-2">
-          <div class="org-src-container">
-            <pre class="src src-cpp">
-<span style="color: #C594C5;">class</span> <span style=
-"color: #FAC863;">Solution</span> <span style=
-"color: #6699CC;">{</span>
-<span style="color: #C594C5;">public</span>:
-    <span style="color: #FAC863;">int</span> <span style=
-"color: #6699CC;">lengthOfLongestSubstring</span><span style=
-"color: #E27E8D;">(</span><span style=
-"color: #F99157;">std</span>::<span style=
-"color: #FAC863;">string</span> <span style=
-"color: #F99157;">s</span><span style=
-"color: #E27E8D;">)</span> <span style="color: #E27E8D;">{</span>
+        <div class="outline-text-3" id="text-1-2"></div>
+      </div>
 
-    <span style="color: #F99157;">std</span>::<span style=
-"color: #FAC863;">unordered_set</span><span style=
-"color: #99C794;">&lt;</span><span style=
-"color: #FAC863;">char</span><span style=
-"color: #99C794;">&gt;</span> <span style=
-"color: #F99157;">liveSet</span><span style=
-"color: #99C794;">(</span>s.size<span style=
-"color: #C594C5;">()</span><span style="color: #99C794;">)</span>;
+      <div id="outline-container-org2e7e1c3" class="outline-3">
+        <h3 id="org2e7e1c3"><span class=
+        "section-number-3">1.3.</span> <span class=
+        "done DONE">DONE</span> Logest Palindromic Substring</h3>
 
-    <span style="color: #FAC863;">int</span> <span style=
-"color: #F99157;">left</span> = <span style=
-"color: #F99157; font-weight: bold;">0</span>;
-    <span style="color: #FAC863;">int</span> <span style=
-"color: #F99157;">longestSubStringSize</span> = <span style=
-"color: #F99157; font-weight: bold;">0</span>;
+        <div class="outline-text-3" id="text-1-3"></div>
+      </div>
 
-    <span style="color: #FAC863;">int</span> <span style=
-"color: #F99157;">stringSize</span> = s.length<span style=
-"color: #99C794;">()</span>;
+      <div id="outline-container-org5550900" class="outline-3">
+        <h3 id="org5550900"><span class=
+        "section-number-3">1.4.</span> <span class=
+        "done DONE">DONE</span> Container With Most Water</h3>
 
-    <span style="color: #C594C5;">for</span> <span style=
-"color: #99C794;">(</span><span style=
-"color: #FAC863;">int</span> <span style=
-"color: #F99157;">i</span> = <span style=
-"color: #F99157; font-weight: bold;">0</span>; i &lt; stringSize; ++i<span style="color: #99C794;">)</span> <span style="color: #99C794;">{</span>
+        <div class="outline-text-3" id="text-1-4"></div>
+      </div>
 
-        <span style="color: #FAC863;">char</span> <span style=
-"color: #F99157;">current</span> = s<span style=
-"color: #C594C5;">[</span>i<span style="color: #C594C5;">]</span>;
+      <div id="outline-container-orgf5d8166" class="outline-3">
+        <h3 id="orgf5d8166"><span class=
+        "section-number-3">1.5.</span> <span class=
+        "done DONE">DONE</span> 3Sum</h3>
 
-        <span style="color: #C594C5;">while</span> <span style=
-"color: #C594C5;">(</span>liveSet.find<span style=
-"color: #6699CC;">(</span>current<span style=
-"color: #6699CC;">)</span> != liveSet.end<span style=
-"color: #6699CC;">()</span><span style=
-"color: #C594C5;">)</span> <span style="color: #C594C5;">{</span>
-            liveSet.erase<span style=
-"color: #6699CC;">(</span><span style=
-"color: #FAC863;">s</span><span style=
-"color: #E27E8D;">[</span>left<span style=
-"color: #E27E8D;">]</span><span style="color: #6699CC;">)</span>;
-            left++;
-        <span style="color: #C594C5;">}</span>
+        <div class="outline-text-3" id="text-1-5"></div>
+      </div>
 
-        liveSet.insert<span style=
-"color: #C594C5;">(</span>current<span style=
-"color: #C594C5;">)</span>;
+      <div id="outline-container-org028f929" class="outline-3">
+        <h3 id="org028f929"><span class=
+        "section-number-3">1.6.</span> <span class=
+        "done DONE">DONE</span> Search in Rotated Sorted Array</h3>
 
-        <span style="color: #FAC863;">int</span> <span style=
-"color: #F99157;">currentLength</span> = i - left + <span style=
-"color: #F99157; font-weight: bold;">1</span>;
-        <span style="color: #C594C5;">if</span> <span style=
-"color: #C594C5;">(</span>longestSubStringSize &lt; currentLength<span style="color: #C594C5;">)</span> <span style="color: #C594C5;">{</span>
-            longestSubStringSize = currentLength;
-        <span style="color: #C594C5;">}</span>
-    <span style="color: #99C794;">}</span>
+        <div class="outline-text-3" id="text-1-6"></div>
+      </div>
 
-    <span style=
-"color: #C594C5;">return</span> longestSubStringSize;
-    <span style="color: #E27E8D;">}</span>
-<span style="color: #6699CC;">}</span>;
-</pre>
-          </div>
-        </div>
+      <div id="outline-container-org1b771f8" class="outline-3">
+        <h3 id="org1b771f8"><span class=
+        "section-number-3">1.7.</span> <span class=
+        "done DONE">DONE</span> Climbing Stairs</h3>
+
+        <div class="outline-text-3" id="text-1-7"></div>
       </div>
     </div>
   </div>
@@ -414,7 +316,7 @@
   <div id="postamble" class="status">
     <p class="author">Author: KRV Perera</p>
 
-    <p class="date">Created: 2022-05-29 Sun 09:54</p>
+    <p class="date">Created: 2022-06-12 Sun 19:54</p>
   </div>
 </body>
 </html>
