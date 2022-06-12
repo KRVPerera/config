@@ -12,4 +12,4 @@ fish_add_path -P ~/MyScripts
 fish_add_path -P /opt/local/bin
 fish_add_path -P /opt/local/sbin
 
-fish_config prompt choose nim
+fish_config prompt choose arrow

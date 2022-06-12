@@ -74,6 +74,9 @@ mapLiteral  :
 ** TODO closure start actions
 DEADLINE: <2022-05-08 Sun   >
 
+** TODO Closures for object ctor new approach
+pass closure variables to object directly for fields
+
 
 ** code reviews
 *** [[https://github.com/rdulmina][rdulmina]]
