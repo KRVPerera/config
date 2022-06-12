@@ -7,6 +7,14 @@
 
  "Make each every day as the first day of your job" -- KRV
 
+
+
+* Notes
+** Trees
+
+*** Rootes trees with unbounded branching
+left-child. right-sibling representation
+
 * Research topics
 ** AWS
 *** TODO Internet topics
