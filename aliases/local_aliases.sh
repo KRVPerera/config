@@ -22,6 +22,8 @@ alias bal2='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang-2/distributio
 alias bal1_old='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal1_very_old='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME_1/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 alias bal2_old='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang-2/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal3='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang-3/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
+alias bal3_old='export BALLERINA_TOOL="$OFFICE_PROJECTS/ballerina-lang-3/distribution/zip/jballerina-tools/build/extracted-distributions/$BALLERINA_TOOLS_OLD_SNAPSHOT_NAME/bin/bal"; echo "BALLERINA_TOOL=$BALLERINA_TOOL"'
 
 
 alias b0='bal0'
