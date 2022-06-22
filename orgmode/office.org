@@ -12,7 +12,11 @@
 
 * Special links
 
-[[https://ballerina.io/spec/lang/master/][Live Spec]]
+[[https://ballerina.io/spec/lang/master/][Live Spec]] [[https://www.mmtk.io/code][MMTK]]
+
+[[https://pnwamk.github.io/sst-tutorial/][Down and Dirty with Semantic Set-theoretic Types (a tutorial) v0.4]]
+
+
 
 * Office tasks
 
@@ -65,7 +69,7 @@ mapLiteral  :
 
 **** MyFunc body update debugging
     1 - Closure desugar from top level nodes
-        because the receiver is a closure symbol
+        because the receiver is a closure symbol[[https://pnwamk.github.io/sst-tutorial/][Down and Dirty with Semantic Set-theoretic Types]]
 
         ClosureDesugar:523,
 
@@ -83,6 +87,8 @@ pass closure variables to object directly for fields
 
 **** DONE [[https://github.com/ballerina-platform/ballerina-lang/pull/36044][Fix NPE when variable of undefined type used in from and join clauses]]
 CLOSED: [2022-05-18 බ 14:13]
+
+**** TODO Parser changes for resource method call action : [[https://github.com/ballerina-platform/ballerina-lang/pull/36378][PR]]
 
 **** TODO spec conformance test
 
@@ -118,7 +124,9 @@ CLOSED: [2022-05-18 බ 14:12]
 CLOSED: [2022-05-27 Fri 17:16]
 
 **** TODO Allot inference for spread operator with variable length arrays [[https://github.com/ballerina-platform/ballerina-lang/pull/36248][PR]]
+CLOSED: [2022-06-13 Mon 02:05]
 
+**** TODO isSameType check blindly returns true for pairs found in `unresolvedTypes` set : [[https://github.com/ballerina-platform/ballerina-lang/issues/36069][PR]]
 
 *** [[https://github.com/suleka96][suleka96]]
 
@@ -139,6 +147,11 @@ CLOSED: [2022-05-27 Fri 17:18] DEADLINE: <2022-05-19 බ්‍ර>
 **** TODO Disallow named-args that specify field of included-record which is an arg : [[https://github.com/ballerina-platform/ballerina-lang/pull/35800][PR]]
     Small comment on the data structure usage. Logic should already reviwed by others
     Fixed the issue I mentioned
+
+*** [[https://github.com/SandaruJayawardana][SandaruJayawardana]]
+**** Add desugaring changes for creating maps with query expression : [[https://github.com/ballerina-platform/ballerina-lang/pull/36366][PR]]
+**** Add type checking changes for creating maps with query expressions : [[https://github.com/ballerina-platform/ballerina-lang/pull/36352][PR]]
+**** Fix relational operator related issues : [[https://github.com/ballerina-platform/ballerina-lang/pull/36191][PR]]
 
 * BOTTOM
 :PROPERTIES:
