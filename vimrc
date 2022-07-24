@@ -21,7 +21,7 @@ Plug 'KRVPerera/ballerina-vim', { 'branch': 'stable' }
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
-Plug 'valloric/youcompleteme'
+"Plug 'valloric/youcompleteme'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 "Plug 'skammer/vim-css-color'
 "Plug 'chrisbra/Colorizer'
