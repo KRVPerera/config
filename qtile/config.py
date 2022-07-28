@@ -65,9 +65,9 @@ keys = [
 
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "q", lazy.window.kill()),
+    Key([mod], "d", lazy.spawn("rofi -shown run -lines 3 -eh 2 width 100 -opacity \"85\" -bw 0")),
     Key([mod], "t", lazy.spawn('xterm')),
     Key([mod], "v", lazy.spawn('pavucontrol')),
-    Key([mod], "d", lazy.spawn('nwggrid -p -o 0.4')),
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn(myTerm)),
     Key([mod], "KP_Enter", lazy.spawn('alacritty')),
@@ -75,9 +75,9 @@ keys = [
 
 # SUPER + SHIFT KEYS
 
+#    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
     Key([mod, "shift"], "Return", lazy.spawn('pcmanfm')),
-    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
-#    Key([mod, "shift"], "d", lazy.spawn(home + '/.config/qtile/scripts/dmenu.sh')),
+    Key([mod, "shift"], "d", lazy.spawn('nwggrid -p -o 0.4')),
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
     Key([mod, "control"], "r", lazy.restart()),
@@ -93,9 +93,9 @@ keys = [
 
 
     Key(["mod1"], "p", lazy.spawn('pamac-manager')),
-    Key(["mod1"], "f", lazy.spawn('firedragon')),
+    Key(["mod1"], "w", lazy.spawn('brave')),
     Key(["mod1"], "m", lazy.spawn('pcmanfm')),
-    Key(["mod1"], "w", lazy.spawn('garuda-welcome')),
+    Key(["mod1"], "f", lazy.spawn('garuda-welcome')),
 
 
 # CONTROL + SHIFT KEYS
@@ -318,15 +318,15 @@ def init_colors():
             ["#c40234", "#c40234"], # color 9
             ["#6790eb", "#6790eb"], # color 10
             ["#ff00ff", "#ff00ff"], #11
-            ["#4c566a", "#4c566a"], #12 
+            ["#4c566a", "#4c566a"], #12
             ["#282c34", "#282c34"], #13
             ["#212121", "#212121"], #14
-            ["#e75480", "#e75480"], #15 
-            ["#2aa899", "#2aa899"], #16 
+            ["#e75480", "#e75480"], #15
+            ["#2aa899", "#2aa899"], #16
             ["#abb2bf", "#abb2bf"],# color 17
-            ["#81a1c1", "#81a1c1"], #18 
-            ["#56b6c2", "#56b6c2"], #19 
-            ["#b48ead", "#b48ead"], #20 
+            ["#81a1c1", "#81a1c1"], #18
+            ["#56b6c2", "#56b6c2"], #19
+            ["#b48ead", "#b48ead"], #20
             ["#e06c75", "#e06c75"], #21
             ["#fb9f7f", "#fb9f7f"], #22
             ["#ffd47e", "#ffd47e"]] #23
@@ -388,7 +388,7 @@ def init_widgets_list():
             disable_drag=True
 
 
-                   
+
                         ),
                 widget.TaskList(
                     highlight_method = 'border', # or block
