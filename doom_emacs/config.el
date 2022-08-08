@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "KRV Perera"
-      user-mail-address "rukshan.viduranga@gmail.com")
+(setq user-full-name "KRV Perera")
+(setq user-mail-address "rukshan.viduranga@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -107,7 +107,7 @@
 
 (setq projectile-project-search-path '("~/Projects/personal" "~/Projects/office" "~/Projects/tools" "~/Projects/office/Testing" "~/Projects/office/Testing/Reviews"))
 
-(setq org-default-notes-file (concat org-directory "/krvperera.org"))
+(setq org-default-notes-file (concat org-directory "/krvperera.org")
       initial-buffer-choice org-default-notes-file)
 
 (use-package which-key
@@ -116,12 +116,6 @@
 
 (add-function :after after-focus-change-function
               (lambda () (org-save-all-org-buffers)))
-
-(use-package treemacs
-  :ensure t
-  :bind
-  (("<f8>" . teemacs)
-   ("C-<f8>"  . treemacs-select-window)))
 
 (require 'package)
 (add-to-list 'package-archives

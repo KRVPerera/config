@@ -42,4 +42,5 @@ else
 fi
 
 git restore '*.toml'
+date
 sleep 1
