@@ -15,6 +15,9 @@
 *** Rootes trees with unbounded branching
 left-child. right-sibling representation
 
+** Create a chrome extention
+[[https://www.youtube.com/watch?v=0n809nd4Zu4][YouTube Link]] Build a Chrome Extention - Course for Beginners
+
 * Research topics
 ** AWS
 *** TODO Internet topics

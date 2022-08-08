@@ -216,6 +216,17 @@ This is royal capital need to wait some time
 Iron Roundshield
 
 *** Good bow
+**** Arrows
+
+***** [[https://eldenring.wiki.fextralife.com/Interactive+map?id=2353&lat=-164.63125&lng=136.080779&zoom=8][Merchant]]
+Isolated Merchant Dragonbarrow shop
+    Beast Repellent torch
+    Serpent Arrow
+
+***** [[https://eldenring.wiki.fextralife.com/interactive+map?id=1158&lat=-187.975001&lng=143.226132&zoom=8][Merchant]] Normadic merchant Caleid South
+Normadic Warrior Cookbook [15]
+    Rotbone arrows/bolt
+
 *** Good Crit Damage
 *** Stance break
 *** Poise Armor
