@@ -21,7 +21,6 @@ tags
 [._]DS_Store
 
 # ord mode exports
-orgmode/*.html
 orgmode/*.tex
 orgmode/*.pdf
 orgmode/*.odt
