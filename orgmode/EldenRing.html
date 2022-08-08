@@ -1,0 +1,1730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <!-- 2022-08-08 Mon 09:44 -->
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=us-ascii" />
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1" />
+
+  <title>Elden Ring Walkthrough</title>
+  <meta name="author" content="KRV Perera" />
+  <meta name="generator" content="Org Mode" />
+  <style type="text/css">
+/*<![CDATA[*/
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <div id="content" class="content">
+    <h1 class="title">Elden Ring Walkthrough</h1>
+
+    <div id="table-of-contents" role="doc-toc">
+      <h2>Table of Contents</h2>
+
+      <div id="text-table-of-contents" role="doc-toc">
+        <ul>
+          <li><a href="#TOP">1. Navigation</a></li>
+
+          <li>
+            <a href="#orgd2777b7">2. Items I need to farming</a>
+
+            <ul>
+              <li><a href="#org0401c0e">2.1. Exalted Flesh</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#org51cbb7d">3. My Current Build</a></li>
+
+          <li>
+            <a href="#org87a4ea5">4. Builds</a>
+
+            <ul>
+              <li><a href="#org7d430a3">4.1. Stats caps</a></li>
+
+              <li><a href="#orgd9bc3bc">4.2. Immortal Paladin
+              Link</a></li>
+
+              <li><a href="#orgdb1ba26">4.3. Wall of frenzy
+              Link</a></li>
+
+              <li><a href="#orgcdb129c">4.4. Spellsword Build - The
+              Exiled Mage Link</a></li>
+
+              <li><a href="#orge3819eb">4.5. Quality</a></li>
+
+              <li><a href="#org135caa1">4.6. Faith Build - Golden
+              God Link</a></li>
+
+              <li><a href="#org3e13339">4.7. Hybrid Caster Build -
+              The Pursuer</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#org0d8ffe1">5. Main ideas</a>
+
+            <ul>
+              <li>
+                <a href="#org04965ec">5.1. Assasin</a>
+
+                <ul>
+                  <li><a href="#orgaf8166b">5.1.1. Golden
+                  parry</a></li>
+
+                  <li><a href="#org044cd85">5.1.2. Good
+                  bow</a></li>
+
+                  <li><a href="#orge541fc8">5.1.3. Good Crit
+                  Damage</a></li>
+
+                  <li><a href="#org30658e4">5.1.4. Stance
+                  break</a></li>
+
+                  <li><a href="#orge97ba61">5.1.5. Poise
+                  Armor</a></li>
+
+                  <li><a href="#orgfa86c7c">5.1.6. Assassin&rsquo;s
+                  Cerulean Dagger - Black Knife Catacombs - NE
+                  Liurnia Of the Lakes</a></li>
+                </ul>
+              </li>
+
+              <li><a href="#org31758a6">5.2. Cinueda + Dragon Crest
+              Shield YouTue</a></li>
+
+              <li><a href="#orge5ea8b5">5.3. Carian Knight Armor
+              Link</a></li>
+
+              <li><a href="#org4abe8ae">5.4. The 5 Most Secretlt
+              powerful werapons Link</a></li>
+
+              <li><a href="#orgd40a736">5.5. Vampire Build
+              Link</a></li>
+
+              <li><a href="#orgbb0a9c3">5.6. Use Grand
+              Lift</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#org3fbd9b3">6. Walk Through</a>
+
+            <ul>
+              <li>
+                <a href="#FIGHTINCOWBOY">6.1. FightinCowboy</a>
+
+                <ul>
+                  <li><a href="#orgeb058d4">6.1.1. <span class=
+                  "todo TODO">TODO</span> Stormveil Castle</a></li>
+
+                  <li><a href="#org7642cf4">6.1.2. <span class=
+                  "done DONE">DONE</span> PART 12 - Godrick the
+                  Grafted</a></li>
+
+                  <li><a href="#org4ec8022">6.1.3. <span class=
+                  "done DONE">DONE</span> Abandoned Cave
+                  Link</a></li>
+
+                  <li><a href="#org6cd04b6">6.1.4. <span class=
+                  "todo TODO">TODO</span> 15 - South Liurnia and
+                  the Rose Church - Link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="#org9a44036">7. Assasin Stealth</a></li>
+
+          <li><a href="#org103c724">8. Weapons</a></li>
+
+          <li><a href="#orgc2ef86b">9. Crafting Items</a></li>
+
+          <li>
+            <a href="#CHANNELS">10. Channels</a>
+
+            <ul>
+              <li><a href="#org6f5ce21">10.1. KhrazeGaming</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#BOTTOM">11. Bottom Navigation</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="outline-container-TOP" class="outline-2">
+      <h2 id="TOP"><span class="section-number-2">1.</span>
+      Navigation</h2>
+
+      <div class="outline-text-2" id="text-TOP">
+        <p><a href="krvperera.html">Home</a> <a href=
+        "office.html">OFFICE</a> <a href="linux.html">LINUX</a>
+        <a href="country.html">Country</a> <a href=
+        "org-mode-reference-in.html">HotKeys</a> <a href=
+        "Professional.html">Professional</a> <a href=
+        "#BOTTOM">BOTTOM</a></p>
+      </div>
+    </div>
+
+    <div id="outline-container-orgd2777b7" class="outline-2">
+      <h2 id="orgd2777b7"><span class="section-number-2">2.</span>
+      Items I need to farming</h2>
+
+      <div class="outline-text-2" id="text-2"></div>
+
+      <div id="outline-container-org0401c0e" class="outline-3">
+        <h3 id="org0401c0e"><span class=
+        "section-number-3">2.1.</span> Exalted Flesh</h3>
+
+        <div class="outline-text-3" id="text-2-1">
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-left" />
+              <col class="org-right" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Item</th>
+
+                <th scope="col" class="org-left">place</th>
+
+                <th scope="col" class="org-right">count</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Rowa fruit</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">5</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Lump of flesh</td>
+
+                <td class="org-left">Animals kills, Bell bearing at
+                night in Church of vows</td>
+
+                <td class="org-right">1</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Hefty Best bone</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">1</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Arteria leaf</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="outline-container-org51cbb7d" class="outline-2">
+      <h2 id="org51cbb7d"><span class="section-number-2">3.</span>
+      My Current Build</h2>
+
+      <div class="outline-text-2" id="text-3">
+        <table border="2" cellspacing="0" cellpadding="6" rules=
+        "groups" frame="hsides">
+          <colgroup>
+            <col class="org-left" />
+            <col class="org-right" />
+            <col class="org-right" />
+            <col class="org-right" />
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th scope="col" class="org-left">Stat</th>
+
+              <th scope="col" class="org-right">value</th>
+
+              <th scope="col" class="org-right">FightinCowboy</th>
+
+              <th scope="col" class="org-right">Greate Rune CB</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="org-left">Vigor</td>
+
+              <td class="org-right">31</td>
+
+              <td class="org-right">36</td>
+
+              <td class="org-right">40</td>
+            </tr>
+
+            <tr>
+              <td class="org-left">Mind</td>
+
+              <td class="org-right">17</td>
+
+              <td class="org-right">10</td>
+
+              <td class="org-right">15</td>
+            </tr>
+
+            <tr>
+              <td class="org-left">Endurance</td>
+
+              <td class="org-right">18</td>
+
+              <td class="org-right">20</td>
+
+              <td class="org-right">25</td>
+            </tr>
+
+            <tr>
+              <td class="org-left">Strength</td>
+
+              <td class="org-right">22</td>
+
+              <td class="org-right">18</td>
+
+              <td class="org-right">23</td>
+            </tr>
+
+            <tr>
+              <td class="org-left">Dexterity</td>
+
+              <td class="org-right">22</td>
+
+              <td class="org-right">18</td>
+
+              <td class="org-right">23</td>
+            </tr>
+
+            <tr>
+              <td class="org-left">Intelligence</td>
+
+              <td class="org-right">12</td>
+
+              <td class="org-right">9</td>
+
+              <td class="org-right">14</td>
+            </tr>
+
+            <tr>
+              <td class="org-left">Faith</td>
+
+              <td class="org-right">20</td>
+
+              <td class="org-right">9</td>
+
+              <td class="org-right">14</td>
+            </tr>
+
+            <tr>
+              <td class="org-left">Arcane</td>
+
+              <td class="org-right">13</td>
+
+              <td class="org-right">7</td>
+
+              <td class="org-right">12</td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <td class="org-left">Total</td>
+
+              <td class="org-right">155</td>
+
+              <td class="org-right">124</td>
+
+              <td class="org-right">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="outline-container-org87a4ea5" class="outline-2">
+      <h2 id="org87a4ea5"><span class="section-number-2">4.</span>
+      Builds</h2>
+
+      <div class="outline-text-2" id="text-4"></div>
+
+      <div id="outline-container-org7d430a3" class="outline-3">
+        <h3 id="org7d430a3"><span class=
+        "section-number-3">4.1.</span> Stats caps</h3>
+
+        <div class="outline-text-3" id="text-4-1">
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-right" />
+              <col class="org-left" />
+              <col class="org-right" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Stat</th>
+
+                <th scope="col" class="org-right">cap1</th>
+
+                <th scope="col" class="org-left">cap2</th>
+
+                <th scope="col" class="org-right">cap3</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Vigor</td>
+
+                <td class="org-right">40</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">60</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Mind</td>
+
+                <td class="org-right">&nbsp;</td>
+
+                <td class="org-left">55</td>
+
+                <td class="org-right">60</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Endurance</td>
+
+                <td class="org-right">&nbsp;</td>
+
+                <td class="org-left">50</td>
+
+                <td class="org-right">&nbsp;</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Strength</td>
+
+                <td class="org-right">20</td>
+
+                <td class="org-left">55</td>
+
+                <td class="org-right">80</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Dexterity</td>
+
+                <td class="org-right">20</td>
+
+                <td class="org-left">55</td>
+
+                <td class="org-right">80</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Intelligence</td>
+
+                <td class="org-right">20</td>
+
+                <td class="org-left">50, 60</td>
+
+                <td class="org-right">80</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Faith</td>
+
+                <td class="org-right">20</td>
+
+                <td class="org-left">50, 60</td>
+
+                <td class="org-right">80</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Arcane</td>
+
+                <td class="org-right">20</td>
+
+                <td class="org-left">50, 60</td>
+
+                <td class="org-right">80</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Total</td>
+
+                <td class="org-right">140</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">520</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="outline-container-orgd9bc3bc" class="outline-3">
+        <h3 id="orgd9bc3bc"><span class=
+        "section-number-3">4.2.</span> Immortal Paladin <a href=
+        "https://www.youtube.com/watch?v=Z9BDkcTpHNE&amp;t=123s">Link</a></h3>
+
+        <div class="outline-text-3" id="text-4-2">
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-right" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Stat</th>
+
+                <th scope="col" class="org-right">value</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Vigor</td>
+
+                <td class="org-right">40</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Mind</td>
+
+                <td class="org-right">20</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Endurance</td>
+
+                <td class="org-right">30</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Strength</td>
+
+                <td class="org-right">65</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Dexterity</td>
+
+                <td class="org-right">17</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Intelligence</td>
+
+                <td class="org-right">13</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Faith</td>
+
+                <td class="org-right">31</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Arcane</td>
+
+                <td class="org-right">9</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Total</td>
+
+                <td class="org-right">229</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Clawmark seal Shard of Alexander Sacred Scoprion Charm
+          Erdtree&rsquo;s Flavour +2 Radagon source seal</p>
+
+          <p>Dragoncrest GreatShield Talisman - Enormously Boosts
+          physical damage</p>
+
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-left" />
+              <col class="org-left" />
+              <col class="org-right" />
+              <col class="org-left" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Item</th>
+
+                <th scope="col" class="org-left">Effect</th>
+
+                <th scope="col" class="org-left">Value</th>
+
+                <th scope="col" class="org-right">Level</th>
+
+                <th scope="col" class="org-left">&nbsp;</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Iron Great, Inseparable great
+                sword</td>
+
+                <td class="org-left">Blade Dance</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">25</td>
+
+                <td class="org-left">&nbsp;</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Banished Knight Great
+                Sword</td>
+
+                <td class="org-left">Blade Dance</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">25</td>
+
+                <td class="org-left">&nbsp;</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Heavy Greate Stars</td>
+
+                <td class="org-left">Prayerful Strike</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">25</td>
+
+                <td class="org-left">&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Shard of Alexander - Greatly boosts the attack power
+          of skills</p>
+        </div>
+      </div>
+
+      <div id="outline-container-orgdb1ba26" class="outline-3">
+        <h3 id="orgdb1ba26"><span class=
+        "section-number-3">4.3.</span> Wall of frenzy <a href=
+        "https://youtu.be/prB2e-yKGD4?t=729">Link</a></h3>
+
+        <div class="outline-text-3" id="text-4-3">
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-right" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Stat</th>
+
+                <th scope="col" class="org-right">value</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Vigor</td>
+
+                <td class="org-right">60</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Mind</td>
+
+                <td class="org-right">21</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Endurance</td>
+
+                <td class="org-right">44</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Strength</td>
+
+                <td class="org-right">48</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Dexterity</td>
+
+                <td class="org-right">20</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Intelligence</td>
+
+                <td class="org-right">9</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Faith</td>
+
+                <td class="org-right">18</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Arcane</td>
+
+                <td class="org-right">9</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Total</td>
+
+                <td class="org-right">229</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Fingerprint Armor - poise</p>
+
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-left" />
+              <col class="org-left" />
+              <col class="org-right" />
+              <col class="org-left" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Item</th>
+
+                <th scope="col" class="org-left">Effect</th>
+
+                <th scope="col" class="org-left">Value</th>
+
+                <th scope="col" class="org-right">Level</th>
+
+                <th scope="col" class="org-left">&nbsp;</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Heavy fingerprint Stone
+                Shield</td>
+
+                <td class="org-left">Shield Bash</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">25</td>
+
+                <td class="org-left">&nbsp;</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Vyke&rsquo;s Was Spear</td>
+
+                <td class="org-left">Frenzyflame Thrust</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">10</td>
+
+                <td class="org-left">&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Shard of Alexander - Greatly boosts the attack power
+          of skills</p>
+        </div>
+      </div>
+
+      <div id="outline-container-orgcdb129c" class="outline-3">
+        <h3 id="orgcdb129c"><span class=
+        "section-number-3">4.4.</span> Spellsword Build - The
+        Exiled Mage <a href=
+        "https://www.youtube.com/watch?v=BLTmyVRAMrw&amp;list=PL7RtZMiaOk8gF9ezBWxRgN6awSM91rAeT&amp;index=13">
+        Link</a></h3>
+
+        <div class="outline-text-3" id="text-4-4">
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-right" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Stat</th>
+
+                <th scope="col" class="org-right">value</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Vigor</td>
+
+                <td class="org-right">60</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Mind</td>
+
+                <td class="org-right">22</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Endurance</td>
+
+                <td class="org-right">30</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Strength</td>
+
+                <td class="org-right">30</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Dexterity</td>
+
+                <td class="org-right">18</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Intelligence</td>
+
+                <td class="org-right">50</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Faith</td>
+
+                <td class="org-right">14</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Arcane</td>
+
+                <td class="org-right">9</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Total</td>
+
+                <td class="org-right">233</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-left" />
+              <col class="org-right" />
+              <col class="org-right" />
+              <col class="org-left" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Item</th>
+
+                <th scope="col" class="org-left">Effect</th>
+
+                <th scope="col" class="org-right">Value</th>
+
+                <th scope="col" class="org-right">Level</th>
+
+                <th scope="col" class="org-left">&nbsp;</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Magic Nightrider Glaive</td>
+
+                <td class="org-left">Attack Power</td>
+
+                <td class="org-right">727</td>
+
+                <td class="org-right">25</td>
+
+                <td class="org-left">Sword Dance</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Lordsworns Straight Sword</td>
+
+                <td class="org-left">Attack Power</td>
+
+                <td class="org-right">517</td>
+
+                <td class="org-right">25</td>
+
+                <td class="org-left">Hearfrost Stomp</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Erdtree Great Shield</td>
+
+                <td class="org-left">Golden Retaliation</td>
+
+                <td class="org-right">517</td>
+
+                <td class="org-right">10</td>
+
+                <td class="org-left">&nbsp;</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Academy Glintstone Staff</td>
+
+                <td class="org-left">Sorcery Scaling</td>
+
+                <td class="org-right">269</td>
+
+                <td class="org-right">25</td>
+
+                <td class="org-left">&nbsp;</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Loretta&rsquo;s War
+                Sickle</td>
+
+                <td class="org-left">&nbsp;</td>
+
+                <td class="org-right">&nbsp;</td>
+
+                <td class="org-right">10</td>
+
+                <td class="org-left">&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Erdtree Favour, Marika&rsquo;s Soreseal, Radagon Icon,
+          Graven-Mass Talisman</p>
+        </div>
+      </div>
+
+      <div id="outline-container-orge3819eb" class="outline-3">
+        <h3 id="orge3819eb"><span class=
+        "section-number-3">4.5.</span> Quality</h3>
+
+        <div class="outline-text-3" id="text-4-5">
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-right" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Stat</th>
+
+                <th scope="col" class="org-right">value</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Vigor</td>
+
+                <td class="org-right">60</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Mind</td>
+
+                <td class="org-right">13</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Endurance</td>
+
+                <td class="org-right">34</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Strength</td>
+
+                <td class="org-right">55</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Dexterity</td>
+
+                <td class="org-right">55</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Intelligence</td>
+
+                <td class="org-right">9</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Faith</td>
+
+                <td class="org-right">14</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Arcane</td>
+
+                <td class="org-right">9</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Total</td>
+
+                <td class="org-right">249</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="outline-container-org135caa1" class="outline-3">
+        <h3 id="org135caa1"><span class=
+        "section-number-3">4.6.</span> Faith Build - Golden God
+        <a href=
+        "https://www.youtube.com/watch?v=DFRYbiwYajE&amp;list=PL7RtZMiaOk8gF9ezBWxRgN6awSM91rAeT&amp;index=9">
+        Link</a></h3>
+
+        <div class="outline-text-3" id="text-4-6">
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-right" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Stat</th>
+
+                <th scope="col" class="org-right">value</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Vigor</td>
+
+                <td class="org-right">60</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Mind</td>
+
+                <td class="org-right">25</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Endurance</td>
+
+                <td class="org-right">25</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Strength</td>
+
+                <td class="org-right">17</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Dexterity</td>
+
+                <td class="org-right">25</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Intelligence</td>
+
+                <td class="org-right">9</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Faith</td>
+
+                <td class="org-right">80</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Arcane</td>
+
+                <td class="org-right">9</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Total</td>
+
+                <td class="org-right">250</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="outline-container-org3e13339" class="outline-3">
+        <h3 id="org3e13339"><span class=
+        "section-number-3">4.7.</span> Hybrid Caster Build - The
+        Pursuer</h3>
+
+        <div class="outline-text-3" id="text-4-7">
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-right" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Stat</th>
+
+                <th scope="col" class="org-right">value</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Vigor</td>
+
+                <td class="org-right">60</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Mind</td>
+
+                <td class="org-right">41</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Endurance</td>
+
+                <td class="org-right">10</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Strength</td>
+
+                <td class="org-right">12</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Dexterity</td>
+
+                <td class="org-right">12</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Intelligence</td>
+
+                <td class="org-right">50</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Faith</td>
+
+                <td class="org-right">50</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Arcane</td>
+
+                <td class="org-right">14</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Total</td>
+
+                <td class="org-right">249</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table border="2" cellspacing="0" cellpadding="6" rules=
+          "groups" frame="hsides">
+            <colgroup>
+              <col class="org-left" />
+              <col class="org-left" />
+              <col class="org-right" />
+              <col class="org-right" />
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Item</th>
+
+                <th scope="col" class="org-left">Effect</th>
+
+                <th scope="col" class="org-right">Value</th>
+
+                <th scope="col" class="org-right">Level</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="org-left">Sword of Night and Flame</td>
+
+                <td class="org-left">Attack Power</td>
+
+                <td class="org-right">701</td>
+
+                <td class="org-right">10</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Golden Order seal</td>
+
+                <td class="org-left">Incantation Scaling</td>
+
+                <td class="org-right">345</td>
+
+                <td class="org-right">10</td>
+              </tr>
+
+              <tr>
+                <td class="org-left">Prince of Deaths Staff</td>
+
+                <td class="org-left">Sorcery Scaling</td>
+
+                <td class="org-right">286</td>
+
+                <td class="org-right">25</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Erdtree Favour, Marika&rsquo;s Soreseal, Radagon Icon,
+          Graven-Mass Talisman</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="outline-container-org0d8ffe1" class="outline-2">
+      <h2 id="org0d8ffe1"><span class="section-number-2">5.</span>
+      Main ideas</h2>
+
+      <div class="outline-text-2" id="text-5"></div>
+
+      <div id="outline-container-org04965ec" class="outline-3">
+        <h3 id="org04965ec"><span class=
+        "section-number-3">5.1.</span> Assasin</h3>
+
+        <div class="outline-text-3" id="text-5-1"></div>
+
+        <div id="outline-container-orgaf8166b" class="outline-4">
+          <h4 id="orgaf8166b"><span class=
+          "section-number-4">5.1.1.</span> Golden parry</h4>
+
+          <div class="outline-text-4" id="text-5-1-1">
+            <p>This is royal capital need to wait some time</p>
+          </div>
+
+          <ol class="org-ol">
+            <li><a id="org80548f4" name="org80548f4"></a>Buckler
+            parry<br /></li>
+
+            <li>
+              <a id="org4586d78" name="org4586d78"></a>Best small
+              shield<br />
+
+              <div class="outline-text-5" id="text-5-1-1-2">
+                <p>Iron Roundshield</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div id="outline-container-org044cd85" class="outline-4">
+          <h4 id="org044cd85"><span class=
+          "section-number-4">5.1.2.</span> Good bow</h4>
+
+          <div class="outline-text-4" id="text-5-1-2"></div>
+
+          <ol class="org-ol">
+            <li>
+              <a id="orge7c1964" name="orge7c1964"></a>Arrows<br />
+
+              <ol class="org-ol">
+                <li>
+                  <a id="org5c2c06d" name="org5c2c06d"></a><a href=
+                  "https://eldenring.wiki.fextralife.com/Interactive+map?id=2353&amp;lat=-164.63125&amp;lng=136.080779&amp;zoom=8">Merchant</a><br />
+
+
+                  <div class="outline-text-6" id="text-5-1-2-1-1">
+                    <p>Isolated Merchant Dragonbarrow shop Beast
+                    Repellent torch Serpent Arrow</p>
+                  </div>
+                </li>
+
+                <li>
+                  <a id="org4325e0d" name="org4325e0d"></a><a href=
+                  "https://eldenring.wiki.fextralife.com/interactive+map?id=1158&amp;lat=-187.975001&amp;lng=143.226132&amp;zoom=8">Merchant</a>
+                  Normadic merchant Caleid South<br />
+
+                  <div class="outline-text-6" id="text-5-1-2-1-2">
+                    <p>Normadic Warrior Cookbook [15] Rotbone
+                    arrows/bolt</p>
+                  </div>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+        <div id="outline-container-orge541fc8" class="outline-4">
+          <h4 id="orge541fc8"><span class=
+          "section-number-4">5.1.3.</span> Good Crit Damage</h4>
+        </div>
+
+        <div id="outline-container-org30658e4" class="outline-4">
+          <h4 id="org30658e4"><span class=
+          "section-number-4">5.1.4.</span> Stance break</h4>
+        </div>
+
+        <div id="outline-container-orge97ba61" class="outline-4">
+          <h4 id="orge97ba61"><span class=
+          "section-number-4">5.1.5.</span> Poise Armor</h4>
+        </div>
+
+        <div id="outline-container-orgfa86c7c" class="outline-4">
+          <h4 id="orgfa86c7c"><span class=
+          "section-number-4">5.1.6.</span> Assassin&rsquo;s
+          Cerulean Dagger - Black Knife Catacombs - NE Liurnia Of
+          the Lakes</h4>
+        </div>
+      </div>
+
+      <div id="outline-container-org31758a6" class="outline-3">
+        <h3 id="org31758a6"><span class=
+        "section-number-3">5.2.</span> Cinueda + Dragon Crest
+        Shield <a href=
+        "https://www.youtube.com/watch?v=SbK4jVYPP8g">YouTue</a></h3>
+      </div>
+
+      <div id="outline-container-orge5ea8b5" class="outline-3">
+        <h3 id="orge5ea8b5"><span class=
+        "section-number-3">5.3.</span> Carian Knight Armor <a href=
+        "https://www.youtube.com/watch?v=LPa_TMTyoac">Link</a></h3>
+      </div>
+
+      <div id="outline-container-org4abe8ae" class="outline-3">
+        <h3 id="org4abe8ae"><span class=
+        "section-number-3">5.4.</span> The 5 Most Secretlt powerful
+        werapons <a href=
+        "https://www.youtube.com/watch?v=A4G5y6g-slQ">Link</a></h3>
+      </div>
+
+      <div id="outline-container-orgd40a736" class="outline-3">
+        <h3 id="orgd40a736"><span class=
+        "section-number-3">5.5.</span> Vampire Build <a href=
+        "https://www.youtube.com/watch?v=xwbx_djjrWA">Link</a></h3>
+
+        <div class="outline-text-3" id="text-5-5">
+          <p>Need to wait for volcano manner</p>
+        </div>
+      </div>
+
+      <div id="outline-container-orgbb0a9c3" class="outline-3">
+        <h3 id="orgbb0a9c3"><span class=
+        "section-number-3">5.6.</span> Use Grand Lift</h3>
+      </div>
+    </div>
+
+    <div id="outline-container-org3fbd9b3" class="outline-2">
+      <h2 id="org3fbd9b3"><span class="section-number-2">6.</span>
+      Walk Through</h2>
+
+      <div class="outline-text-2" id="text-6"></div>
+
+      <div id="outline-container-FIGHTINCOWBOY" class="outline-3">
+        <h3 id="FIGHTINCOWBOY"><span class=
+        "section-number-3">6.1.</span> FightinCowboy</h3>
+
+        <div class="outline-text-3" id="text-FIGHTINCOWBOY"></div>
+
+        <div id="outline-container-orgeb058d4" class="outline-4">
+          <h4 id="orgeb058d4"><span class=
+          "section-number-4">6.1.1.</span> <span class=
+          "todo TODO">TODO</span> <a href=
+          "https://www.youtube.com/watch?v=p4uxeniQsg4&amp;list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&amp;index=11">
+          Stormveil Castle</a></h4>
+
+          <div class="outline-text-4" id="text-6-1-1"></div>
+
+          <ol class="org-ol">
+            <li><a id="org1f6875a" name=
+            "org1f6875a"></a><span class="todo TODO">TODO</span>
+            Defeat the Crucible Knight<br /></li>
+          </ol>
+        </div>
+
+        <div id="outline-container-org7642cf4" class="outline-4">
+          <h4 id="org7642cf4"><span class=
+          "section-number-4">6.1.2.</span> <span class=
+          "done DONE">DONE</span> PART 12 - <a href=
+          "https://www.youtube.com/watch?v=EQzBxb_ZQWQ&amp;list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&amp;index=12">
+          Godrick the Grafted</a></h4>
+
+          <div class="outline-text-4" id="text-6-1-2"></div>
+
+          <ol class="org-ol">
+            <li>
+              <a id="org9bdcf2f" name="org9bdcf2f"></a><span class=
+              "done DONE">DONE</span> Seed beast - door is open
+              from Rampart tower<br />
+
+              <div class="outline-text-5" id="text-6-1-2-1"></div>
+            </li>
+          </ol>
+        </div>
+
+        <div id="outline-container-org4ec8022" class="outline-4">
+          <h4 id="org4ec8022"><span class=
+          "section-number-4">6.1.3.</span> <span class=
+          "done DONE">DONE</span> Abandoned Cave <a href=
+          "https://www.youtube.com/watch?v=orecZ59sHj8&amp;list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&amp;index=30">
+          Link</a></h4>
+
+          <div class="outline-text-4" id="text-6-1-3">
+            <p>45, 15, 32, 35, 26, 14, 14, 12</p>
+          </div>
+        </div>
+
+        <div id="outline-container-org6cd04b6" class="outline-4">
+          <h4 id="org6cd04b6"><span class=
+          "section-number-4">6.1.4.</span> <span class=
+          "todo TODO">TODO</span> 15 - South Liurnia and the Rose
+          Church - <a href=
+          "https://www.youtube.com/watch?v=epYkRmcA2nU&amp;list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh&amp;index=15">
+          Link</a></h4>
+
+          <div class="outline-text-4" id="text-6-1-4"></div>
+
+          <ol class="org-ol">
+            <li><a id="orgac802d7" name=
+            "orgac802d7"></a><span class="todo TODO">TODO</span>
+            Stillwater cave<br /></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div id="outline-container-org9a44036" class="outline-2">
+      <h2 id="org9a44036"><span class="section-number-2">7.</span>
+      Assasin Stealth</h2>
+
+      <div class="outline-text-2" id="text-7">
+        <p><a href=
+        "https://www.youtube.com/watch?v=xCKi6g-Fm_E">Assasing
+        Stealth</a> <a href=
+        "https://www.youtube.com/watch?v=DxCpnGtO1ns">ELDEN RING -
+        The Best CRITICAL HIT VAMPIRIC BUILD for EVERYTHING: PARRY,
+        STANCE BREAK &amp; BACKSTABS</a></p>
+      </div>
+    </div>
+
+    <div id="outline-container-org103c724" class="outline-2">
+      <h2 id="org103c724"><span class="section-number-2">8.</span>
+      Weapons</h2>
+
+      <div class="outline-text-2" id="text-8">
+        <p>Item Discovery - Smoldering Church west of starting og
+        Caleid</p>
+
+        <p>Bandits Curved Sword - farming - Church of
+        Pilgrimage</p>
+      </div>
+    </div>
+
+    <div id="outline-container-orgc2ef86b" class="outline-2">
+      <h2 id="orgc2ef86b"><span class="section-number-2">9.</span>
+      Crafting Items</h2>
+
+      <div class="outline-text-2" id="text-9">
+        <p><a href="https://www.youtube.com/watch?v=QjxsxIefaAI">5
+        secret items</a> Gravity stone chunks Exalted Flesh -
+        increase damage</p>
+      </div>
+    </div>
+
+    <div id="outline-container-CHANNELS" class="outline-2">
+      <h2 id="CHANNELS"><span class="section-number-2">10.</span>
+      Channels</h2>
+
+      <div class="outline-text-2" id="text-CHANNELS"></div>
+
+      <div id="outline-container-org6f5ce21" class="outline-3">
+        <h3 id="org6f5ce21"><span class=
+        "section-number-3">10.1.</span> <a href=
+        "https://www.youtube.com/watch?v=iSjviLX1x1g">KhrazeGaming</a></h3>
+
+        <div class="outline-text-3" id="text-10-1">
+          <p><a href="#TOP">TOP</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="outline-container-BOTTOM" class="outline-2">
+      <h2 id="BOTTOM"><span class="section-number-2">11.</span>
+      Bottom Navigation</h2>
+
+      <div class="outline-text-2" id="text-BOTTOM"></div>
+    </div>
+  </div>
+
+  <div id="postamble" class="status">
+    <p class="author">Author: KRV Perera</p>
+
+    <p class="date">Created: 2022-08-08 Mon 09:44</p>
+  </div>
+</body>
+</html>
