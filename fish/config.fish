@@ -37,7 +37,7 @@ end
 
 ## Starship prompt
 if status --is-interactive
-   source ("/usr/bin/starship" init fish --print-full-init | psub)
+#source ("/usr/bin/starship" init fish --print-full-init | psub)
 end
 
 
@@ -168,3 +168,5 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 if status --is-interactive && type -q fastfetch
    fastfetch --load-config neofetch
 end
+
+fish_add_path /Users/rukshanp/.cargo/bin
