@@ -23,21 +23,22 @@
 
 * My Current Build
 
-| Stat         | value | FightinCowboy | Greate Rune CB |
-|--------------+-------+---------------+----------------|
-| Vigor        |    31 |            36 |             41 |
-| Mind         |    17 |            10 |             15 |
-| Endurance    |    18 |            20 |             25 |
-| Strength     |    22 |            18 |             24 |
-| Dexterity    |    22 |            18 |             23 |
-| Intelligence |    22 |             9 |             14 |
-| Faith        |    20 |             9 |             14 |
-| Arcane       |    13 |             7 |             12 |
-|--------------+-------+---------------+----------------|
-| Total        |   165 |           127 |            168 |
+| Stat         | value | With Great Rune | FightinCowboy | Greate Rune CB |
+|--------------+-------+-----------------+---------------+----------------|
+| Vigor        |    36 |              41 |            36 |             41 |
+| Mind         |    17 |              22 |            10 |             15 |
+| Endurance    |    21 |              26 |            20 |             25 |
+| Strength     |    24 |              29 |            18 |             24 |
+| Dexterity    |    24 |              29 |            18 |             23 |
+| Intelligence | 22 +2 |              29 |             9 |             14 |
+| Faith        |    19 |              24 |             9 |             14 |
+| Arcane       |    13 |              18 |             7 |             12 |
+|--------------+-------+-----------------+---------------+----------------|
+| Total        |   178 |             218 |           127 |            168 |
 #+TBLFM: @>$2=vsum(@I..@II)
 #+TBLFM: @>$3=vsum(@I..@II)
 #+TBLFM: @>$4=vsum(@I..@II)
+#+TBLFM: @>$5=vsum(@I..@II)
 
 ** FightinCowboy Weapons
 - Bloodhound's Fang +5
@@ -97,36 +98,6 @@ Dragoncrest GreatShield Talisman - Enormously Boosts physical damage
 Shard of Alexander - Greatly boosts the attack power of skills
 
 
-** Wall of frenzy [[https://youtu.be/prB2e-yKGD4?t=729][Link]]
-
-
-| Stat         | value |
-|--------------+-------|
-| Vigor        |    60 |
-| Mind         |    21 |
-| Endurance    |    44 |
-| Strength     |    48 |
-| Dexterity    |    20 |
-| Intelligence |     9 |
-| Faith        |    18 |
-| Arcane       |     9 |
-|--------------+-------|
-| Total        |   229 |
-#+TBLFM: @>$2=vsum(@I..@II)
-
-Fingerprint Armor - poise
-
-| Item                           | Effect             | Value | Level |   |
-|--------------------------------+--------------------+-------+-------+---|
-| Heavy fingerprint Stone Shield | Shield Bash        |       |    25 |   |
-| Vyke's Was Spear               | Frenzyflame Thrust |       |    10 |   |
-|--------------------------------+--------------------+-------+-------+---|
-
-Shard of Alexander - Greatly boosts the attack power of skills
-
-
-
-
 ** Spellsword Build - The Exiled Mage [[https://www.youtube.com/watch?v=BLTmyVRAMrw&list=PL7RtZMiaOk8gF9ezBWxRgN6awSM91rAeT&index=13][Link]]
 
 | Stat         | value |
@@ -168,22 +139,6 @@ Erdtree Favour, Marika's Soreseal, Radagon Icon, Graven-Mass Talisman
 | Arcane       |     9 |
 |--------------+-------|
 | Total        |   249 |
-#+TBLFM: @>$2=vsum(@I..@II)
-
-** Faith Build - Golden God [[https://www.youtube.com/watch?v=DFRYbiwYajE&list=PL7RtZMiaOk8gF9ezBWxRgN6awSM91rAeT&index=9][Link]]
-
-| Stat         | value |
-|--------------+-------|
-| Vigor        |    60 |
-| Mind         |    25 |
-| Endurance    |    25 |
-| Strength     |    17 |
-| Dexterity    |    25 |
-| Intelligence |     9 |
-| Faith        |    80 |
-| Arcane       |     9 |
-|--------------+-------|
-| Total        |   250 |
 #+TBLFM: @>$2=vsum(@I..@II)
 
 ** Hybrid Caster Build - The Pursuer
@@ -246,6 +201,13 @@ Normadic Warrior Cookbook [15]
 Need to wait for volcano manner
 
 ** Use Grand Lift
+
+** Spellsword
+*** Sword of astel
+
+*** Terra Magica
+
+*** Sword of night and flame ??
 
 * Walk Through
 ** FightinCowboy
