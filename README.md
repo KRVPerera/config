@@ -42,3 +42,6 @@ init.vim
 Config for neovim
 
 ~/.config/nvim/init.vim
+
+#### Install doom emacs on windows
+[Link](https://earvingad.github.io/posts/doom_emacs_windows/)
