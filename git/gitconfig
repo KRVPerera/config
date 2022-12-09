@@ -27,3 +27,8 @@
     co = checkout
     rv = remote -v
     fa = fetch --all
+    r = rebase
+    rc = rebase --continue
+    sub = submodule
+    subu = submodule update
+    subur = submodule update --remote
