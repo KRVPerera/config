@@ -23,22 +23,21 @@
 
 * My Current Build
 
-| Stat         | value | With Great Rune | FightinCowboy | Greate Rune CB |
-|--------------+-------+-----------------+---------------+----------------|
-| Vigor        |    36 |              41 |            36 |             41 |
-| Mind         |    17 |              22 |            10 |             15 |
-| Endurance    |    21 |              26 |            20 |             25 |
-| Strength     |    24 |              29 |            18 |             24 |
-| Dexterity    |    24 |              29 |            18 |             23 |
-| Intelligence | 22 +2 |              29 |             9 |             14 |
-| Faith        |    19 |              24 |             9 |             14 |
-| Arcane       |    13 |              18 |             7 |             12 |
-|--------------+-------+-----------------+---------------+----------------|
-| Total        |   178 |             218 |           127 |            168 |
+| Stat         | Base Value | Radagons Soreseal | With Great Rune |
+|--------------+------------+-------------------+-----------------|
+| Vigor        |         35 |                40 |              45 | 
+| Mind         |         19 |                19 |              24 |
+| Endurance    |         17 |                22 |              27 |
+| Strength     |         19 |                24 |              29 |
+| Dexterity    |         17 |                22 |              27 |
+| Intelligence |         24 |                24 |              29 |
+| Faith        |         19 |                19 |              24 |
+| Arcane       |          9 |                 9 |              14 |
+|--------------+------------+-------------------+-----------------+
+| Total        |   178      |               218 |             127 |
 #+TBLFM: @>$2=vsum(@I..@II)
 #+TBLFM: @>$3=vsum(@I..@II)
 #+TBLFM: @>$4=vsum(@I..@II)
-#+TBLFM: @>$5=vsum(@I..@II)
 
 ** FightinCowboy Weapons
 - Bloodhound's Fang +5
