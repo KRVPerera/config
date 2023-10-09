@@ -19,3 +19,9 @@ fi
 echo "Copying zshrc"
 mv ~/.zshrc ~/.zshrc.bak
 ln -s $configPath/zshrc.linux ~/.zshrc
+export ZPLUG_HOME=$HOME/.zplug
+mkdir $ZPLUG_HOME
+git clone https://github.com/zplug/zplug $ZPLUG_HOME
+
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > $HOME/.zsh/plugins/bd/bd.zsh

@@ -180,7 +180,7 @@ unset __conda_setup
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=$HOME/zplug
 source $ZPLUG_HOME/init.zsh
 
 ## plugins
