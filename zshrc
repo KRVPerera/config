@@ -121,7 +121,6 @@ fi
 ulimit -S -n 65000
 
 #export PATH=$HOME/Projects/ballerina-lang/distribution/zip/jballerina-tools/build/extracted-distributions/jballerina-tools-1.3.0-SNAPSHOT/bin:$PATH
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Colorise the top Tabs of Iterm2 with the same color as background
 ## Just change the 18/26/33 wich are the rgb values
@@ -143,8 +142,6 @@ export PATH="$PATH:${HOME}/SDKs/flutter/bin"
 bindkey -v
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-#export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_HOME=$(/usr/libexec/java_home -v 11.0)
 export HISTCONTROL=ignoreboth:erasedups
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
@@ -159,9 +156,6 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
-
-# set BALLERINA_TOOL variable
-b0
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -185,7 +179,7 @@ source $ZPLUG_HOME/init.zsh
 
 ## plugins
 zplug sei40kr/fast-alias-tips-bin, from:gh-r, as:command, rename-to:def-matcher
-zplug sei40kr/zsh-fast-alias-tips
 
 # zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
