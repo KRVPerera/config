@@ -385,95 +385,87 @@ def init_widgets_list():
                 line_width = 20,
                 ),
 
-           # widget.TaskList(
-           #     highlight_method = 'border', # or block
-           #     icon_size=21,
-           #     max_title_width=92,
-           #     rounded=True,
-           #     padding_x=0,
-           #     padding_y=0,
-           #     margin_y=0,
-           #     fontsize=11,
-           #     border=colors[7],
-           #     foreground=colors[8],
-           #     margin=2,
-           #     txt_floating='🗗',
-           #     txt_minimized='>_ ',
-           #     borderwidth = 1,
-           #     background=colors[2],
-           #     #unfocused_border = 'border'
-           #     ),
+            # widget.TaskList(
+            #     highlight_method = 'border', # or block
+            #     icon_size=21,
+            #     max_title_width=92,
+            #     rounded=True,
+            #     padding_x=0,
+            #     padding_y=0,
+            #     margin_y=0,
+            #     fontsize=11,
+            #     border=colors[7],
+            #     foreground=colors[8],
+            #     margin=2,
+            #     txt_floating='🗗',
+            #     txt_minimized='>_ ',
+            #     borderwidth = 1,
+            #     background=colors[2],
+            #     #unfocused_border = 'border'
+            #     ),
 
+            widget.Spacer(length = 8),
             widget.CurrentLayoutIcon(
                     custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
                     foreground = colors[5],
-                    background = colors[3],
                     padding = 1,
                     scale = 0.7
                     ),
-
+            widget.Spacer(length = 8),
             widget.CurrentLayout(
-                    font = "Noto Sans Bold",
-                    fontsize = 12,
                     foreground = colors[5],
-                    background = colors[3]
                     ),
+            widget.Spacer(length = 8),
             widget.Sep(
-                padding = 10,
-                line_width = 20,
-                ),
+                    padding = 10,
+                    line_width = 20,
+                    ),
+            widget.Spacer(length = 8),
+            widget.Pomodoro(),
+            widget.Spacer(length = 8),
             widget.WindowName (
                     foreground = colors[6],
                     ),
             widget.Spacer(length = 8),
+            widget.GenPollText(
+                    update_interval = 300,
+                    func = lambda : subprocess.check_output("printf $(uname -r)", shell=True, text=True),
+                    foreground = colors[3],
+                    format = ' {}',
+                    ),
+            widget.Spacer(length = 8),
+            widget.NetGraph(
+                    ),
+            widget.Spacer(length = 8),
             widget.CPU(
-                    font="Noto Sans",
-                    #format = '{MemUsed}M/{MemTotal}M',
+                    format = ' Cpu : {load_percent}%',
                     update_interval = 10,
-                    fontsize = 12,
                     foreground = colors[5],
                     background = colors[0],
                     mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
                     ),
+            widget.Spacer(length = 8),
             widget.Battery(
                     **widget_defaults,
                     battery="CMB1",
                     ),
-            widget.Net(
-                    font="Noto Sans",
-                    fontsize=12,
-                    # Here enter your network name
-                    interface=["wlp6s0"],
-                    format = '{down} ↓↑ {up}',
-                    foreground=colors[5],
-                    background=colors[8],
-                    padding = 0,
-                    ),
-
-
+            widget.Spacer(length = 8),
             widget.Memory(
-                    font="Noto Sans",
-                    format = '{MemUsed: .0f}M/{MemTotal: .0f}M',
-                    update_interval = 1,
-                    fontsize = 12,
+                    format = '{MemUsed: .0f} / {MemTotal: .0f}M',
                     measure_mem = 'M',
-                    foreground = colors[5],
-                    background = colors[6],
+                    foreground = colors[8],
                     mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
                     ),
+            widget.Spacer(length = 8),
 
             widget.Clock(
                     foreground = colors[8],
-                    background = colors[3],
                     fontsize = 12,
-                    format="%m-%d %H:%M"
+                    format=" %a %b %d - %H:%M"
                     ),
-
-            widget.Systray(
-                    background=colors[1],
-                    icon_size=20,
-                    padding = 4
-                    ),
+            widget.Spacer(length = 8),
+            widget.Systray(padding = 3),
+            widget.Spacer(length = 8),
             ]
     return widgets_list
 
