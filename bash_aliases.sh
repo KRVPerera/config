@@ -42,7 +42,8 @@ alias alert='export SILENT="1"; echo "SILENT_ON=$SILENT_ON"'
 
 alias mat="/Users/rukshanp/Applications/mat.app/Contents/MacOS/MemoryAnalyzer -vmargs -Xmx3g -XX:-UseGCOverheadLimit"
 
-alias config="cd ~/MyConfig/config"
+alias config="cd /home/krv/MyConfig/config"
+alias qc="vim /home/krv/.config/qtile/config.py"
 
 ## exa alias
 alias ls=exa
@@ -55,3 +56,4 @@ alias cat="bat"
 
 ## emacs life
 alias emacs="emacsclient -c -a 'emacs'"
+alias g="git"

@@ -67,6 +67,8 @@ keys = [
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "d", lazy.spawn("rofi -show run -lines 3 -eh 2 width 100 -opacity \"85\" -bw 0")),
     Key([mod], "t", lazy.spawn('xterm')),
+    Key([mod], "m", lazy.spawn(home + '/apps/MATLAB/R2023b/bin/matlab')),
+    Key([mod], "Tab", lazy.group.focus_back()),
     Key([mod], "v", lazy.spawn('pavucontrol')),
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn(myTerm)),
@@ -107,7 +109,6 @@ keys = [
 
     Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
     Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
-#    Key([mod2, "shift"], "Print", lazy.spawn('gnome-screenshot -i')),
 
 # MULTIMEDIA KEYS
 
@@ -231,17 +232,18 @@ keys = [
 groups = []
 
 # FOR QWERTY KEYBOARDS
-group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 # group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ",]
-#group_labels = ["", "", "", "", "",]
+#group_labels = ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ",]
+group_labels = ["α", "β", "web", "δ", "ε", "6:qtile", "η", "8", "9", "0"]
+#group_labels = ["", """, "", "", "",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "treetab", "floating",]
+group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "treetab", "monadtall", "monadtall", "treetab", "floating",]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
@@ -257,8 +259,6 @@ for i in groups:
 
 #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key([mod], "Tab", lazy.screen.next_group()),
-        Key([mod, "shift" ], "Tab", lazy.screen.prev_group()),
         Key(["mod1"], "Tab", lazy.screen.next_group()),
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 
@@ -267,6 +267,7 @@ for i in groups:
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
     ])
+
 
 
 def init_layout_theme():
@@ -281,23 +282,23 @@ layout_theme = init_layout_theme()
 
 layouts = [
     layout.MonadTall(margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"),
-    layout.MonadWide(margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"),
-    layout.Matrix(**layout_theme),
-    layout.Bsp(**layout_theme),
-    layout.Floating(**layout_theme),
-    layout.RatioTile(**layout_theme),
-    layout.Max(**layout_theme),
+#    layout.MonadWide(margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"),
+#    layout.Matrix(**layout_theme),
+#    layout.Bsp(**layout_theme),
+#    layout.Floating(**layout_theme),
+#    layout.RatioTile(**layout_theme),
     layout.Columns(**layout_theme),
     layout.Stack(**layout_theme),
     layout.Tile(**layout_theme),
     layout.TreeTab(
         sections=['FIRST', 'SECOND'],
-        bg_color = '#141414',
-        active_bg = '#0000ff',
-        inactive_bg = '#1e90ff',
+        bg_color = '#262626',
+        active_bg = '#d75f5f',
+        inactive_bg = '#FC9d9a',
         padding_y =5,
         section_top =10,
-        panel_width = 280),
+        panel_width = 100),
+    layout.Max(**layout_theme),
     layout.VerticalTile(**layout_theme),
     layout.Zoomy(**layout_theme)
 ]
@@ -413,7 +414,7 @@ def init_widgets_list():
                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
                        foreground = colors[5],
                        background = colors[3],
-                       padding = 0,
+                       padding = 1,
                        scale = 0.7
                        ),
 
@@ -423,8 +424,10 @@ def init_widgets_list():
                       foreground = colors[5],
                       background = colors[3]
                         ),
-
-
+               widget.Battery(
+                       **widget_defaults,
+                       battery="CMB1",
+                       ),
                 widget.Net(
                          font="Noto Sans",
                          fontsize=12,
@@ -439,7 +442,7 @@ def init_widgets_list():
                 widget.CPU(
                         font="Noto Sans",
                         #format = '{MemUsed}M/{MemTotal}M',
-                        update_interval = 1,
+                        update_interval = 10,
                         fontsize = 12,
                         foreground = colors[5],
                         background = colors[22],
@@ -461,7 +464,7 @@ def init_widgets_list():
                         foreground = colors[9],
                         background = colors[23],
                         fontsize = 12,
-                        format="%Y-%m-%d %H:%M"
+                        format="%m-%d %H:%M"
                         ),
 
                widget.Systray(
