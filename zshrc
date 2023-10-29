@@ -156,6 +156,10 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks from each command
+
+export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..|..|...)"
+/usr/bin/emacs --daemon &
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

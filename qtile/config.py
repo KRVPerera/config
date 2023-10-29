@@ -33,14 +33,15 @@ from typing import List  # noqa: F401
 from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
 from libqtile.command import lazy
-
 from libqtile.widget import Spacer
+import colors
 
 #mod4 or mod = super key
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
+myEmacs = "emacsclient -c -a 'emacs' "
 
 
 @lazy.function
@@ -61,54 +62,54 @@ keys = [
 
 
 
-# SUPER + FUNCTION KEYS
+        # SUPER + FUNCTION KEYS
 
-    Key([mod], "f", lazy.window.toggle_fullscreen()),
-    Key([mod], "q", lazy.window.kill()),
-    Key([mod], "d", lazy.spawn("rofi -show run -lines 3 -eh 2 width 100 -opacity \"85\" -bw 0")),
-    Key([mod], "t", lazy.spawn('xterm')),
-    Key([mod], "m", lazy.spawn(home + '/apps/MATLAB/R2023b/bin/matlab')),
-    Key([mod], "Tab", lazy.group.focus_back()),
-    Key([mod], "v", lazy.spawn('pavucontrol')),
-    Key([mod], "Escape", lazy.spawn('xkill')),
-    Key([mod], "Return", lazy.spawn(myTerm)),
-    Key([mod], "KP_Enter", lazy.spawn('alacritty')),
-    Key([mod], "x", lazy.shutdown()),
+        Key([mod], "f", lazy.window.toggle_fullscreen()),
+        Key([mod], "q", lazy.window.kill()),
+        Key([mod], "d", lazy.spawn("rofi -show run -lines 3 -eh 2 width 100 -opacity \"85\" -bw 0")),
+        Key([mod], "t", lazy.spawn('xterm')),
+        Key([mod], "e", lazy.spawn(myEmacs), desc="emacs"),
+        Key([mod], "Tab", lazy.group.focus_back()),
+        Key([mod], "v", lazy.spawn('pavucontrol')),
+        Key([mod], "Escape", lazy.spawn('xkill')),
+        Key([mod], "Return", lazy.spawn(myTerm)),
+        Key([mod], "KP_Enter", lazy.spawn('alacritty')),
+        Key([mod], "x", lazy.shutdown()),
 
-# SUPER + SHIFT KEYS
+        # SUPER + SHIFT KEYS
 
-#    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
-    Key([mod, "shift"], "Return", lazy.spawn('pcmanfm')),
-    Key([mod, "shift"], "d", lazy.spawn('nwggrid -p -o 0.4')),
-    Key([mod, "shift"], "q", lazy.window.kill()),
-    Key([mod, "shift"], "r", lazy.restart()),
-    Key([mod, "control"], "r", lazy.restart()),
-    Key([mod, "shift"], "x", lazy.shutdown()),
+        #    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
+        Key([mod, "shift"], "Return", lazy.spawn('pcmanfm')),
+        Key([mod, "shift"], "d", lazy.spawn('nwggrid -p -o 0.4')),
+        Key([mod, "shift"], "q", lazy.window.kill()),
+        Key([mod, "shift"], "r", lazy.restart()),
+        Key([mod, "control"], "r", lazy.restart()),
+        Key([mod, "shift"], "x", lazy.shutdown()),
 
-# CONTROL + ALT KEYS
+        # CONTROL + ALT KEYS
 
-    Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
-    Key(["mod1", "control"], "t", lazy.spawn('xterm')),
-    Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
+        Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
+        Key(["mod1", "control"], "t", lazy.spawn('xterm')),
+        Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
 
-# ALT + ... KEYS
-
-
-    Key(["mod1"], "p", lazy.spawn('pamac-manager')),
-    Key(["mod1"], "w", lazy.spawn('brave')),
-    Key(["mod1"], "m", lazy.spawn('pcmanfm')),
-    Key(["mod1"], "f", lazy.spawn('garuda-welcome')),
+        # ALT + ... KEYS
 
 
-# CONTROL + SHIFT KEYS
+        Key(["mod1"], "p", lazy.spawn('pamac-manager')),
+        Key(["mod1"], "w", lazy.spawn('brave')),
+        Key(["mod1"], "m", lazy.spawn('pcmanfm')),
+        Key(["mod1"], "f", lazy.spawn('garuda-welcome')),
 
-    Key([mod2, "shift"], "Escape", lazy.spawn('lxtask')),
+
+        # CONTROL + SHIFT KEYS
+
+        Key([mod2, "shift"], "Escape", lazy.spawn('lxtask')),
 
 
-# SCREENSHOTS
+        # SCREENSHOTS
 
-    Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
-    Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
+        Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
+Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
 
 # MULTIMEDIA KEYS
 
@@ -248,25 +249,25 @@ group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall"
 
 for i in range(len(group_names)):
     groups.append(
-        Group(
-            name=group_names[i],
-            layout=group_layouts[i].lower(),
-            label=group_labels[i],
-        ))
+            Group(
+                name=group_names[i],
+                layout=group_layouts[i].lower(),
+                label=group_labels[i],
+                ))
 
 for i in groups:
     keys.extend([
 
-#CHANGE WORKSPACES
+        #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
         Key(["mod1"], "Tab", lazy.screen.next_group()),
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 
-# MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
+        # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
-# MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
+        # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
-    ])
+        ])
 
 
 
@@ -281,27 +282,27 @@ layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadTall(margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"),
-#    layout.MonadWide(margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"),
-#    layout.Matrix(**layout_theme),
-#    layout.Bsp(**layout_theme),
-#    layout.Floating(**layout_theme),
-#    layout.RatioTile(**layout_theme),
-    layout.Columns(**layout_theme),
-    layout.Stack(**layout_theme),
-    layout.Tile(**layout_theme),
-    layout.TreeTab(
-        sections=['FIRST', 'SECOND'],
-        bg_color = '#262626',
-        active_bg = '#d75f5f',
-        inactive_bg = '#FC9d9a',
-        padding_y =5,
-        section_top =10,
-        panel_width = 100),
-    layout.Max(**layout_theme),
-    layout.VerticalTile(**layout_theme),
-    layout.Zoomy(**layout_theme)
-]
+        layout.MonadTall(margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"),
+        #    layout.MonadWide(margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"),
+        #    layout.Matrix(**layout_theme),
+        #    layout.Bsp(**layout_theme),
+        #    layout.Floating(**layout_theme),
+        #    layout.RatioTile(**layout_theme),
+        layout.Columns(**layout_theme),
+        layout.Stack(**layout_theme),
+        layout.Tile(**layout_theme),
+        layout.TreeTab(
+            sections=['FIRST', 'SECOND'],
+            bg_color = '#262626',
+            active_bg = '#d75f5f',
+            inactive_bg = '#FC9d9a',
+            padding_y =5,
+            section_top =10,
+            panel_width = 100),
+        layout.Max(**layout_theme),
+        layout.VerticalTile(**layout_theme),
+        layout.Zoomy(**layout_theme)
+        ]
 
 # COLORS FOR THE BAR
 
@@ -332,147 +333,133 @@ def init_colors():
             ["#fb9f7f", "#fb9f7f"], #22
             ["#ffd47e", "#ffd47e"]] #23
 
-colors = init_colors()
+colors = colors.MonokaiPro
 
 def base(fg='text', bg='dark'):
-    return {'foreground': colors[14],'background': colors[15]}
+    return {'foreground': colors[1],'background': colors[0]}
 
 
 # WIDGETS FOR THE BAR
 
 def init_widgets_defaults():
-    return dict(font="Noto Sans",
-                fontsize = 9,
-                padding = 2,
-                background=colors[1])
+    return dict(font="Ubuntu Bold",
+                fontsize = 12,
+                padding = 0,
+                background=colors[0])
 
 widget_defaults = init_widgets_defaults()
 
 def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
-
-                 widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[15],
-                        background = colors[15]
-                        ),              #
-               widget.Image(
-                       filename = "~/.config/qtile/icons/garuda-red.png",
-                       iconsize = 9,
-                       background = colors[15],
-                       mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('jgmenu_run')}
-                       ),
-               widget.GroupBox(
-
-            **base(bg=colors[15]),
-            font='UbuntuMono Nerd Font',
-
-                    fontsize = 15,
-                    margin_y = 3,
-                    margin_x = 2,
-                    padding_y = 5,
-                    padding_x = 4,
-                    borderwidth = 3,
-
-            active=colors[5],
-            inactive=colors[6],
-            rounded= True,
-            highlight_method='block',
-            urgent_alert_method='block',
-            urgent_border=colors[16],
-            this_current_screen_border=colors[20],
-            this_screen_border=colors[17],
-            other_current_screen_border=colors[13],
-            other_screen_border=colors[17],
-            disable_drag=True
-
-
-
-                        ),
-                widget.TaskList(
-                    highlight_method = 'border', # or block
-                    icon_size=17,
-                    max_title_width=150,
-                    rounded=True,
-                    padding_x=0,
-                    padding_y=0,
-                    margin_y=0,
-                    fontsize=14,
-                    border=colors[7],
-                    foreground=colors[9],
-                    margin=2,
-                    txt_floating='🗗',
-                    txt_minimized='>_ ',
-                    borderwidth = 1,
-                    background=colors[20],
-                    #unfocused_border = 'border'
+            widget.Image(
+                filename = "~/.config/qtile/icons/garuda-red.png",
+                iconsize = 9,
+                background = colors[0],
+                mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('jgmenu_run')}
+                ),
+            widget.GroupBox(
+                fontsize = 11,
+                margin_y = 3,
+                margin_x = 4,
+                padding_y = 2,
+                padding_x = 3,
+                borderwidth = 3,
+                active = colors[8],
+                inactive = colors[1],
+                rounded = False,
+                highlight_color = colors[2],
+                highlight_method = 'line',
+                urgent_alert_method = 'block',
+                urgent_border = colors[6],
+                this_current_screen_border = colors[7],
+                this_screen_border = colors[4],
+                other_current_screen_border = colors[7],
+                other_screen_border = colors[4],
                 ),
 
-               widget.CurrentLayoutIcon(
-                       custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                       foreground = colors[5],
-                       background = colors[3],
-                       padding = 1,
-                       scale = 0.7
-                       ),
+           # widget.TaskList(
+           #     highlight_method = 'border', # or block
+           #     icon_size=21,
+           #     max_title_width=92,
+           #     rounded=True,
+           #     padding_x=0,
+           #     padding_y=0,
+           #     margin_y=0,
+           #     fontsize=11,
+           #     border=colors[7],
+           #     foreground=colors[8],
+           #     margin=2,
+           #     txt_floating='🗗',
+           #     txt_minimized='>_ ',
+           #     borderwidth = 1,
+           #     background=colors[2],
+           #     #unfocused_border = 'border'
+           #     ),
 
-               widget.CurrentLayout(
-                      font = "Noto Sans Bold",
-                      fontsize = 12,
-                      foreground = colors[5],
-                      background = colors[3]
-                        ),
-               widget.Battery(
-                       **widget_defaults,
-                       battery="CMB1",
-                       ),
-                widget.Net(
-                         font="Noto Sans",
-                         fontsize=12,
-                        # Here enter your network name
-                         interface=["wlp6s0"],
-                         format = '{down} ↓↑ {up}',
-                         foreground=colors[5],
-                         background=colors[19],
-                         padding = 0,
-                         ),
+            widget.CurrentLayoutIcon(
+                    custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                    foreground = colors[5],
+                    background = colors[3],
+                    padding = 1,
+                    scale = 0.7
+                    ),
 
-                widget.CPU(
-                        font="Noto Sans",
-                        #format = '{MemUsed}M/{MemTotal}M',
-                        update_interval = 10,
-                        fontsize = 12,
-                        foreground = colors[5],
-                        background = colors[22],
-                        mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
-                       ),
+            widget.CurrentLayout(
+                    font = "Noto Sans Bold",
+                    fontsize = 12,
+                    foreground = colors[5],
+                    background = colors[3]
+                    ),
+            widget.Battery(
+                    **widget_defaults,
+                    battery="CMB1",
+                    ),
+            widget.Net(
+                    font="Noto Sans",
+                    fontsize=12,
+                    # Here enter your network name
+                    interface=["wlp6s0"],
+                    format = '{down} ↓↑ {up}',
+                    foreground=colors[5],
+                    background=colors[8],
+                    padding = 0,
+                    ),
 
-               widget.Memory(
-                        font="Noto Sans",
-                        format = '{MemUsed: .0f}M/{MemTotal: .0f}M',
-                        update_interval = 1,
-                        fontsize = 12,
-                        measure_mem = 'M',
-                        foreground = colors[5],
-                        background = colors[16],
-                        mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
-                       ),
+            widget.CPU(
+                    font="Noto Sans",
+                    #format = '{MemUsed}M/{MemTotal}M',
+                    update_interval = 10,
+                    fontsize = 12,
+                    foreground = colors[5],
+                    background = colors[0],
+                    mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
+                    ),
 
-               widget.Clock(
-                        foreground = colors[9],
-                        background = colors[23],
-                        fontsize = 12,
-                        format="%m-%d %H:%M"
-                        ),
+            widget.Memory(
+                    font="Noto Sans",
+                    format = '{MemUsed: .0f}M/{MemTotal: .0f}M',
+                    update_interval = 1,
+                    fontsize = 12,
+                    measure_mem = 'M',
+                    foreground = colors[5],
+                    background = colors[6],
+                    mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
+                    ),
 
-               widget.Systray(
-                       background=colors[10],
-                       icon_size=20,
-                       padding = 4
-                       ),
-              ]
+            widget.Clock(
+                    foreground = colors[8],
+                    background = colors[3],
+                    fontsize = 12,
+                    format="%m-%d %H:%M"
+                    ),
+
+            widget.Systray(
+                    background=colors[1],
+                    icon_size=20,
+                    padding = 4
+                    ),
+            ]
     return widgets_list
 
 widgets_list = init_widgets_list()
@@ -487,22 +474,26 @@ def init_widgets_screen2():
     return widgets_screen2
 
 widgets_screen1 = init_widgets_screen1()
-widgets_screen2 = init_widgets_screen2()
+#widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=0.85, background= "000000")),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=0.85, background= "000000"))]
+    #return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=0.85, background= "000000")),
+    #        Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=0.85, background= "000000"))]
+
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=23, opacity=0.85, background= "FF0000"))]
+
+
 screens = init_screens()
 
 
 # MOUSE CONFIGURATION
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size())
-]
+        Drag([mod], "Button1", lazy.window.set_position_floating(),
+             start=lazy.window.get_position()),
+        Drag([mod], "Button3", lazy.window.set_size_floating(),
+             start=lazy.window.get_size())
+        ]
 
 dgroups_key_binder = None
 dgroups_app_rules = []
@@ -565,7 +556,7 @@ def start_always():
 @hook.subscribe.client_new
 def set_floating(window):
     if (window.window.get_wm_transient_for()
-            or window.window.get_wm_type() in floating_types):
+        or window.window.get_wm_type() in floating_types):
         window.floating = True
 
 floating_types = ["notification", "toolbar", "splash", "dialog"]
@@ -602,7 +593,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='cairo-dock'),
 
 
-],  fullscreen_border_width = 0, border_width = 0)
+    ],  fullscreen_border_width = 0, border_width = 0)
 auto_fullscreen = True
 
 focus_on_window_activation = "focus" # or smart
