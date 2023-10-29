@@ -12,15 +12,17 @@ export GRADLE_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=\"/Users/ru
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vi_mode vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history command_execution_time root_indicator public_ip background_jobs)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# Add a space in the first prompt
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+#POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=false
+
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vi_mode vcs)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history command_execution_time root_indicator public_ip background_jobs)
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
+#POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+#POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
