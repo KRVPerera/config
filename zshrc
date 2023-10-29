@@ -159,7 +159,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks from each command
 
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..|..|...)"
-/usr/bin/emacs --daemon &
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
