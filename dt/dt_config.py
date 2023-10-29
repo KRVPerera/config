@@ -276,7 +276,7 @@ layouts = [
          vspace = 3,
          panel_width = 240
          ),
-    layout.Zoomy(**layout_theme),
+#    layout.Zoomy(**layout_theme),
 ]
 
 # Some settings that I use on almost every widget, which saves us
