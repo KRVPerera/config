@@ -338,6 +338,9 @@ colors = colors.MonokaiPro
 def base(fg='text', bg='dark'):
     return {'foreground': colors[1],'background': colors[0]}
 
+@hook.subscribe.startup_once
+def autostart_once():
+    subprocess.run('/home/krv/.config/autostart/autostart_once.sh')
 
 # WIDGETS FOR THE BAR
 
@@ -353,7 +356,7 @@ def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
             widget.Image(
-                filename = "~/.config/qtile/icons/garuda-red.png",
+                filename = "~/.config/qtile/boruto.png",
                 iconsize = 9,
                 background = colors[0],
                 mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('jgmenu_run')}
@@ -376,6 +379,10 @@ def init_widgets_list():
                 this_screen_border = colors[4],
                 other_current_screen_border = colors[7],
                 other_screen_border = colors[4],
+                ),
+            widget.Sep(
+                padding = 10,
+                line_width = 20,
                 ),
 
            # widget.TaskList(
@@ -411,6 +418,23 @@ def init_widgets_list():
                     foreground = colors[5],
                     background = colors[3]
                     ),
+            widget.Sep(
+                padding = 10,
+                line_width = 20,
+                ),
+            widget.WindowName (
+                    foreground = colors[6],
+                    ),
+            widget.Spacer(length = 8),
+            widget.CPU(
+                    font="Noto Sans",
+                    #format = '{MemUsed}M/{MemTotal}M',
+                    update_interval = 10,
+                    fontsize = 12,
+                    foreground = colors[5],
+                    background = colors[0],
+                    mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
+                    ),
             widget.Battery(
                     **widget_defaults,
                     battery="CMB1",
@@ -426,15 +450,6 @@ def init_widgets_list():
                     padding = 0,
                     ),
 
-            widget.CPU(
-                    font="Noto Sans",
-                    #format = '{MemUsed}M/{MemTotal}M',
-                    update_interval = 10,
-                    fontsize = 12,
-                    foreground = colors[5],
-                    background = colors[0],
-                    mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
-                    ),
 
             widget.Memory(
                     font="Noto Sans",
