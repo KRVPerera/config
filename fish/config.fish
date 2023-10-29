@@ -177,3 +177,4 @@ fish_add_path -P /opt/local/sbin
 
 source ~/MyConfig/config/bash_aliases.sh
 source ~/MyConfig/config/aliases/local_aliases.sh
+starship init fish | source

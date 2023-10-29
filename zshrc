@@ -186,3 +186,6 @@ zplug sei40kr/fast-alias-tips-bin, from:gh-r, as:command, rename-to:def-matcher
 # zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+colorscript random
+eval "$(starship init zsh)"
