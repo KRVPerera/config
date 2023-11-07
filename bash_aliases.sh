@@ -57,3 +57,4 @@ alias cat="bat"
 ## emacs life
 alias emacs="emacsclient -c -a 'emacs'"
 alias g="git"
+alias ciot="~/projects/IOT/sense"

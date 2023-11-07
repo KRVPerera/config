@@ -1,0 +1,17 @@
+[user]
+	name = KRVPerera
+	email = rukshan.viduranga@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = vim
+[merge]
+	conflictstyle = diff3
+	tool = vimdiff
+[credential]
+	helper = cache --timeout=3600
+[diff]
+  tool = vimdiff
+
+[alias]
+  st = status

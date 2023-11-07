@@ -56,7 +56,7 @@ def window_to_next_group(qtile):
         i = qtile.groups.index(qtile.currentGroup)
         qtile.currentWindow.togroup(qtile.groups[i + 1].name)
 
-myTerm = "alacritty" # My terminal of choice
+myTerm = "kitty" # My terminal of choice
 
 keys = [
 
@@ -69,21 +69,19 @@ keys = [
         Key([mod], "d", lazy.spawn("rofi -show run -lines 3 -eh 2 width 100 -opacity \"85\" -bw 0")),
         Key([mod], "t", lazy.spawn('xterm')),
         Key([mod], "e", lazy.spawn(myEmacs), desc="emacs"),
+        Key([mod], "m", lazy.spawn('/home/krv/apps/MATLAB/R2023b/bin/matlab')),
         Key([mod], "Tab", lazy.group.focus_back()),
         Key([mod], "v", lazy.spawn('pavucontrol')),
         Key([mod], "Escape", lazy.spawn('xkill')),
         Key([mod], "Return", lazy.spawn(myTerm)),
         Key([mod], "KP_Enter", lazy.spawn('alacritty')),
-        Key([mod], "x", lazy.shutdown()),
 
         # SUPER + SHIFT KEYS
 
         #    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
         Key([mod, "shift"], "Return", lazy.spawn('pcmanfm')),
-        Key([mod, "shift"], "d", lazy.spawn('nwggrid -p -o 0.4')),
         Key([mod, "shift"], "q", lazy.window.kill()),
         Key([mod, "shift"], "r", lazy.restart()),
-        Key([mod, "control"], "r", lazy.restart()),
         Key([mod, "shift"], "x", lazy.shutdown()),
 
         # CONTROL + ALT KEYS
@@ -92,18 +90,9 @@ keys = [
         Key(["mod1", "control"], "t", lazy.spawn('xterm')),
         Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
 
-        # ALT + ... KEYS
-
-
-        Key(["mod1"], "p", lazy.spawn('pamac-manager')),
-        Key(["mod1"], "w", lazy.spawn('brave')),
-        Key(["mod1"], "m", lazy.spawn('pcmanfm')),
-        Key(["mod1"], "f", lazy.spawn('garuda-welcome')),
-
 
         # CONTROL + SHIFT KEYS
 
-        Key([mod2, "shift"], "Escape", lazy.spawn('lxtask')),
 
 
         # SCREENSHOTS
@@ -266,7 +255,8 @@ for i in groups:
         # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
         # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=False) , 
+            lazy.group[i.name].toscreen()),
         ])
 
 
