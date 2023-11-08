@@ -181,6 +181,7 @@ export LC_ALL=en_US.UTF-8
 
 export ZPLUG_HOME=$HOME/zplug
 source $ZPLUG_HOME/init.zsh
+export RIOT_HOME=$HOME/projects/IOT/mini-project/RIOT
 
 ## plugins
 zplug sei40kr/fast-alias-tips-bin, from:gh-r, as:command, rename-to:def-matcher
