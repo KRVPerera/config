@@ -70,6 +70,7 @@ keys = [
         Key([mod], "t", lazy.spawn('xterm')),
         Key([mod], "e", lazy.spawn(myEmacs), desc="emacs"),
         Key([mod], "m", lazy.spawn('/home/krv/apps/MATLAB/R2023b/bin/matlab')),
+        Key([mod], "z", lazy.spawn('/home/krv/apps/Zotero-6.0.30/Zotero_linux-x86_64/zotero')),
         Key([mod], "Tab", lazy.group.focus_back()),
         Key([mod], "v", lazy.spawn('pavucontrol')),
         Key([mod], "Escape", lazy.spawn('xkill')),
