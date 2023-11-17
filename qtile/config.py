@@ -75,7 +75,7 @@ keys = [
         Key([mod], "v", lazy.spawn('pavucontrol')),
         Key([mod], "Escape", lazy.spawn('xkill')),
         Key([mod], "Return", lazy.spawn(myTerm)),
-        Key([mod], "KP_Enter", lazy.spawn('alacritty')),
+        Key([mod], "KP_Enter", lazy.spawn('fish')),
 
         # SUPER + SHIFT KEYS
 
