@@ -230,7 +230,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 # group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 #group_labels = ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ",]
-group_labels = ["α", "β", "web", "δ", "ε", "6:qtile", "η", "8", "9", "0"]
+group_labels = ["α", "β", "3:web", "δ", "ε", "6:qtile", "η", "8", "9", "0:comm"]
 #group_labels = ["", """, "", "", "",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
