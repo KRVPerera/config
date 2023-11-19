@@ -66,7 +66,7 @@ keys = [
 
         Key([mod], "f", lazy.window.toggle_fullscreen()),
         Key([mod], "q", lazy.window.kill()),
-        Key([mod], "d", lazy.spawn("rofi -show run -lines 3 -eh 2 width 100 -opacity \"65\" -bw 0")),
+        Key([mod], "d", lazy.spawn("rofi -show run -lines 3 -eh 2 width 100 -opacity \"85\" -bw 0")),
         Key([mod], "t", lazy.spawn('xterm')),
         Key([mod], "e", lazy.spawn(myEmacs), desc="emacs"),
         Key([mod], "m", lazy.spawn('/home/krv/apps/MATLAB/R2023b/bin/matlab')),
@@ -99,17 +99,17 @@ keys = [
         # SCREENSHOTS
 
         Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
-Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
+        Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
 
-# MULTIMEDIA KEYS
+        # MULTIMEDIA KEYS
 
-# INCREASE/DECREASE BRIGHTNESS
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s +5%")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 5%- ")),
+        # INCREASE/DECREASE BRIGHTNESS
+        Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s +5%")),
+        Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 5%- ")),
 
-# INCREASE/DECREASE/MUTE VOLUME
-    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
+        # INCREASE/DECREASE/MUTE VOLUME
+        Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
+Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q set Master 5%+")),
 
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
@@ -341,6 +341,10 @@ def init_widgets_defaults():
                 padding = 0,
                 background=colors[0])
 
+def open_chat_gpt(qtile):
+    qtile.cmd_spawn('google-chrome --app=https://outlook.office.com/mail/')
+
+
 widget_defaults = init_widgets_defaults()
 
 def init_widgets_list():
@@ -350,7 +354,32 @@ def init_widgets_list():
                 filename = "~/.config/qtile/boruto.png",
                 iconsize = 9,
                 background = colors[0],
-                mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('jgmenu_run')}
+                #                mouse_callbacks = {'Button1': open_chat_gpt},
+                mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('google-chrome --app=https://krvperera.com')},
+                ),
+            widget.Sep(
+                padding = 10,
+                line_width = 20,
+                ),
+            widget.TextBox(
+                text='',
+                font='FontAwesome',
+                fontsize=20,
+                mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('google-chrome --app=https://teams.microsoft.com/_#/conversations/48:notes?ctx=chat')},
+                ),
+            widget.Sep(
+                padding = 10,
+                line_width = 20,
+                ),
+            widget.TextBox(
+                text='',
+                font='FontAwesome',
+                fontsize=20,
+                mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('google-chrome --app=https://chat.openai.com')},
+                ),
+            widget.Sep(
+                padding = 10,
+                line_width = 20,
                 ),
             widget.GroupBox(
                 fontsize = 15,
@@ -389,7 +418,7 @@ def init_widgets_list():
             #     foreground=colors[8],
             #     margin=2,
             #     txt_floating='🗗',
-            #     txt_minimized='>_ ',
+    #     txt_minimized='>_ ',
             #     borderwidth = 1,
             #     background=colors[2],
             #     #unfocused_border = 'border'
@@ -401,10 +430,6 @@ def init_widgets_list():
                     foreground = colors[5],
                     padding = 1,
                     scale = 0.7
-                    ),
-            widget.Spacer(length = 8),
-            widget.CurrentLayout(
-                    foreground = colors[5],
                     ),
             widget.Spacer(length = 8),
             widget.Sep(
@@ -432,16 +457,16 @@ def init_widgets_list():
             widget.NetGraph(),
             widget.Spacer(length = 8),
         widget.DF(
-                 update_interval = 60,
-                 foreground = colors[4],
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
-                 partition = '/',
-                 #format = '[{p}] {uf}{m} ({r:.0f}%)',
-                 format = '{uf}{m} free',
-                 fmt = '🖴  Disk: {}',
-                 visible_on_warn = False,
-                 ),
-            widget.Spacer(length = 8),
+                update_interval = 60,
+                foreground = colors[4],
+                mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
+                partition = '/',
+                #format = '[{p}] {uf}{m} ({r:.0f}%)',
+                format = '{uf}{m} free',
+                fmt = '🖴  Disk: {}',
+                visible_on_warn = False,
+                ),
+        widget.Spacer(length = 8),
             widget.CPU(
                     format = 'Cpu : {load_percent}%',
                     update_interval = 10,

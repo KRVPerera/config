@@ -86,10 +86,10 @@ set clipboard=unnamed
 
 inoremap ii <Esc>
 inoremap jj <Esc>
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
+nnoremap : .
+nnoremap . :
+vnoremap : .
+vnoremap . :
 
 nnoremap <C-L> <C-W><C-V>
 nnoremap <C-J> :split<CR>
