@@ -492,7 +492,7 @@ def init_screens():
     #return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=0.85, background= "000000")),
     #        Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=0.85, background= "000000"))]
 
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=23, opacity=0.85, background= "FF0000"))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=23, opacity=0.70, background= "FF0000"))]
 
 
 screens = init_screens()

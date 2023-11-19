@@ -3,5 +3,6 @@
 /usr/bin/nitrogen --restore &
 nm-applet &
 volumeicon &
-picom --experimental-backend &
+picom &
+#picom --experimental-backend &
 notify-log $HOME/.log/notify.log &

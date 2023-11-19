@@ -26,3 +26,5 @@ orgmode/*.pdf
 orgmode/*.odt
 
 .idea
+
+__pycache__
