@@ -192,3 +192,9 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 colorscript random
 eval "$(starship init zsh)"
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+source /home/krv/.config/broot/launcher/bash/br

@@ -66,7 +66,7 @@ keys = [
 
         Key([mod], "f", lazy.window.toggle_fullscreen()),
         Key([mod], "q", lazy.window.kill()),
-        Key([mod], "d", lazy.spawn("rofi -show run -lines 3 -eh 2 width 100 -opacity \"85\" -bw 0")),
+        Key([mod], "d", lazy.spawn("rofi -mode 'run,ssh' -show run -lines 3 -eh 2 width 100 -opacity \"85\" -bw 0")),
         Key([mod], "t", lazy.spawn('xterm')),
         Key([mod], "e", lazy.spawn(myEmacs), desc="emacs"),
         Key([mod], "m", lazy.spawn('/home/krv/apps/MATLAB/R2023b/bin/matlab')),
