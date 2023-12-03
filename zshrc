@@ -162,19 +162,26 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks from each command
 
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..|..|...)"
 
+CONDA_PATH_1=miniconda3
+CONDA_PATH_2=miniforge3
+CONDA_PATH=${CONDA_PATH_1}
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/krv/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/krv/${CONDA_PATH}/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/krv/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/krv/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/krv/${CONDA_PATH}/etc/profile.d/conda.sh" ]; then
+        . "/home/krv/${CONDA_PATH}/etc/profile.d/conda.sh"
     else
-        export PATH="/home/krv/miniconda3/bin:$PATH"
+        export PATH="/home/krv/${CONDA_PATH}/bin:$PATH"
     fi
 fi
 unset __conda_setup
+
+if [ -f "/home/krv/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/krv/miniforge3/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
