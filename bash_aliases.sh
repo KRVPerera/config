@@ -64,3 +64,5 @@ alias cw="~/projects/DataStreamPilot"
 alias cdeep="~/projects/DeepLearning/DeepLearning"
 alias jl="jupyter-lab"
 alias tools="~/MyConfig/config/tools.sh"
+
+alias virt='echo $VIRTUAL_ENV'

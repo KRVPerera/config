@@ -206,3 +206,4 @@ fpath+=~/.zfunc
 
 fortune | cowsay -f $(ls /usr/share/cowsay/cows | shuf -n1)
 source /home/krv/.config/broot/launcher/bash/br
+eval "$(atuin init zsh)"

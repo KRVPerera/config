@@ -38,6 +38,7 @@ end
 ## Starship prompt
 if status --is-interactive
 #source ("/usr/bin/starship" init fish --print-full-init | psub)
+atuin init fish | source
 end
 
 
