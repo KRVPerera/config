@@ -25,6 +25,14 @@ git config --global diff.tool vimdiff
 git config --global merge.tool vimdiff
 # git config --global difftool.prompt false # I disabled because have experience with 100s of vims opening at once
 
+# GE
+git config --global core.autocrlf false
+git config --global push.default tracking
+git config --global branch.autosetuprebase always
+git config --global pull.rebase false
+git config --global gc.auto 0
+git config --global rerere.enabled yes
+
 ## utils
 ### monitoring tools
 sudo nala install -y htop pydf
