@@ -230,11 +230,11 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 # group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 #group_labels = ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ",]
-group_labels = ["α", "β", "3:web", "δ", "ε", "6:qtile", "η", "8", "9", "0:comm"]
+group_labels = ["α", "β", "3:web", "δ", "ε", "6", "η", "8", "9", "0:comm"]
 #group_labels = ["", """, "", "", "",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "treetab", "monadtall", "monadtall", "treetab", "floating",]
+group_layouts = ["zoomy", "monadtall", "monadtall", "monadtall", "monadtall", "treetab", "monadtall", "monadtall", "treetab", "floating",]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
@@ -270,16 +270,21 @@ def init_layout_theme():
             }
 
 layout_theme = init_layout_theme()
+print(dir(layout_theme))
 
 
 layouts = [
-        layout.MonadTall(margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"),
-        #    layout.MonadWide(margin=8, border_width=2, border_focus="#ff00ff", border_normal="#f4c2c2"),
-        #    layout.Matrix(**layout_theme),
-        #    layout.Bsp(**layout_theme),
-        #    layout.Floating(**layout_theme),
-        #    layout.RatioTile(**layout_theme),
-        layout.Columns(**layout_theme),
+        layout.MonadTall(margin=1, border_width=1, border_focus="#ff00ff", border_normal="#f4c2c2"),
+        layout.MonadWide(margin=1, border_width=1, border_focus="#ff00ff", border_normal="#f4c2c2"),
+        layout.MonadThreeCol(margin=1, border_width=1, border_focus="#ff00ff", border_normal="#f4c2c2"),
+        layout.Matrix(**layout_theme),
+        layout.Bsp(**layout_theme),
+        #layout.Floating(**layout_theme),
+        #layout.Plasma(**layout_theme),
+        layout.RatioTile(**layout_theme),
+        #layout.ScreenSplit(**layout_theme),
+        layout.Slice(**layout_theme),
+        layout.Spiral(**layout_theme),
         layout.Stack(**layout_theme),
         layout.Tile(**layout_theme),
         layout.TreeTab(
@@ -388,17 +393,17 @@ def init_widgets_list():
                 padding_y = 2,
                 padding_x = 3,
                 borderwidth = 3,
-                active = colors[8],
-                inactive = colors[1],
+                active = colors[3],
+                inactive = colors[2],
                 rounded = True,
                 highlight_color = colors[2],
                 highlight_method = 'line',
                 urgent_alert_method = 'block',
                 urgent_border = colors[6],
-                this_current_screen_border = colors[7],
-                this_screen_border = colors[4],
-                other_current_screen_border = colors[7],
-                other_screen_border = colors[4],
+                this_current_screen_border = colors[6], # on this screen when focused
+                this_screen_border = colors[8],
+                other_current_screen_border = colors[6], # other screen
+                other_screen_border = colors[8],
                 ),
             widget.Sep(
                 padding = 10,
@@ -443,7 +448,7 @@ def init_widgets_list():
                     line_width = 20,
                     ),
             widget.Spacer(length = 8),
-#            widget.WindowTabs(),
+#            widget.WindowTabs),
 #            widget.WindowName (foreground = colors[6]),
             widget.TaskList(),
             widget.Spacer(length = 8),
@@ -498,26 +503,148 @@ def init_widgets_list():
             ]
     return widgets_list
 
-widgets_list = init_widgets_list()
+def init_widgets_list1():
+    prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
+    widgets_list = [
+            widget.Image(
+                filename = "~/.config/qtile/boruto.png",
+                iconsize = 9,
+                background = colors[0],
+                #                mouse_callbacks = {'Button1': open_chat_gpt},
+                mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('google-chrome --app=https://krvperera.com')},
+                ),
+            widget.Sep(
+                padding = 10,
+                line_width = 20,
+                ),
+            widget.GroupBox(
+                fontsize = 15,
+                margin_y = 3,
+                margin_x = 4,
+                padding_y = 2,
+                padding_x = 3,
+                borderwidth = 3,
+                active = colors[3],
+                inactive = colors[2],
+                rounded = True,
+                highlight_color = colors[2],
+                highlight_method = 'line',
+                urgent_alert_method = 'block',
+                urgent_border = colors[6],
+                this_current_screen_border = colors[6], # on this screen when focused
+                this_screen_border = colors[8],
+                other_current_screen_border = colors[6], # other screen
+                other_screen_border = colors[8],
+                ),
+            widget.Sep(
+                padding = 10,
+                line_width = 20,
+                ),
 
+            # widget.TaskList(
+            #     highlight_method = 'border', # or block
+            #     icon_size=21,
+            #     max_title_width=92,
+            #     rounded=True,
+            #     padding_x=0,
+            #     padding_y=0,
+            #     margin_y=0,
+            #     fontsize=11,
+            #     border=colors[7],
+            #     foreground=colors[8],
+            #     margin=2,
+            #     txt_floating='🗗',
+    #     txt_minimized='>_ ',
+            #     borderwidth = 1,
+            #     background=colors[2],
+            #     #unfocused_border = 'border'
+            #     ),
+
+            widget.Spacer(length = 8),
+            widget.CurrentLayoutIcon(
+                    custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                    foreground = colors[5],
+                    padding = 1,
+                    scale = 0.7
+                    ),
+            widget.Spacer(length = 8),
+            widget.Sep(
+                    padding = 10,
+                    line_width = 20,
+                    ),
+            widget.Spacer(length = 8),
+            widget.Pomodoro(),
+            widget.Sep(
+                    padding = 10,
+                    line_width = 20,
+                    ),
+            widget.Spacer(length = 8),
+#            widget.WindowTabs),
+#            widget.WindowName (foreground = colors[6]),
+            widget.TaskList(fontsize=10),
+            widget.Spacer(length = 8),
+            widget.GenPollText(
+                    update_interval = 300,
+                    func = lambda : subprocess.check_output("printf $(uname -r)", shell=True, text=True),
+                    foreground = colors[3],
+                    format = '❤ {}',
+                    ),
+            widget.Spacer(length = 8),
+            widget.NetGraph(),
+            widget.Spacer(length = 8),
+        widget.DF(
+                update_interval = 60,
+                foreground = colors[4],
+                mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
+                partition = '/',
+                #format = '[{p}] {uf}{m} ({r:.0f}%)',
+                format = '{uf}{m} free',
+                fmt = '🖴  Disk: {}',
+                visible_on_warn = False,
+                ),
+        widget.Spacer(length = 8),
+            widget.CPU(
+                    format = 'Cpu : {load_percent}%',
+                    update_interval = 10,
+                    foreground = colors[5],
+                    background = colors[0],
+                    mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
+                    ),
+            widget.Spacer(length = 8),
+            widget.Battery(
+                    battery="CMB1",
+                    ),
+            widget.Spacer(length = 8),
+            widget.Memory(
+                    format = '{MemUsed: .0f} / {MemTotal: .0f}M',
+                    measure_mem = 'M',
+                    foreground = colors[7],
+                    mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
+                    ),
+            widget.Spacer(length = 8),
+
+            widget.Clock(
+                    foreground = colors[8],
+                    fontsize = 12,
+                    format=" %a %b %d - %H:%M"
+                    ),
+            widget.Spacer(length = 8),
+            ]
+    return widgets_list
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
     return widgets_screen1
 
 def init_widgets_screen2():
-    widgets_screen2 = init_widgets_list()
+    widgets_screen2 = init_widgets_list1()
     return widgets_screen2
 
-widgets_screen1 = init_widgets_screen1()
-#widgets_screen2 = init_widgets_screen2()
-
-
 def init_screens():
-    #return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=0.85, background= "000000")),
-    #        Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=0.85, background= "000000"))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=23, opacity=0.70, background= "FF0000")),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=15, opacity=0.70, background= "FF0000"))]
 
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=23, opacity=0.70, background= "FF0000"))]
+    #return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=23, opacity=0.70, background= "FF0000"))]
 
 
 screens = init_screens()

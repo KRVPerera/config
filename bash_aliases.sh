@@ -57,11 +57,8 @@ alias cat="bat"
 ## emacs life
 alias emacs="emacsclient -c -a 'emacs'"
 alias g="git"
-alias ciot="~/projects/IOT/sense"
 alias cm="~/masters"
-alias cmid="~/masters/ssp"
-alias cw="~/projects/DataStreamPilot"
-alias cdeep="~/projects/DeepLearning/DeepLearning"
+alias cw="~/projects/Pixelmancy"
 alias jl="jupyter-lab"
 alias tools="~/MyConfig/config/tools.sh"
 
