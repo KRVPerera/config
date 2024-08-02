@@ -4,5 +4,4 @@
 nm-applet &
 volumeicon &
 picom &
-#picom --experimental-backend &
 notify-log $HOME/.log/notify.log &
