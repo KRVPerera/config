@@ -91,6 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias soc="source ~/.bashrc"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -101,8 +102,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases.sh ]; then
-    . ~/.bash_aliases.sh
+if [ -f ~/bash_aliases.sh ]; then
+    . ~/bash_aliases.sh
 fi
 
 # enable programmable completion features (you don't need to enable

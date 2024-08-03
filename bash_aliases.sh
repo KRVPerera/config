@@ -1,65 +1,72 @@
-alias soc='. ~/.zshrc'
-alias cls='clear'
 alias c='clear'
-alias quit='exit'
+alias cat='bat'
+
+alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
+alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+alias l.="exa -a | egrep '^\.'"
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias c='clear'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 alias e='exit'
-alias edit='vim'
-alias gv='gvim'
-alias v='gvim'
+alias c='clear'
+alias g='git'
+alias edit='nvim'
+alias config="cd $HOME/MyConfig/config"
 alias rm='rm -i'
-alias sd='sudo shutdown -h now'
-alias p='python3'
 alias free='free -ht'
-alias top='htop'
-alias df='pydf'
-alias ipconfig='ifconfig'
-alias antlr4='java org.antlr.v4.Tool'
-alias grun='java org.antlr.v4.runtime.misc.TestRig'
-alias histg='history | grep'
-alias hg='history | grep'
-alias psBal='lsof -n | grep ballerina'
-alias rmJar='rm -rf *jar'
-alias sub='git pull --recurse-submodule'
 
-# aliases for ballerina
-alias decompile='java -jar /Applications/procyon.jar'
-alias decompileGui='java -jar /Applications/jd-gui.jar'
+alias sd='sudo shutdown -h now'
+alias logout='sudo pkill -u'
 
-alias gitCleanBal='git restore misc**; git restore composer**; git restore tool-plugins**'
-alias findTCPListenPorts='lsof -PiTCP -sTCP:LISTEN'
-alias downloadSongs="youtube-dl -f 'bestvideo[height<=360]+bestaudio/best[height<=360]' --download-archive Songs.txt https://www.youtube.com/playlist\?list\=PLKK_AU2B-pEoOIhsxTIKwlNTNReBQrLi3"
-alias frate="~/MyScripts/frate.sh"
-alias downWith5Cns="aria2c --file-allocation=none -c -x 5 --check-integrity=true"
-alias d2="aria2c --file-allocation=none -c -x 2 --check-integrity=true"
-alias d5=downWith5Cns
-alias downWithXCns="aria2c --file-allocation=none -c --check-integrity=true -x"
-alias du="youtube-dl -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'"
+alias bak="~/MyConfig/config/backup.sh"
 
-alias gw='./gradlew'
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gb="git branch"
+alias gp="git push"
+alias gl="git pull"
+alias gcm="git commit -m"
+alias gcam="git commit -a -m"
+alias gst="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gco="git checkout"
+alias grs="git restore"
+alias grv="git remote -v"
 
-alias silent='export SILENT="0"; echo "SILENT_ON=$SILENT_ON"'
-alias alert='export SILENT="1"; echo "SILENT_ON=$SILENT_ON"'
 
-alias mat="/Users/rukshanp/Applications/mat.app/Contents/MacOS/MemoryAnalyzer -vmargs -Xmx3g -XX:-UseGCOverheadLimit"
+alias hg="history | grep"
+alias lg="ls | grep"
+alias pg="ps -ef | grep"
+alias ag="alias | grep"
+alias apt_proxy="cat /etc/apt/apt.conf"
 
-alias config="cd /home/krv/MyConfig/config"
-alias qc="vim /home/krv/.config/qtile/config.py"
+alias startvm="VBoxManage startvm"
 
-## exa alias
-alias ls=exa
-alias la="exa -al"
-alias ll="exa --all --long --header --icons --git --all"
-alias l1="exa -al --tree --level=2"
-alias l2="exa -al --tree --level=3"
-alias l3="exa -al --tree --level=4"
-alias cat="bat"
+alias logs="cd ~/logs"
+
+alias cscope_cpp_files='ack -f --cpp > cscope.files'
 
 ## emacs life
 alias emacs="emacsclient -c -a 'emacs'"
-alias g="git"
+
+alias virt='echo $VIRTUAL_ENV'
+
+
+## machine specific
+alias tools="~/MyConfig/config/tools.sh"
 alias cm="~/masters"
 alias cw="~/projects/Pixelmancy"
 alias jl="jupyter-lab"
-alias tools="~/MyConfig/config/tools.sh"
-
-alias virt='echo $VIRTUAL_ENV'

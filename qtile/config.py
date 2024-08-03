@@ -220,9 +220,9 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 # group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["1 ", "2 ", "3:web ", "4:hub_desktop ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
+group_labels = ["1 ", "2 ", "3", "4:web", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 #group_labels = ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ",]
-#group_labels = ["α", "β", "3:web", "4:hub_dekstop", "5", "6:", "η", "8", "9", "0:comm"]
+#group_labels = ["α", "β", "3:web", "4", "5", "6:", "η", "8", "9", "0:comm"]
 #group_labels = ["", """, "", "", "",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
