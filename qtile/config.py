@@ -32,9 +32,13 @@ import subprocess
 from typing import List  # noqa: F401
 from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from libqtile.widget import Spacer
 import colors
+from libqtile import hook
+from libqtile.log_utils import logger
+from libqtile.core.manager import Qtile
+#from core.layouts import floating_layout
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -44,17 +48,6 @@ home = os.path.expanduser('~')
 myEmacs = "emacsclient -c -a 'emacs' "
 
 
-@lazy.function
-def window_to_prev_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
-
-@lazy.function
-def window_to_next_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
 
 myTerm = "kitty" # My terminal of choice
 
@@ -69,11 +62,10 @@ keys = [
         Key([mod], "d", lazy.spawn("rofi -mode 'run,ssh' -show drun -lines 3 -eh 2 width 100 -opacity \"85\" -bw 0")),
         Key([mod], "t", lazy.spawn('xterm')),
         Key([mod], "e", lazy.spawn(myEmacs), desc="emacs"),
-        Key([mod], "m", lazy.spawn('/home/krv/apps/MATLAB/R2023b/bin/matlab')),
-        Key([mod], "z", lazy.spawn('/home/krv/apps/Zotero-6.0.30/Zotero_linux-x86_64/zotero')),
         Key([mod], "Tab", lazy.group.focus_back()),
         Key([mod], "v", lazy.spawn('pavucontrol')),
         Key([mod], "Escape", lazy.spawn('xkill')),
+        Key([mod], "s", lazy.spawn('kitty --single-instance --session ~/.config/kitty/office_session.conf')),
         Key([mod], "Return", lazy.spawn(myTerm)),
         Key([mod], "KP_Enter", lazy.spawn('fish')),
 
@@ -87,7 +79,6 @@ keys = [
 
         # CONTROL + ALT KEYS
 
-        Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
         Key(["mod1", "control"], "t", lazy.spawn('xterm')),
         Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
 
@@ -200,14 +191,14 @@ Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
          ### Treetab controls
-    Key([mod, "control"], "k",
-        lazy.layout.section_up(),
-        desc='Move up a section in treetab'
-        ),
-    Key([mod, "control"], "j",
-        lazy.layout.section_down(),
-        desc='Move down a section in treetab'
-        ),
+    #Key([mod, "control"], "k",
+    #    lazy.layout.section_up(),
+    #    desc='Move up a section in treetab'
+    #    ),
+    #Key([mod, "control"], "j",
+    #    lazy.layout.section_down(),
+    #    desc='Move down a section in treetab'
+    #    ),
 
 
 
@@ -229,13 +220,13 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 # group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
+group_labels = ["1 ", "2 ", "3:web ", "4:hub_desktop ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 #group_labels = ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ",]
-group_labels = ["α", "β", "3:web", "δ", "ε", "6", "η", "8", "9", "0:comm"]
+#group_labels = ["α", "β", "3:web", "4:hub_dekstop", "5", "6:", "η", "8", "9", "0:comm"]
 #group_labels = ["", """, "", "", "",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["zoomy", "monadtall", "monadtall", "monadtall", "monadtall", "treetab", "monadtall", "monadtall", "treetab", "floating",]
-#group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
+group_layouts = ["monadtall", "monadtall", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall", "bsp", "bsp",]
 
 for i in range(len(group_names)):
     groups.append(
@@ -250,8 +241,8 @@ for i in groups:
 
         #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key(["mod1"], "Tab", lazy.screen.next_group()),
-        Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
+#        Key(["mod1"], "Tab", lazy.screen.next_group()),
+#        Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 
         # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
@@ -263,28 +254,25 @@ for i in groups:
 
 
 def init_layout_theme():
-    return {"margin":10,
-            "border_width":2,
+    return {"margin":2,
+            "border_width": 4,
             "border_focus": "#ff00ff",
             "border_normal": "#f4c2c2"
             }
 
 layout_theme = init_layout_theme()
-print(dir(layout_theme))
 
 
 layouts = [
-        layout.MonadTall(margin=1, border_width=1, border_focus="#ff00ff", border_normal="#f4c2c2"),
-        layout.MonadWide(margin=1, border_width=1, border_focus="#ff00ff", border_normal="#f4c2c2"),
-        layout.MonadThreeCol(margin=1, border_width=1, border_focus="#ff00ff", border_normal="#f4c2c2"),
+        layout.MonadTall(**layout_theme),
+        layout.MonadWide(**layout_theme),
+        layout.MonadThreeCol(**layout_theme),
         layout.Matrix(**layout_theme),
         layout.Bsp(**layout_theme),
-        #layout.Floating(**layout_theme),
-        #layout.Plasma(**layout_theme),
-        layout.RatioTile(**layout_theme),
-        #layout.ScreenSplit(**layout_theme),
-        layout.Slice(**layout_theme),
-        layout.Spiral(**layout_theme),
+        #    layout.Bsp(**layout_theme),
+        #    layout.Floating(**layout_theme),
+        #    layout.RatioTile(**layout_theme),
+        layout.Columns(**layout_theme),
         layout.Stack(**layout_theme),
         layout.Tile(**layout_theme),
         layout.TreeTab(
@@ -370,7 +358,7 @@ def init_widgets_list():
                 text='',
                 font='FontAwesome',
                 fontsize=20,
-                mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('google-chrome --app=https://teams.microsoft.com/_#/conversations/48:notes?ctx=chat')},
+                mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('google-chrome --app=https://teams.microsoft.com/v2/?culture=en-us')},
                 ),
             widget.Sep(
                 padding = 10,
@@ -393,17 +381,17 @@ def init_widgets_list():
                 padding_y = 2,
                 padding_x = 3,
                 borderwidth = 3,
-                active = colors[3],
-                inactive = colors[2],
+                active = colors[8],
+                inactive = colors[1],
                 rounded = True,
                 highlight_color = colors[2],
                 highlight_method = 'line',
                 urgent_alert_method = 'block',
                 urgent_border = colors[6],
-                this_current_screen_border = colors[6], # on this screen when focused
-                this_screen_border = colors[8],
-                other_current_screen_border = colors[6], # other screen
-                other_screen_border = colors[8],
+                this_current_screen_border = colors[7],
+                this_screen_border = colors[4],
+                other_current_screen_border = colors[7],
+                other_screen_border = colors[4],
                 ),
             widget.Sep(
                 padding = 10,
@@ -430,8 +418,7 @@ def init_widgets_list():
             #     ),
 
             widget.Spacer(length = 8),
-            widget.CurrentLayoutIcon(
-                    custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+            widget.CurrentLayout(
                     foreground = colors[5],
                     padding = 1,
                     scale = 0.7
@@ -448,7 +435,7 @@ def init_widgets_list():
                     line_width = 20,
                     ),
             widget.Spacer(length = 8),
-#            widget.WindowTabs),
+#            widget.WindowTabs(),
 #            widget.WindowName (foreground = colors[6]),
             widget.TaskList(),
             widget.Spacer(length = 8),
@@ -480,10 +467,6 @@ def init_widgets_list():
                     mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
                     ),
             widget.Spacer(length = 8),
-            widget.Battery(
-                    battery="CMB1",
-                    ),
-            widget.Spacer(length = 8),
             widget.Memory(
                     format = '{MemUsed: .0f} / {MemTotal: .0f}M',
                     measure_mem = 'M',
@@ -503,142 +486,20 @@ def init_widgets_list():
             ]
     return widgets_list
 
-def init_widgets_list1():
-    prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
-    widgets_list = [
-            widget.Image(
-                filename = "~/.config/qtile/boruto.png",
-                iconsize = 9,
-                background = colors[0],
-                #                mouse_callbacks = {'Button1': open_chat_gpt},
-                mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn('google-chrome --app=https://krvperera.com')},
-                ),
-            widget.Sep(
-                padding = 10,
-                line_width = 20,
-                ),
-            widget.GroupBox(
-                fontsize = 15,
-                margin_y = 3,
-                margin_x = 4,
-                padding_y = 2,
-                padding_x = 3,
-                borderwidth = 3,
-                active = colors[3],
-                inactive = colors[2],
-                rounded = True,
-                highlight_color = colors[2],
-                highlight_method = 'line',
-                urgent_alert_method = 'block',
-                urgent_border = colors[6],
-                this_current_screen_border = colors[6], # on this screen when focused
-                this_screen_border = colors[8],
-                other_current_screen_border = colors[6], # other screen
-                other_screen_border = colors[8],
-                ),
-            widget.Sep(
-                padding = 10,
-                line_width = 20,
-                ),
+widgets_list = init_widgets_list()
 
-            # widget.TaskList(
-            #     highlight_method = 'border', # or block
-            #     icon_size=21,
-            #     max_title_width=92,
-            #     rounded=True,
-            #     padding_x=0,
-            #     padding_y=0,
-            #     margin_y=0,
-            #     fontsize=11,
-            #     border=colors[7],
-            #     foreground=colors[8],
-            #     margin=2,
-            #     txt_floating='🗗',
-    #     txt_minimized='>_ ',
-            #     borderwidth = 1,
-            #     background=colors[2],
-            #     #unfocused_border = 'border'
-            #     ),
-
-            widget.Spacer(length = 8),
-            widget.CurrentLayoutIcon(
-                    custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                    foreground = colors[5],
-                    padding = 1,
-                    scale = 0.7
-                    ),
-            widget.Spacer(length = 8),
-            widget.Sep(
-                    padding = 10,
-                    line_width = 20,
-                    ),
-            widget.Spacer(length = 8),
-            widget.Pomodoro(),
-            widget.Sep(
-                    padding = 10,
-                    line_width = 20,
-                    ),
-            widget.Spacer(length = 8),
-#            widget.WindowTabs),
-#            widget.WindowName (foreground = colors[6]),
-            widget.TaskList(fontsize=10),
-            widget.Spacer(length = 8),
-            widget.GenPollText(
-                    update_interval = 300,
-                    func = lambda : subprocess.check_output("printf $(uname -r)", shell=True, text=True),
-                    foreground = colors[3],
-                    format = '❤ {}',
-                    ),
-            widget.Spacer(length = 8),
-            widget.NetGraph(),
-            widget.Spacer(length = 8),
-        widget.DF(
-                update_interval = 60,
-                foreground = colors[4],
-                mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
-                partition = '/',
-                #format = '[{p}] {uf}{m} ({r:.0f}%)',
-                format = '{uf}{m} free',
-                fmt = '🖴  Disk: {}',
-                visible_on_warn = False,
-                ),
-        widget.Spacer(length = 8),
-            widget.CPU(
-                    format = 'Cpu : {load_percent}%',
-                    update_interval = 10,
-                    foreground = colors[5],
-                    background = colors[0],
-                    mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
-                    ),
-            widget.Spacer(length = 8),
-            widget.Battery(
-                    battery="CMB1",
-                    ),
-            widget.Spacer(length = 8),
-            widget.Memory(
-                    format = '{MemUsed: .0f} / {MemTotal: .0f}M',
-                    measure_mem = 'M',
-                    foreground = colors[7],
-                    mouse_callbacks = {'Button1': lambda : qtile.cmd_spawn(myTerm + ' -e htop')},
-                    ),
-            widget.Spacer(length = 8),
-
-            widget.Clock(
-                    foreground = colors[8],
-                    fontsize = 12,
-                    format=" %a %b %d - %H:%M"
-                    ),
-            widget.Spacer(length = 8),
-            ]
-    return widgets_list
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
     return widgets_screen1
 
 def init_widgets_screen2():
-    widgets_screen2 = init_widgets_list1()
+    widgets_screen2 = init_widgets_list()
     return widgets_screen2
+
+widgets_screen1 = init_widgets_screen1()
+#widgets_screen2 = init_widgets_screen2()
+
 
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=23, opacity=0.70, background= "FF0000")),
@@ -667,37 +528,45 @@ dgroups_app_rules = []
 #########################################################
 ################ assgin apps to groups ##################
 #########################################################
-# @hook.subscribe.client_new
-# def assign_app_group(client):
-#     d = {}
-#     #########################################################
-#     ################ assgin apps to groups ##################
-#     #########################################################
-#     d["1"] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser",
-#               "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser", ]
-#     d["2"] = [ "Atom", "Subl3", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord",
-#                "atom", "subl3", "geany", "brackets", "code-oss", "code", "telegramDesktop", "discord", ]
-#     d["3"] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
-#               "inkscape", "nomacs", "ristretto", "nitrogen", "feh", ]
-#     d["4"] = ["Gimp", "gimp" ]
-#     d["5"] = ["Meld", "meld", "org.gnome.meld" "org.gnome.Meld" ]
-#     d["6"] = ["Vlc","vlc", "Mpv", "mpv" ]
-#     d["7"] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
-#               "virtualbox manager", "virtualbox machine", "vmplayer", ]
-#     d["8"] = ["pcmanfm", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
-#               "pcmanfm", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
-#     d["9"] = ["Evolution", "Geary", "Mail", "Thunderbird",
-#               "evolution", "geary", "mail", "thunderbird" ]
-#     d["0"] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
-#               "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
-#     ##########################################################
-#     wm_class = client.window.get_wm_class()[0]
-#
-#     for i in range(len(d)):
-#         if wm_class in list(d.values())[i]:
-#             group = list(d.keys())[i]
-#             client.togroup(group)
-#             client.group.cmd_toscreen()
+def assign_app_group(client):
+    if client is None:
+        logger.debug("Null client")
+        return
+
+    d = {}
+    #########################################################
+    ################ assgin apps to groups ##################
+    #########################################################
+    d["3"] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser",
+              "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser", ]
+    #d["2"] = [ "Atom", "Subl3", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord",
+    #           "atom", "subl3", "geany", "brackets", "code-oss", "code", "telegramDesktop", "discord", ]
+    #d["3"] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
+    #          "inkscape", "nomacs", "ristretto", "nitrogen", "feh", ]
+    #d["4"] = ["Gimp", "gimp" ]
+    #d["5"] = ["Meld", "meld", "org.gnome.meld" "org.gnome.Meld" ]
+    #d["6"] = ["Vlc","vlc", "Mpv", "mpv" ]
+    #d["7"] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
+    #          "virtualbox manager", "virtualbox machine", "vmplayer", ]
+    #d["8"] = ["pcmanfm", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
+    #          "pcmanfm", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
+    #d["9"] = ["Evolution", "Geary", "Mail", "Thunderbird",
+    #          "evolution", "geary", "mail", "thunderbird" ]
+    #d["0"] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
+    #          "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
+    ##########################################################
+
+    wm_class = ''
+    if isinstance(client._wm_class, list) and len(client._wm_class) > 0:
+        wm_class = client._wm_class[0]
+    else:
+        return
+
+    for i in range(len(d)):
+        if wm_class in list(d.values())[i]:
+            group = list(d.keys())[i]
+            client.togroup(group)
+            #client.group.toscreen()
 
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
@@ -706,21 +575,10 @@ dgroups_app_rules = []
 
 main = None
 
-@hook.subscribe.startup_once
-def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
-
 @hook.subscribe.startup
 def start_always():
     # Set the cursor to something sane in X
     subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
-
-@hook.subscribe.client_new
-def set_floating(window):
-    if (window.window.get_wm_transient_for()
-        or window.window.get_wm_type() in floating_types):
-        window.floating = True
 
 floating_types = ["notification", "toolbar", "splash", "dialog"]
 
