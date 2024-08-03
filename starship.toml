@@ -18,18 +18,22 @@ $php\
 $java\
 $kotlin\
 $haskell\
+$conda\
 $python\
 [](fg:color_blue bg:color_bg3)\
 $docker_context\
 [](fg:color_bg3 bg:color_bg1)\
 $time\
 [ ](fg:color_bg1)\
+$shell\
 $line_break$character"""
 
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'
+color_fg1 = '#ebdbb2'
+color_bg0 = '#282828'
 color_bg1 = '#3c3836'
 color_bg3 = '#665c54'
 color_blue = '#458588'
@@ -39,6 +43,14 @@ color_orange = '#d65d0e'
 color_purple = '#b16286'
 color_red = '#cc241d'
 color_yellow = '#d79921'
+color_normalwhite = '#a89984'
+color_lightblack = '#928374'
+color_lightred   = '#fb4934'
+color_lightgreen = '#b8bb26'
+color_lightyellow = '#fabd2f'
+color_lightblue  = '#83a598'
+color_lightmagenta = '#d3869b'
+color_lightcyan  = '#8ec07c'
 
 [os]
 disabled = false
@@ -141,7 +153,7 @@ format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 [docker_context]
 symbol = ""
 style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+format = '[[ $symbol( $context) ](fg:color_lightblue bg:color_bg3)]($style)'
 
 [time]
 disabled = false
@@ -151,6 +163,12 @@ format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
 [line_break]
 disabled = false
+
+[shell]
+disabled = false
+style = "bg:color_bg0 fg:color_green"
+fish_indicator = "󰈺"
+bash_indicator = "󱆃"
 
 [character]
 disabled = false
