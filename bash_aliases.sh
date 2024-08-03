@@ -64,9 +64,10 @@ alias emacs="emacsclient -c -a 'emacs'"
 
 alias virt='echo $VIRTUAL_ENV'
 
+alias nvimk='NVIM_APPNAME="nvim-kickstart" nvim'
 
 ## machine specific
 alias tools="~/MyConfig/config/tools.sh"
-alias cm="~/masters"
-alias cw="~/projects/Pixelmancy"
+alias cm="cd ~/masters"
+alias cw="cd ~/projects/Pixelmancy"
 alias jl="jupyter-lab"

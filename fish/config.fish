@@ -37,6 +37,7 @@ fish_add_path -P /home/krv/.emacs.d/bin
 fish_add_path -P /home/krv/.local/bin
 fish_add_path -P ~/MyScripts
 fish_add_path -P ~/apps/lua-ls/bin
+fish_add_path -P ~/apps/nvim-linux64/bin
 
 function random_quote
   set random_cow (exa /usr/share/cowsay/cows | shuf -n1)
