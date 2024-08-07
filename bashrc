@@ -253,3 +253,5 @@ if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integr
  eval "$(starship init bash)"
 
 source /home/krv/.config/broot/launcher/bash/br
+
+[ -f "/home/krv/.ghcup/env" ] && . "/home/krv/.ghcup/env" # ghcup-env
