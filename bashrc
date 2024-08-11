@@ -117,13 +117,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# added by Anaconda3 4.0.0 installer
-export PATH="/home/krv/anaconda3/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/jdk.1.8.0_92"
 export JRE_HOME="$JAVA_HOME/jre"
-export PYTHONPATH=~/Programs/xgboost/python-package
 export PATH="$JAVA_HOME/bin:$PATH"
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/apps/zig-0.14:$PATH"
 
 function smp() {
 	printf '\n---------------- Set mora proxy env --------------\n'
@@ -253,5 +250,3 @@ if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integr
  eval "$(starship init bash)"
 
 source /home/krv/.config/broot/launcher/bash/br
-
-[ -f "/home/krv/.ghcup/env" ] && . "/home/krv/.ghcup/env" # ghcup-env

@@ -33,11 +33,11 @@ alias sd='sudo shutdown -h now'
 alias jctl="journalctl -p 3 -xb"
 ## path
 fish_add_path -P /home/krv/.cargo/bin
-fish_add_path -P /home/krv/.emacs.d/bin
 fish_add_path -P /home/krv/.local/bin
 fish_add_path -P ~/MyScripts
 fish_add_path -P ~/apps/lua-ls/bin
 fish_add_path -P ~/apps/nvim-linux64/bin
+fish_add_path -P ~/apps/zig-0.14
 
 function random_quote
   set random_cow (exa /usr/share/cowsay/cows | shuf -n1)
